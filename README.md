@@ -2,12 +2,13 @@
 
 <img src="doc/content/images/Web-Security-Shield.png" alt="Web Security Shield CC4 PNGALL" width="20%"/>
 
-This is a **hands-on** appsec fundamentals workshop where we explore protecting API's and Web apps, all in an Equinor Context. We look at authentication (authn), authorization (authz) and friends.
+This is a **hands-on** AppSec fundamentals workshop where we explore protecting API's and Web apps. We look at authentication (authn), authorization (authz) and friends.
 
-In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Azure AD. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. During our work will will discuss many relevant Equinor scenarios. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
+In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Azure AD. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
 
 * The workshop level is intermediate/advanced.
-* The workshop will be organized as 2+2 full days sessions.
+* The workshop is usually executed as aa virtual session (using MS Teams or similar)
+* The workshop will be organized as 2 full days sessions.
 * It recommended that more than one person participate from a team.
 * During the workshop we expect to spark a high number of relevant discussions. These discussion should naturally continue in the teams after the workshop.
 
@@ -57,3 +58,11 @@ Most of the topics and exercises have documentation as part of the exercise. We 
 ## Pre Workshop Preparations
 
 To enable a good flow and outcome of the workshop it is vital to come prepared. Preparations are defined in [Support/workshop_preparations](Support/workshop_preparations.md)
+
+## Non Equinor adaptions
+
+The workshop makes a few assumptions about the availability of various infrastructure components we use in Equinor. These are marked with ⚡️ and may need to be adopted to your context.
+
+### Section 1
+
+### Section 2

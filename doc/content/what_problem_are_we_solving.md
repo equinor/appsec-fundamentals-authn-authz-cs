@@ -8,6 +8,11 @@
 
 ![Modern Web App](content/images/modernapp.png)
 
+Note:
+
+- Show the application running from ex-10
+- Log-in, request email, perhaps some episodes
+
 ---
 
 ### The delegation problem
