@@ -29,8 +29,6 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 * Exploring Web **API's** protection
 * Exploring Web **API chaining** scenarios
 * Exploring **Device Code Grant** - authorization in CLI's
-* Exploring **Network inspection** - Proxying
-* Exploring fully automated **Integration testing** with active authentication and authorization
 
 ## Exercise index
 
@@ -46,8 +44,6 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 10. [Protecting Web Api's](ex-10/readme.md)
 11. [Protecting Web Api's O-B-O](ex-11/readme.md)
 12. [Device Code Grant](ex-12/readme.md)
-13. [Inspecting the Back-Channel](ex-13/readme.md)
-14. [Integration Testing](ex-14/readme.md)
 
 ## Documentation and Slide deck
 

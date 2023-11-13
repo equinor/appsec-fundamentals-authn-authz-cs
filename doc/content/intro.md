@@ -3,7 +3,7 @@
 
 Welcome to the
 # AppSec Fundamentals AuthN & AuthZ
-workshop
+workshop (the CS version)
 
 ---
 
@@ -42,8 +42,7 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * Exploring Refresh tokens, Implicit grant and PKCE for Native, Mobile, SPA
 * Exploring Protecting Web API's and API chaining
 * Exploring Device Code Grant - for CLI's
-* Exploring **Network inspection** - Proxying
-* Exploring fully automated **Integration testing**
+
 
 </div>
 
