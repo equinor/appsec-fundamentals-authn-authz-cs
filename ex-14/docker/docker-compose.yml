@@ -1,0 +1,77 @@
+version: '3.8'
+services:
+
+  client:
+    build: ../client/.
+    user: "1001:1001"
+    container_name: client
+    tty: true
+    ports:
+      - "${CLIENT_PORT}:${CLIENT_PORT}"
+    environment:
+      NODE_ENV: "${NODE_ENV}"
+      PORT: "${CLIENT_PORT}"
+      HOST: "0.0.0.0"
+      REDIRECT_URI: "${REDIRECT_URI}" 
+      TENANT_ID: "${TENANT_ID}"
+      CLIENT_ID: "${CLIENT_CLIENT_ID}"
+      CLIENT_SECRET: "${CLIENT_CLIENT_SECRET}"
+      EPISODES_API_URI: "${EPISODES_API_URI}"
+      TEST_CLIENT_USERNAME: "${TEST_CLIENT_USERNAME}"
+      TEST_CLIENT_PASSWORD: "${TEST_CLIENT_PASSWORD}"
+      TOKEN_CACHE_FILE: "${TOKEN_CACHE_FILE}"
+      EPISODES_API_URL: "${EPISODES_API_URL}"
+    volumes:
+       - ${TOKEN_CACHE_LOCAL_DIR}:/usr/src/app/data
+
+  episodes:
+      build: ../got-episodes-api/.
+      user: "1001:1001"
+      container_name: episodes
+      tty: true
+      ports:
+        - "${EPISODES_PORT}:${EPISODES_PORT}"
+      environment:
+        NODE_ENV: "${NODE_ENV}"
+        PORT: "${EPISODES_PORT}"
+        HOST: "0.0.0.0"
+        REDIRECT_URI: "${REDIRECT_URI}" 
+        TENANT_ID: "${TENANT_ID}"
+        CLIENT_ID: "${EPISODES_CLIENT_ID}"
+        CLIENT_SECRET: "${EPISODES_CLIENT_SECRET}"
+        EPISODES_API_URI: "${EPISODES_API_URI}"
+        QUOTES_API_URI: "${QUOTES_API_URI}"
+        QUOTES_API_URL: "${QUOTES_API_URL}"
+
+  quotes:
+      build: ../got-quote-api/
+      user: "1001:1001"
+      container_name: quotes
+      tty: true
+      ports:
+        - "${QUOTES_PORT}:${QUOTES_PORT}"
+      environment:
+        NODE_ENV: "${NODE_ENV}"
+        PORT: "${QUOTES_PORT}"
+        HOST: "0.0.0.0"
+        TENANT_ID: "${TENANT_ID}"
+        EPISODES_API_URI: "${EPISODES_API_URI}"
+        QUOTES_API_URI: "${QUOTES_API_URI}"
+        
+  cypress:
+    image: cypress/included:13.2.0
+    container_name: cypress
+    tty: true
+    depends_on:
+      - client
+      - episodes
+      - quotes
+    environment:
+      - CYPRESS_baseUrl=http://client:${CLIENT_PORT}
+      - CYPRESS_VIDEO=false
+      - http_proxy=$http_proxy
+      - https_proxy=$https_proxy
+      - no_proxy= client, episodes, quotes
+    working_dir: /e2e
+    volumes:
+      - ../client-cypress:/e2e

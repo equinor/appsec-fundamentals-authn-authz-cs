@@ -1,0 +1,43 @@
+{
+    "name": "ex-11",
+    "version": "1.1.1",
+    "description": "The Client",
+    "main": "./src/server.js",
+    "useragent": "ex-11-client",
+    "scripts": {
+        "test": "tap",
+        "test-cover": "tap --coverage-report=lcov",
+        "test-repl": "tap repl",
+        "start": "node ./src/server.js | pino-pretty -c -S",
+        "dev": "nodemon ./src/server.js -e js,marko,json --ignore data/ --verbose | pino-pretty -c -S",
+        "snyk": "snyk test"
+    },
+    "author": "Lars Kåre Skjørestad",
+    "license": "MIT",
+    "dependencies": {
+        "@azure/msal-node": "^2.1.0",
+        "@fastify/auth": "^4.3.0",
+        "@fastify/cookie": "^9.0.4",
+        "@fastify/cors": "^8.4.0",
+        "@fastify/formbody": "^7.4.0",
+        "@fastify/helmet": "^11.1.1",
+        "@fastify/session": "^10.5.0",
+        "@fastify/static": "^6.11.2",
+        "@fastify/view": "^8.2.0",
+        "fastify": "^4.23.2",
+        "fastify-favicon": "^4.3.0",
+        "got": "^11.8.3",
+        "handlebars": "^4.7.8",
+        "path": "^0.12.7",
+        "pino": "^8.15.1",
+        "pino-pretty": "^10.2.0",
+        "underscore": "^1.13.6"
+    },
+    "devDependencies": {
+        "global-agent": "^3.0.0",
+        "nodemon": "^3.0.1",
+        "sinon": "^16.0.0",
+        "snyk": "^1.1225.0",
+        "tap": "^18.0.4"
+    }
+}

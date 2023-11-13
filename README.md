@@ -1,0 +1,63 @@
+# Application Security Fundamentals - Authn & Authz
+
+<img src="doc/content/images/Web-Security-Shield.png" alt="Web Security Shield CC4 PNGALL" width="20%"/>
+
+This is a **hands-on** appsec fundamentals workshop where we explore protecting API's and Web apps, all in an Equinor Context. We look at authentication (authn), authorization (authz) and friends.
+
+In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Azure AD. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. During our work will will discuss many relevant Equinor scenarios. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
+
+* The workshop level is intermediate/advanced.
+* The workshop will be organized as 2+2 full days sessions.
+* It recommended that more than one person participate from a team.
+* During the workshop we expect to spark a high number of relevant discussions. These discussion should naturally continue in the teams after the workshop.
+
+## Workshop outline
+
+* Intro, objectives
+* **What problem** are we trying to solve?
+* The basics of Authentication and Authorization (part 1)
+* **OAuth2** Code Grant Raw Style
+* Getting access tokens using code
+* The basics of Authentication and Authorization (part 2)
+* Exploring **Scope**
+* Exploring **Frameworks** for Authentication and Authorization
+* Exploring **Sessions** and session management
+* Exploring **Common** authorization scenarios in Equinor
+* Exploring **Refresh** tokens
+* Exploring The **Implicit grant** for Native, Mobile, SPA
+* Exploring **PKCE** for Native, Mobile, SPA
+* Exploring Web **API's** protection
+* Exploring Web **API chaining** scenarios
+* Exploring **Device Code Grant** - authorization in CLI's
+* Exploring **Network inspection** - Proxying
+* Exploring fully automated **Integration testing** with active authentication and authorization
+
+## Exercise index
+
+1. [Authorization Code Grant Raw Style](ex-01/readme.md)
+2. [Getting an access token using code](ex-02/readme.md)
+3. [Scope](ex-03/readme.md)
+4. [Using Auth Frameworks](ex-04/readme.md)
+5. [Sessions](ex-05/readme.md)
+6. [Common Authorization Scenarios](ex-06/readme.md)
+7. [Refresh tokens](ex-07/readme.md)
+8. [Implicit grant](ex-08/readme.md)
+9. [Auth Code Grant with PKCE](ex-09/readme.md)
+10. [Protecting Web Api's](ex-10/readme.md)
+11. [Protecting Web Api's O-B-O](ex-11/readme.md)
+12. [Device Code Grant](ex-12/readme.md)
+13. [Inspecting the Back-Channel](ex-13/readme.md)
+14. [Integration Testing](ex-14/readme.md)
+
+## Documentation and Slide deck
+
+Most of the topics and exercises have documentation as part of the exercise. We use a slide deck for some parts. The [doc/readme](doc/readme.md) shows you how to load the docs in your local environment.
+
+## Support documents
+
+* [Proxy configurations](Support/proxy.md)
+* [Frequently Asked Questions](Support/faq.md)
+  
+## Pre Workshop Preparations
+
+To enable a good flow and outcome of the workshop it is vital to come prepared. Preparations are defined in [Support/workshop_preparations](Support/workshop_preparations.md)

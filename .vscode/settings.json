@@ -1,0 +1,5 @@
+{
+    //Terminal settings
+    "terminal.integrated.gpuAcceleration": "canvas",
+    "liveServer.settings.root": "/doc"
+}

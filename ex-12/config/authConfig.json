@@ -1,0 +1,14 @@
+{
+    "authOptions": {
+        "clientId": "",
+        "authority": "https://login.microsoftonline.com/"
+    },
+    "request": {
+        "deviceCodeUrlParameters": {
+            "scopes": ["user.read"]
+        }
+    },
+    "resourceApi": {
+        "endpoint": "https://graph.microsoft.com/v1.0/me"
+    }
+}

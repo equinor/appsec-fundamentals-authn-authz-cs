@@ -1,0 +1,27 @@
+## Defining variables
+@tenant_id=3aa4a235-b6e2-48d5-9195-7fcf05b459b0
+@client_id=
+@scope=openid profile
+@state=123456789
+@redirect_uri=http://localhost/myapp/
+
+###The first leg
+GET https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/authorize
+    ?client_id={{client_id}}
+    &response_type=code
+    &redirect_uri={{redirect_uri}}
+    &response_mode=query
+    &scope={{scope}}
+    &state={{state}}
+
+### The Second Leg, assuming client_secret to be available in env variable prior to starting vs code
+POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token
+content-type: application/x-www-form-urlencoded
+
+client_id={{client_id}}
+&scope={{scope}}
+&redirect_uri={{redirect_uri}}
+&grant_type=authorization_code
+&client_secret={{$processEnv CLIENT_SECRET}}
+&code=
+&state={{state}}

@@ -1,0 +1,30 @@
+<div id="card-div" class="col-md-3">
+  <div class="card text-center">
+    <div class="card-body">
+        <a class="btn btn-primary" href="/showinbox" id="showinbox" data-toggle="tooltip" title="Get access token and then show the InBox">Show Inbox</a>
+        <p></p>
+        {{#if ShowWriterButton}}
+          <a class="btn btn-primary" href="/" id="showwriter" data-toggle="tooltip" title="Write something">Writer</a>
+          <p></p>
+        {{/if}}
+        <a class="btn btn-secondary" href="/" id="showindex" data-toggle="tooltip" title="Get me home">Home</a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="col-md-7">
+  <div class="tab-content" id="nav-tabContent">
+    {{#if (isdefined accountName)}}
+        <p> {{ accountName.name }} - ( {{ accountName.username }}) </p>
+    {{/if}}
+    {{#if inbox}}
+      <id="inbox-list">
+        <ul>
+       {{#each inbox}}
+          <li>{{this}}</li>
+        {{/each}}
+        </ul>     
+     {{/if}}
+  </div>
+</div>
