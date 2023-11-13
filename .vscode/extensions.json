@@ -1,9 +1,0 @@
-{
-    "recommendations": [
-        "humao.rest-client",
-        "streetsidesoftware.code-spell-checker",
-        "dbaeumer.vscode-eslint",
-        "ms-azuretools.vscode-docker",
-        "ritwickdey.liveserver"
-    ]
-}

@@ -1,0 +1,36 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/snyk-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+                "ms-vscode-remote.remote-containers",
+                "GitHub.codespaces",
+                "mhutchie.git-graph",
+                "humao.rest-client",
+                "streetsidesoftware.code-spell-checker",
+                "dbaeumer.vscode-eslint",
+                "ms-azuretools.vscode-docker",
+                "ritwickdey.liveserver"
+            ],
+			"settings": {
+				"gitlens.showWelcomeOnInstall" :false,
+				"terminal.integrated.gpuAcceleration": "canvas",
+    			"liveServer.settings.root": "/doc"
+			}
+		},
+		"codespaces": {
+		}
+	},
+	"updateContentCommand": {
+		"trufflehog" : "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.62.1/trufflehog_3.62.1_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
+	},
+	"containerEnv": {
+		"PIPELINE": "development"
+	}
+}
