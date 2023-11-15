@@ -1,30 +1,24 @@
 # Requesting an Authorization Code using Rest Client.
 
-At this point we will start the first leg of the OAuth2 Code Grant flow - getting the auth code that we later will use to request a token. We will use the VS Code Rest Client, and assume you are using VS Code and that the [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension is installed.
+At this point we will start the first leg of the OAuth2 Code Grant flow - getting the auth code that we later will use to request a token. We will use the VS Code Rest Client.
 
 Steps:
 
 * Let's start by looking at the [auth code flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow) in the documentation of the _Microsoft Identity Platform_
 * We assume the you have not started VS Code
-  * Open a new terminal window, change directory to the workshop code
-  * Set a new environment variable to hold the client secret
-    ```shell
-    export CLIENT_SECRET='<value>'
-    ```
-  * Start VS Code from the command line
-    ```shell
-    code .
-    ```
-  * Accept to install recommended extensions for the workspace, or do this manually.
+  * Open a new terminal window
+  * Current directory should be `/workspaces/appsec-fundamentals-authn-authz-cs `
 * Open the `./ex-01/authCode.http` file in VSCode.
   * Verify that the 'Rest Client' extension is active
-* In 'authCode.http' - add value value for your AAD client id to '@client_id='
+* In 'authCode.http' - add value values for
+  * Your AAD client id to `@client_id=`
+  * The Redirect URI to `@redirect_uri=`
 * Explore the set-up and the `GET` request (The first leg)
   * In VSCode, select the GET request
   * Right-click and select 'Generate Code Snippet' ([doc](https://github.com/Huachao/vscode-restclient#generate-code-snippet))
-  * Select 'Shell' and then 'Wget'
-* Copy the http request from the wget command
-* Paste the wget http request into your browser and execute
+  * Select 'Shell' and then 'cURL'
+* Copy the `url` from the curl request
+* Paste the url into your browser and execute
   * Using the Browser Web Developer Tools is recommended.
   * Why in the browser?
   * Why the "consent" flow?
@@ -32,7 +26,7 @@ Steps:
   * (Depending on the State of your browser you may have to authenticate or not, explore the get request header for cookies)
   * Make a copy of the 'code' parameter in the redirect.
 * For additional insight on the complete dance (optional)
-  * Open a "private/incognito" window in your browser
+  * Open a "private/incognito" window in your browser. (TEST THIS - COMPLIANT Device!!)
   * Open the Developer Tools
   * Select the option to persist logs
   * Copy the "get request" from VSCode, paste into browser, and execute

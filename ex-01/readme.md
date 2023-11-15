@@ -8,7 +8,3 @@ In this exercise we will explore the OAuth2 authorization code grant from a raw 
 * [Requesting an Authorization Code](doc/request_an_authorization_code.md)
 * [Requesting an Access Token](doc/requesting_an_access_token.md)
 * [Exploring Tokens](doc/exploring_tokens.md)
-
----
-
-Azure AD (AAD) is being rebranded to "Microsoft Entra ID". This is reflected in the Azure portal. We will still keep referring to it as Azure AD for a while ... 🥸
