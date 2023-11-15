@@ -1,10 +1,13 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"build": { "dockerfile": "Dockerfile" }, // Ubuntu adjusted
+	//"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/snyk-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
-		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": "latest",
+		"ghcr.io/devcontainers/features/node:1": { "version": "18.18" }
 	},
 	"customizations": {
 		"vscode": {
