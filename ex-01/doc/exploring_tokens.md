@@ -27,5 +27,5 @@ Steps:
 * Be cautious on which tools you use to examine tokens - especially online ones!
 * Token validation is important - for the intended recipient of the token
 * Token storage/caching is always a tricky question
-* A good practice is to "not use access tokens as proof of authentication". Access tokens are for the protected resource. It's just like a bus ticket - it grant you access to the buss but do not prove that you are you - even if the ticket has your name on it.
+* A good practice is to "not use access tokens as proof of authentication". Access tokens are for the protected resource. It's just like a bus ticket - it grant you access to the bus but do not prove that you are you - even if the ticket has your name on it.
 

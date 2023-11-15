@@ -11,8 +11,9 @@ Steps:
 * Open the `./ex-01/authCode.http` file in VSCode.
   * Verify that the 'Rest Client' extension is active
 * In 'authCode.http' - add value values for
-  * Your AAD client id to `@client_id=`
-  * The Redirect URI to `@redirect_uri=`
+  * Your tenant id to `@tenant_id=`
+  * Your client id to `@client_id=`
+  * The redirect URI to `@redirect_uri=`
 * Explore the set-up and the `GET` request (The first leg)
   * In VSCode, select the GET request
   * Right-click and select 'Generate Code Snippet' ([doc](https://github.com/Huachao/vscode-restclient#generate-code-snippet))

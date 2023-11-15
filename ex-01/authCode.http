@@ -1,9 +1,9 @@
 ## Defining variables
-@tenant_id=3aa4a235-b6e2-48d5-9195-7fcf05b459b0
-@client_id=28dc6656-c2e5-47fa-8fa3-df8d06c544c3
+@tenant_id=
+@client_id=
 @scope=openid profile
 @state=123456789
-@redirect_uri=https://solid-invention-pjrjqqpjvxx29pgw-3000.app.github.dev/
+@redirect_uri=
 
 ###The first leg
 GET https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/authorize
@@ -24,5 +24,5 @@ client_id={{client_id}}
 &redirect_uri={{redirect_uri}}
 &grant_type=authorization_code
 &client_secret={{client_secret}}
-&code=0.AQIANaKkOuK21UiRlX_PBbRZsFZm3CjlwvpHj6PfjQbFRMMCABo.AgABAAIAAAAmoFfGtYxvRrNriQdPKIZ-AgDs_wUA9P_n4UKH9tUgpIvtcfRoU0kHW6jg0KNhEd73gvUOODRT8UjJp7Olqgbj4TjcvHRX9i8Q1hhF2SbuGu1fvcR-H4X-_9NoeLQhM5HNJ5j1OCXrqGwEd3B5MGa54eaAeNUFIajOn57bVxSZx-gp42Ve4K4K3LYwvDRA1XxE2eqOoPOVTw-_9qyFgTIdZ8ETb-Wf3FKILD_JnxLpA_RBrFlHuYnS2jlanz-2KpCoHVEoTuic4ij6UMaA5HP6bLzNAdmNymaG4kj6d02rY45oz9LpNCQ3DmFfnmJafEjCuzXiRJocxh-aunMvbEUbp2UBt9GdfmW_BWyS_a3_P80JwIigLIPmU1dXVfcRVfyXMgBGlWeFA2DwBYiAdFYifAIQV8NaW4QhZUWyhdv_Zpbt1A4WsLtLKSptgCoM9TLDMbFq9awHcLOeOqLMS81nxgi_-FXEXkCk7cb1fyguPkPnXqT8Q98GulwR6kYHGnQj2Wn0jr4_21cq82rWpB1fLZd_MQ2i61htglXbK34eQTjzNNH8a2AwA_ed51pTdyFuUmY3efUPBrhdpLGSQjx3yHuPoT9aiOd_boPOWOzjX8AnnRROn_66Vx5ZqnhSPgnoxhr6zZhWBz3d6nFb--Xo2BPjzvQzTqKOh-w9tkIbEZWLxF9NIWqDMTujtzDLSqyv8KlaMYFKfMIDYlERqL3HIVRB6c7hS7PHTyXYUw5ugvsRfevvYeWa6-sDSA9md77hwOYDTkSvkTHZSPe--t8SqnnVr4Nvox0gAc5T0B3YxB_ry8I5qeHDipcXtw
+&code=
 &state={{state}}
