@@ -1,0 +1,11 @@
+# Test episodes API and/or Client
+
+@bearer = ey...
+
+# Episodes getAll
+GET http://localhost:3100/api/episodes HTTP/1.1
+User-agent: ex-10-client
+Authorization: Bearer {{bearer}}
+
+### Swagger
+GET http://localhost:3100/docs HTTP/1.1
