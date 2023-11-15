@@ -19,6 +19,7 @@
                 "streetsidesoftware.code-spell-checker",
                 "dbaeumer.vscode-eslint",
                 "ms-azuretools.vscode-docker",
+				"charliermarsh.ruff"
                 // "lzm0x219.vscode-markdown-github"
             ],
 			"settings": {
@@ -34,6 +35,7 @@
 		"trufflehog" : "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.62.1/trufflehog_3.62.1_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
 	},
 	"containerEnv": {
-		"PIPELINE": "development"
+		"PIPELINE": "development",
+		"PYTHONDONTWRITEBYTECODE": "1"
 	}
 }

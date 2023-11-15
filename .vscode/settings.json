@@ -1,0 +1,24 @@
+{
+    "cSpell.words": [
+        "authlib",
+        "azuretools",
+        "Bealor",
+        "charliermarsh",
+        "codespaces",
+        "dbaeumer",
+        "devcontainer",
+        "eitsupi",
+        "fastapi",
+        "humao",
+        "jwks",
+        "Kingsroad",
+        "mhutchie",
+        "pydantic",
+        "PYTHONDONTWRITEBYTECODE",
+        "snyk",
+        "trufflehog",
+        "uvicorn"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true
+}
