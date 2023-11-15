@@ -33,7 +33,7 @@ Steps:
 * In the browser, identify the cookie that is used for session management
   * Alter content of, or delete, the cookie that holds the sessions id. Observer the changes to the application.
 * Observe from logging when getting tokens silently is used. 
-  * Try to provoke getting a new token from Azure AD?
+  * Try to provoke getting a new token from Microsoft Entra ID?
   * How could we monitor/observe this behavior from the "outside"?
 
 ## --Discuss security issues and good practices--

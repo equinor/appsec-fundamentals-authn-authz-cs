@@ -103,9 +103,9 @@
 
 ---
 
-## Azure AD 
+## Microsoft Entra ID 
 
-Azure AD (AAD) issues JWT tokens (access, id). It's up to the discretion of the authorization server to decide what tokens to issue and the format they have.
+Microsoft Entra ID (AAD) issues JWT tokens (access, id). It's up to the discretion of the authorization server to decide what tokens to issue and the format they have.
 
 * JSON Web Token (JWT)([rfc7519)](https://datatracker.ietf.org/doc/html/rfc7519) 
 * Format is header.body.signature (using base64 encoding)
@@ -132,7 +132,7 @@ dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 
 ## Example ID Token
 
-* Azure AD Id Token [Claims](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens)
+* Microsoft Entra ID Id Token [Claims](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens)
 
 ![Id Token Decoded](content/images/id_token_decoded.png)<!-- .element style="width:50%"-->
 
@@ -166,5 +166,5 @@ dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 * The process for a protected resource to query the authorization server to verify validity of a OAuth2 token
 * An extension to OAuth2 defined in [rfc7662](https://datatracker.ietf.org/doc/html/rfc7662)
 * Getting tokens type by ref and querying for "details"
-* Not currently supported by Azure AD<br/> ([5+ year old request](https://feedback.azure.com/d365community/idea/ea407180-be25-ec11-b6e6-000d3a4f0789))
+* Not currently supported by Microsoft Entra ID<br/> ([5+ year old request](https://feedback.azure.com/d365community/idea/ea407180-be25-ec11-b6e6-000d3a4f0789))
 * No introspection limits the value of the /revoke end-point?

@@ -47,7 +47,7 @@ Steps:
   export PORT=3100
   ```
 
-* Add this config - explore the Azure AD App registrations to find the proper values.
+* Add this config - explore the Microsoft Entra ID App registrations to find the proper values.
   * Hint: You may have to create a new value for the secret
 
 ### --Now You--

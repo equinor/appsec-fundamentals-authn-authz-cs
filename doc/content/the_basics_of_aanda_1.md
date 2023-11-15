@@ -385,7 +385,7 @@ grant_type=authorization_code
 
 ## Please Note
 
-* Use Azure AD v2 - MSAL
-* Azure AD v1 (ADAL) was [deprecated](https://github.com/azure-deprecation/dashboard/issues/60) on December 31th 2022.
+* Use Microsoft Entra ID v2 - MSAL
+* Microsoft Entra ID v1 (ADAL) was [deprecated](https://github.com/azure-deprecation/dashboard/issues/60) on December 31th 2022.
 * (Be aware of doc/answers and v1 vs. v2 (it's easy to read the wrong docs or old answers on stack overflow 😀 ))
 

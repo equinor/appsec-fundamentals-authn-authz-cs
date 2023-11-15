@@ -26,7 +26,7 @@ Steps:
 ## The Config
 
 * A new environment variable **export EPISODES_API_URI** that needs to be added to then env file
-  * Hint: Azure AD -> App Registrations -> Episodes Api -> Expose An Api -> Application ID URI
+  * Hint: Microsoft Entra ID -> App Registrations -> Episodes Api -> Expose An Api -> Application ID URI
   * Hint: Exclude the prefix 'api://'
 * Update the client env file (appsec-course-client-eq.env)
 

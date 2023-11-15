@@ -31,13 +31,13 @@ Steps:
 
 ## Configuration
 
-In order to make the app run we need to prepare to sets of configuration. We need to create an Azure AD object representing the client and we need to create some environment config driving the app.
+In order to make the app run we need to prepare to sets of configuration. We need to create an Microsoft Entra ID object representing the client and we need to create some environment config driving the app.
 
-### Azure AD
+### Microsoft Entra ID
 
 Steps:
 
-* Create a new Azure AD App Registration for the CLI app
+* Create a new Microsoft Entra ID App Registration for the CLI app
   * Hint: Remember to active the Application Developer role in PM
 * Important parameters
   * Name: **(initial)-appsec-course-cli**

@@ -6,13 +6,13 @@ Steps:
 
 ## App Registrations vs. Enterprise Applications
 
-One analogy that could make sense to understand these two are; app registrations are like an object definition while the enterprise application is one instance of that object. Remember apps could be "multi tenant" - meaning that there would be instances in different Azure AD tenants.
+One analogy that could make sense to understand these two are; app registrations are like an object definition while the enterprise application is one instance of that object. Remember apps could be "multi tenant" - meaning that there would be instances in different Microsoft Entra ID tenants.
 
 ## Configuration
 
 Steps:
 
-* From Azure AD, select Enterprise Applications
+* From Microsoft Entra ID, select Enterprise Applications
 * Search for your client application (initial-aav2-client)
 * Select **Properties** on the left side menu
 * Observe
@@ -48,5 +48,5 @@ Steps:
 
 ## --Security considerations--
 
-* Valid account means all accounts in the Azure AD tenant, not only "employees". It could be externals, guests accounts or similar.
+* Valid account means all accounts in the Microsoft Entra ID tenant, not only "employees". It could be externals, guests accounts or similar.
 * Be aware of security considerations for multi tenant applications ([MS Guidance](https://msrc.microsoft.com/blog/2023/03/guidance-on-potential-misconfiguration-of-authorization-of-multi-tenant-applications-that-use-azure-ad/))

@@ -24,9 +24,9 @@ npm test
 
 * Do the steps
 
-## Azure AD
+## Microsoft Entra ID
 
-A few words on configuring the Azure AD registration for our application.
+A few words on configuring the Microsoft Entra ID registration for our application.
 
 * Our application is a web app. This is defined in the "App registration" -> "Authentication" -> "Platform Configuration"
 * For a SPA application you would (not valid for our example, we use the hybrid mode)

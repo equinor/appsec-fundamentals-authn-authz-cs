@@ -20,7 +20,7 @@ export NODE_ENV=development
 * Do the steps above
   * You may have to fix a minor configuration issue :)
 * Follow the oauth dance by inspecting the log
-  * The [Azure AD Spec](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow) for the OAuth2 Auth Code Flow
+  * The [Microsoft Entra ID Spec](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow) for the OAuth2 Auth Code Flow
   * First leg: redirect to login.microsoft.com with params and redirect_uri
   * Second leg: receive code on redirect_uri endpoint, use code to request access token 
 * Extract the access token and inspect at [jwt.ms](https://jwt.ms)
@@ -33,7 +33,7 @@ export NODE_ENV=development
   * prompt
   * response_mode
   * scope
-* Explore what consent you have given to apps on Azure AD on [myapps.microsoft.com](https://myapps.microsoft.com/)
+* Explore what consent you have given to apps on Microsoft Entra ID on [myapps.microsoft.com](https://myapps.microsoft.com/)
  * Test revoking for your app (if available in the list)
 
 ## --Discuss security issues and good practices--

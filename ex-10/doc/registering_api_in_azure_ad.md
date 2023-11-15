@@ -1,14 +1,14 @@
-# Register the API in Azure AD
+# Register the API in Microsoft Entra ID
 
-The purpose of this part is to register an Azure AD app for our API. This enables us to use Azure AD to help protecting the API.
+The purpose of this part is to register an Microsoft Entra ID app for our API. This enables us to use Microsoft Entra ID to help protecting the API.
 
-After this part we have two object in Azure AD, one for the client, and one for the episodes api.
+After this part we have two object in Microsoft Entra ID, one for the client, and one for the episodes api.
 
 
 Steps:
 * Navigate to [portal.azure.com](https://portal.azure.com)
-* Activate your _Application Developer role_ in _Azure AD Privileged Identity Management_
-  * _My roles_ -> _Azure AD Roles_ -> _Application Developer_ -> _Activate_
+* Activate your _Application Developer role_ in _Microsoft Entra ID Privileged Identity Management_
+  * _My roles_ -> _Microsoft Entra ID Roles_ -> _Application Developer_ -> _Activate_
   * Be patient - it may take a minute ...
 * Select _Azure Active Directory_ from the Azure Portal Home page
 * Select _App Registrations_

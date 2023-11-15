@@ -19,14 +19,14 @@ This scenario has 3+1 key components. The 3 key components are independent of ea
 * The Episodes API
   * The protected resource server for Episodes
   * Serve a JSON document with GOT Episodes at /api/episodes
-  * Requests needs to be validated, tokens needs to be issued by Azure AD
-  * Using O-B-O to request an access token from Azure AD to be used towards the GOT Quotes API
+  * Requests needs to be validated, tokens needs to be issued by Microsoft Entra ID
+  * Using O-B-O to request an access token from Microsoft Entra ID to be used towards the GOT Quotes API
   * Read quotes and include them in episode response to clients
 * The Quotes API
   * The protected resource for GOT Quotes
-  * Receives and authorize requests (JWT tokens issues by Azure AD)
+  * Receives and authorize requests (JWT tokens issues by Microsoft Entra ID)
   * Sends a random GOT Quote back to the Episodes API
-* Azure AD
+* Microsoft Entra ID
   * The identity provider and the Authority Server
 
 Steps:

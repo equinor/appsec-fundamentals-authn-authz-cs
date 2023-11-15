@@ -4,7 +4,7 @@
 
 ## Remember to Clean-Up
 
-* Azure AD App Registrations (Multiple Tenants)
+* Microsoft Entra ID App Registrations (Multiple Tenants)
 * Delete repository on "Equinor-Playground" when no longer used
 * Delete local token cache stores
 * Remove unused Github CodeSpaces

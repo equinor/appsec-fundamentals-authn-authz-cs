@@ -4,7 +4,7 @@
 
 This is a **hands-on** AppSec fundamentals workshop where we explore protecting API's and Web apps. We look at authentication (authn), authorization (authz) and friends.
 
-In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Azure AD. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
+In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Microsoft Entra ID. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
 
 * The workshop level is intermediate/advanced.
 * The workshop is usually executed as aa virtual session (using MS Teams or similar)

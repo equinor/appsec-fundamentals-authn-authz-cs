@@ -18,7 +18,7 @@ This version of the app uses the [Microsoft Authentication Library for Javascrip
 ## Architecture
 
 NodeJS based backend, simple html on front end.
-SSO using oauth with Azure AD
+SSO using oauth with Microsoft Entra ID
 
 Important NodeJS modules
 

@@ -33,7 +33,7 @@ Additional config are defined in './lib/app-config.js'. Config that should be ve
 ### Steps:
 
 * Update the scope.gotApi in msalConfig to contain the value of the scope for your api
-  * Hint: Azure AD -> App Registrations -> (initials)-appsec-course-episodes-api -> Expose and Api -> Scopes
+  * Hint: Microsoft Entra ID -> App Registrations -> (initials)-appsec-course-episodes-api -> Expose and Api -> Scopes
 
 ### --Now you--
 
@@ -63,7 +63,7 @@ Steps:
     * Hint: App Registrations -> (initials)-appsec-course-episodes-api -> Expose and Api -> Application ID URI
     * Remember to save the change
 
-### Azure AD
+### Microsoft Entra ID
 
 We have created and app registration for our episodes api. We have also created a scope that is exposed by this api. The typical next steps would be that users, or an admin on behalf of an organization, would give consent to this scope for a client.
 
@@ -81,10 +81,10 @@ Steps:
 ### --Now you--
 
 * Do the steps above for "The App and the Environment"
-* Do the steps above for "Azure AD"
+* Do the steps above for "Microsoft Entra ID"
 
 ## --Discuss security issues and good practices--
 
 * Good practice: In your team - define a strategy for how to handle config, what needs to be defined outside the application (outside version control) and what may live inside (and the criteria for what goes where). 
 * Good practice: Consider using components/modules to read config and make it available to the application (like [dotenv](https://www.npmjs.com/package/dotenv) for NodeJs)
-* Discuss: When does it make sense to script Azure AD App registrations?
+* Discuss: When does it make sense to script Microsoft Entra ID App registrations?

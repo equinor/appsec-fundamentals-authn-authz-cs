@@ -19,7 +19,7 @@ The purpose of this exercise is get an access token using code. We are moving fr
 This app will list the context of your inbox. A web page is presented, when **show inbox** is selected the app will trigger a **authorization code grant flow** and list content of your inbox.
 
 NodeJS based backend, simple html on front end.
-SSO using oauth2/oidc with Azure AD
+SSO using oauth2/oidc with Microsoft Entra ID
 
 Important NodeJS modules
 

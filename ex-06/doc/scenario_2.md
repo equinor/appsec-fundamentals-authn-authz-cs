@@ -6,7 +6,7 @@ In this section we will protect a web app so that only defined groups (and users
 
 ## Alternative 1 (Sign In)
 
-Alternative 1 is about assigning users/groups directly to the Azure AD Object. This happens in Azure AD - and it's not about application logic at the client.
+Alternative 1 is about assigning users/groups directly to the Microsoft Entra ID Object. This happens in Microsoft Entra ID - and it's not about application logic at the client.
 
 This alternative is about the ability to sign-in. This alternative can be used in combination with other alternatives (Defence In Depth)
 
@@ -22,9 +22,9 @@ This approach assumes that the user is authenticated and able to sign-in.
 
 This approach has known limitations. The [maximum number of group claims](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-group-claims#important-caveats-for-this-functionality) in a JWT token is 200. When the user is part of more groups the JWT token will contain a link for querying the Microsoft Graph API.
 
-* The [Application Manifest](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest) defines all attributes and behavior of the app related to Azure AD.
+* The [Application Manifest](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest) defines all attributes and behavior of the app related to Microsoft Entra ID.
   * The App manifest is the master
-  * The Azure AD GUI are not yet keeping up with whats in the app manifest
+  * The Microsoft Entra ID GUI are not yet keeping up with whats in the app manifest
   * For adding group membership to the token claim we can use the "Token configuration" -> "Add groups claim"
   
 Steps:
@@ -110,7 +110,7 @@ Steps:
 * Did you observe the usage of app roles in our client application?
   * Who is responsible for validating the Id token?
   * Why is it preferable to render gui logic on the back-end?
-* From an architecture view alternative using app roles would be a preferred approach. All logic related to groups, group-id etc are moved out of the application which only is concerned about roles. This means that groups, memberships etc will be handled outside the application code - which in most cases is a good pattern. (This will be quite obvious when we start challenge testability and move testing over to different Azure AD tenant later)
+* From an architecture view alternative using app roles would be a preferred approach. All logic related to groups, group-id etc are moved out of the application which only is concerned about roles. This means that groups, memberships etc will be handled outside the application code - which in most cases is a good pattern. (This will be quite obvious when we start challenge testability and move testing over to different Microsoft Entra ID tenant later)
 * **What if we want to send the app roles to API's?**</br> In our example we received the app roles in the ID token. What about getting the app roles into API's to drive business logic? This entirely possible. Add the necessary app roles to the API's AAD object. [Assign users / groups to the app role](https://learn.microsoft.com/nb-no/azure/active-directory/develop/howto-add-app-roles-in-apps#assign-users-and-groups-to-roles) by using the "Enterprise application" version of the API AAD object. The app roles claim will now be part of the access token that is provided to access the api. Read more on the topic in [MS Identity platform](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-add-app-roles-in-apps#usage-scenario-of-app-roles) (Adding groups is also possible)
 
 ----

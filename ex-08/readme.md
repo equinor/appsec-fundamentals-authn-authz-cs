@@ -30,11 +30,11 @@ There are at least to architectural models:
   * Parts of app logic in back-end
   * In OAuth2 terms, the back-end is a confidential client
 
-## Configuring Azure AD for Implicit grant
+## Configuring Microsoft Entra ID for Implicit grant
 
 Steps:
 
-* For the client app, open Azure AD App Registration
+* For the client app, open Microsoft Entra ID App Registration
 * Explore the "Authentication" options
   * "Implicit grant and hybrid flows"
 

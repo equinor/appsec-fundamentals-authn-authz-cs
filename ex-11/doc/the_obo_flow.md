@@ -9,8 +9,8 @@
    security tokens from OAuth 2.0 authorization servers, including
    security tokens employing impersonation and delegation
 * [Microsoft Identity Platform OAuth2 OBO](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
-* Supported by Azure AD (MS Identity Platform) on V1 and V2 endpoints. Not supported for Azure AD B2C
-* May not be supported by other Security Token Services (STS) - none Azure AD
+* Supported by Microsoft Entra ID (MS Identity Platform) on V1 and V2 endpoints. Not supported for Microsoft Entra ID B2C
+* May not be supported by other Security Token Services (STS) - none Microsoft Entra ID
 * Framework support will vary
 
 ## The Flow
@@ -42,9 +42,9 @@
   | expires_in | Number of seconds until the access token expire |
   | access_token | The actual access token that will be used by the Episodes Api when requesting from the Quote Api (step 7) 
 
-## The Application Objects in Azure AD
+## The Application Objects in Microsoft Entra ID
 
-* All objects that we want to protect must be registered in Azure AD
+* All objects that we want to protect must be registered in Microsoft Entra ID
 * The Client:  Must have a client_id and client_secret (depending on which flows that are used). No changes compared to previous exercises 
 * The Episodes Api: Must have a client_id and a client_secret. Must expose scope for api - Episodes.Read. Compared to previous exercises - we need a client_secret to be able to request a token on-behalf-of 
 * The Quote Api: Must have a client_id. Must expose scope for api - Quote.Read. Compared to previous exercises - this is a new registration

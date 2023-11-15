@@ -30,5 +30,5 @@ Steps:
 * Find the answer to the following questions
   * What permissions have you granted to the Graph Explorer?
   * What permissions is granted by the admin on your behalf for the graph explorer?
-  * (Hints: Token, Azure AD)
+  * (Hints: Token, Microsoft Entra ID)
 

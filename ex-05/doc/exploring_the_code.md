@@ -7,7 +7,7 @@ The end-user facing functionality of the app is not changed. The changes are on 
 ## Changes
 
 * We have introduced **session management**.
-* We are using the **silent log-in** functionality of MSAL. Previously when we wanted to read the inbox our app acquired an access token for each request to the MS Graph Api. Now our app is doing a lookup into the token cache, if the user is identified (using the session) and has a valid token for the scope that is requested - the existing token will be used (hence - no trip to Azure AD to acquire a token for each request). If a valid token does not exist - MSAL will get this, store it in the token cache - and the use it.
+* We are using the **silent log-in** functionality of MSAL. Previously when we wanted to read the inbox our app acquired an access token for each request to the MS Graph Api. Now our app is doing a lookup into the token cache, if the user is identified (using the session) and has a valid token for the scope that is requested - the existing token will be used (hence - no trip to Microsoft Entra ID to acquire a token for each request). If a valid token does not exist - MSAL will get this, store it in the token cache - and the use it.
 * Sessions are stored "in-memory" at the client. The token cache for a "user" is stored in the session.
 * We are **protecting end-points**. Only authenticated users can access /showinbox
 * We have enhanced the /logout logic. It will remove the signed-in user from the token cache and destroy the app session.

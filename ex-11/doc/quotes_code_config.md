@@ -38,9 +38,9 @@ Steps:
 
 ## The Config
 
-### Azure AD
+### Microsoft Entra ID
 
-We need to create a new Azure AD App Registration for Quotes Api.
+We need to create a new Microsoft Entra ID App Registration for Quotes Api.
 
 Using the procedure from [exercise-10](../../ex-10/doc/registering_api_in_azure_ad.md) create a new app registration. The important values will be:
 * Name: **(initial)-appsec-course-quotes-api**

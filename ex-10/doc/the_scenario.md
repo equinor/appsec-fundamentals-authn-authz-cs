@@ -13,14 +13,14 @@ This scenario has 2+1 key components. The 2 key components are independent of ea
 * The Client
   * Serving the Web front end
   * Handling login/logout, sessions and token cache.
-  * Managing requests for authentication and authorization - getting tokens from Azure AD
+  * Managing requests for authentication and authorization - getting tokens from Microsoft Entra ID
   * Requesting users InBox from the O365 API
   * Requesting a list of GOT Episodes from the Episodes API
 * The Episodes API
   * The protected resource server
   * Serve a JSON document with GOT Episodes at /api/episodes
-  * Requests needs to be validated, tokens needs to be issued by Azure AD
-* Azure AD
+  * Requests needs to be validated, tokens needs to be issued by Microsoft Entra ID
+* Microsoft Entra ID
   * The identity provider and the Authority Server
 
 Steps:
