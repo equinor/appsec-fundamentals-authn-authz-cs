@@ -26,7 +26,7 @@ Steps:
   * (Depending on the State of your browser you may have to authenticate or not, explore the get request header for cookies)
   * Make a copy of the 'code' parameter in the redirect.
 * For additional insight on the complete dance (optional)
-  * Open a "private/incognito" window in your browser. (TEST THIS - COMPLIANT Device!!)
+  * Open a "private/incognito" window in your browser.
   * Open the Developer Tools
   * Select the option to persist logs
   * Copy the "get request" from VSCode, paste into browser, and execute
