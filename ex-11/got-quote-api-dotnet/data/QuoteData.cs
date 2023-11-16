@@ -1,4 +1,7 @@
-public static class GotQuotes
+namespace GotQuotes.Data;
+using GotQuotes.Models;
+
+public static class QuoteData
 {
     public static readonly List<Quote> demoQuotes =
     [

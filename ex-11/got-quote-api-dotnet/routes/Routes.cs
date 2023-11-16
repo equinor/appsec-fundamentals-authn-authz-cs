@@ -1,3 +1,8 @@
+using GotQuotes.Controllers;
+using GotQuotes.Middleware;
+
+namespace GotQuotes.Routes;
+
 public static class Routes
 {
     public static void ConfigureApi(this WebApplication app)
