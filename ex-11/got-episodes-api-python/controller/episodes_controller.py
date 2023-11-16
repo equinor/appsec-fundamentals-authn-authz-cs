@@ -19,7 +19,7 @@ def get_random_quote(obo_token):
     quote_headers = {"Authorization": f"Bearer {obo_token}"}
     logger.warning(f"{quote_endpoint = }")
     quote = requests.get(url= quote_endpoint, headers = quote_headers)
-    logger.info(f"Got a quote: {quote.json()}")
+    logger.info(f"Got a quote: {quote} {repr(quote)}")
     return quote.json()
 
 ## Auxiliary methods

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "got-quote-api-dotnet", "got-quote-api-dotnet.csproj", "{510DBD72-2643-4502-ADD1-C83559D0FD84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{510DBD72-2643-4502-ADD1-C83559D0FD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{510DBD72-2643-4502-ADD1-C83559D0FD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{510DBD72-2643-4502-ADD1-C83559D0FD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{510DBD72-2643-4502-ADD1-C83559D0FD84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A304CAB-C46D-43C9-8650-2F73B9C8A9EE}
+	EndGlobalSection
+EndGlobal

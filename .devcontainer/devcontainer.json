@@ -19,7 +19,8 @@
                 "streetsidesoftware.code-spell-checker",
                 "dbaeumer.vscode-eslint",
                 "ms-azuretools.vscode-docker",
-				"charliermarsh.ruff"
+				"charliermarsh.ruff",
+				"ms-dotnettools.csharp"
                 // "lzm0x219.vscode-markdown-github"
             ],
 			"settings": {
