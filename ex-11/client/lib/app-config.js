@@ -11,7 +11,7 @@ const port = process.env.PORT || '3000';
 const host = process.env.HOST || '127.0.0.1';
 
 const tenantId = process.env.TENANT_ID;
-const gotApiUrl = 'http://127.0.0.1:3100';
+const gotEpisodesApiUrl = process.env.EPISODES_API_URL;
 const tokenCacheFile = process.env.TOKEN_CACHE_FILE;
 
 //request:  https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_node.html#authorizationurlrequest
@@ -24,13 +24,13 @@ const msalConfig = {
     request: {
         authCodeUrlParameters: {
             scopes: ['user.read', 'mail.read'],
-            redirectUri: 'http://localhost:' + port + '/callback',
+            redirectUri: process.env.REDIRECT_URI,
             responseMode: 'query',
             // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {
-            redirectUri: 'http://localhost:' + port + '/callback',
+            redirectUri: process.env.REDIRECT_URI,
             scopes: [],
         },
         silentRequest: {
@@ -53,7 +53,7 @@ const msalConfig = {
 //A helper function to check if cache file exists, if not then try to create it
 //Doing this in sync mode - we need the cache file to continue
 function handleTokeCacheFile(cFile) {
- 
+
     if (fs.existsSync(cFile)) {
         logger.info('Token Cache file does exist at ' + cFile);
     } else {
@@ -76,21 +76,21 @@ function handleTokeCacheFile(cFile) {
 
 }
 
-function isConfigOk() {   
+function isConfigOk() {
 
     if (__.isUndefined(tenantId)) {
       logger.error('Config: Missing Tenant_Id in config');
-      return false;  
+      return false;
     }
 
     if (__.isUndefined(msalConfig.authOptions.clientId)) {
         logger.error('Config: Missing Client_Id in config');
-        return false; 
+        return false;
     }
 
     if (__.isUndefined(msalConfig.authOptions.clientSecret)) {
         logger.error('Config: Missing Client_Secret in config');
-        return false; 
+        return false;
     }
 
     if (__.isUndefined(msalConfig.cache.file)) {
@@ -123,6 +123,6 @@ module.exports = {
     isConfigOk,
     port,
     host,
-    gotApiUrl,
+    gotEpisodesApiUrl: gotEpisodesApiUrl,
     handleTokeCacheFile
 };
