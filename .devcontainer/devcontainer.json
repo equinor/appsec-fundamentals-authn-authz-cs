@@ -1,6 +1,6 @@
 {
-	"build": { "dockerfile": "Dockerfile" }, // Ubuntu adjusted
-	//"image": "mcr.microsoft.com/devcontainers/universal:2",
+	//"build": { "dockerfile": "Dockerfile" }, // Ubuntu adjusted
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/snyk-cli:1": {},
@@ -20,38 +20,46 @@
                 "dbaeumer.vscode-eslint",
                 "ms-azuretools.vscode-docker",
 				"charliermarsh.ruff",
-				"ms-dotnettools.csharp"
-                // "lzm0x219.vscode-markdown-github"
+				"ms-dotnettools.csharp",
+				"ritwickdey.liveserver"
             ],
 			"settings": {
 				"gitlens.showWelcomeOnInstall" :false,
 				"terminal.integrated.gpuAcceleration": "canvas",
-    			"liveServer.settings.root": "/doc"
+    			"liveServer.settings.root": "/doc",
+				"terminal.integrated.shell.linux": "/usr/bin/zsh",
+				"terminal.integrated.defaultProfile.linux": "zsh"
 			}
 		},
 		"codespaces": {
+			"openFiles": [""]
 		}
 	},
 	"portsAttributes": {
-		"3000": {
-			"label": "Client",
-			"onAutoForward": "openBrowser",
-			"protocol": "https"
-		},
-		"3100": {
-			"label": "Episodes API",
-			"onAutoForward": "openPreview",
-			"protocol": "https"
-		},
-		"3200": {
-			"label": "Quote API",
-			"onAutoForward": "ignore",
-			"protocol": "https"
-		}
+		// "3000": {
+		// 	"label": "Client",
+		// 	"onAutoForward": "openBrowser",
+		// 	"protocol": "https"
+		// },
+		// "3100": {
+		// 	"label": "Episodes API",
+		// 	"onAutoForward": "openPreview",
+		// 	"protocol": "https"
+		// },
+		// "3200": {
+		// 	"label": "Quote API",
+		// 	"onAutoForward": "ignore",
+		// 	"protocol": "https"
+		// }
 	},
-	"forwardPorts": [3000, 3100, 3200],
+	// "forwardPorts": [3000, 3100, 3200],
 	"updateContentCommand": {
 		"trufflehog" : "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.62.1/trufflehog_3.62.1_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
+	},
+	"postCreateCommand": {
+		"sed": "sed -i 's/ZSH_THEME=\\\"devcontainers\\\"/ZSH_THEME=\\\"avit\\\"/g' ~/.zshrc",
+		"addPath": "echo 'export PATH=\\$PATH:$CODESPACE_VSCODE_FOLDER/src' >> ~/.zshrc",
+		"welcomeMessage": "sudo cp .devcontainer/welcome.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt"
 	},
 	"containerEnv": {
 		"PIPELINE": "development",
