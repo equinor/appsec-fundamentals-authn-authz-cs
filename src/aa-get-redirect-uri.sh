@@ -20,4 +20,22 @@ source "$CONFIG_FILE" 2> /dev/null
 
 # printf "Successfully read config file (%s)\n" "$CONFIG_FILE"
 
-echo 'https://'$CODESPACE_NAME'-3000.'$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN'/'
+if [ -z "$PORT" ]
+then
+    printf "Missing PORT environment variable.\n"
+    exit 1
+fi
+
+if [ -z "$CODESPACE_NAME" ]
+then
+    printf "Missing CODESPACE_NAME environment variable.\n"
+    exit 1
+fi
+
+if [ -z "$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN" ]
+then
+    printf "Missing $GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN environment variable.\n"
+    exit 1
+fi
+
+echo 'https://'$CODESPACE_NAME'-'$PORT'.'$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN'/'

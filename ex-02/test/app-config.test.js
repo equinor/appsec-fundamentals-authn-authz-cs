@@ -9,6 +9,7 @@ test('Environment Config should be persisted', (t) => {
     process.env.TENANT_ID = 'A';
     process.env.CLIENT_ID = 'B';
     process.env.CLIENT_SECRET = 'C';
+    process.env.REDIRECT_URI = 'D';
 
     delete require.cache[require.resolve('../lib/app-config.js')];
     const appConfig = require('../lib/app-config.js');
@@ -20,6 +21,8 @@ test('Environment Config should be persisted', (t) => {
         'C',
         'Client Secret should be set'
     );
+    t.equal(appConfig.clientConfig.redirect_uri, 'D', 'Redirect URI should be set')
+    
 
     t.end();
 });
@@ -31,6 +34,7 @@ test('IsConfigOk', (t) => {
         process.env.TENANT_ID = 'A';
         process.env.CLIENT_ID = 'B';
         process.env.CLIENT_SECRET = 'C';
+        process.env.REDIRECT_URI = 'D';
 
         sinon.stub(process, 'exit');
         process.exit.callsFake(() => {
@@ -108,54 +112,44 @@ test('IsConfigOk', (t) => {
         t.end();
     });
 
-    t.test('Verify that port is used in client redirect uri', (t) => {
-        delete process.env.PORT;
-        process.env.PORT = 3333;
-
-        delete require.cache[require.resolve('../lib/app-config.js')];
-        const appConfig = require('../lib/app-config.js');
-
-        t.equal(appConfig.clientConfig.redirect_uri[0],'http://localhost:3333/callback','Redirect uri should include port');
-        t.equal(appConfig.port,"3333",'Port returned from config should be ' + process.env.PORT);
-
-        t.end();
-});
-
     t.end();
 });
 
-test('Set proper PORT value', (t) => {
+test('Set proper PORT value', async (t) => {
 
+    t.beforeEach(function () {
+        //Defining config
+        process.env.TENANT_ID = 'A';
+        process.env.CLIENT_ID = 'B';
+        process.env.CLIENT_SECRET = 'C';
+        process.env.REDIRECT_URI = 'D';
 
-    
-    delete require.cache[require.resolve('../lib/app-config.js')];
-    
-    delete process.env.PORT;
+        sinon.stub(process, 'exit');
+        process.exit.callsFake(() => {
+            console.log('Test triggered process.exit');
+            return true;
+        });   
+    });
 
-    const port = require('../lib/app-config.js').port;
+    t.afterEach(function() {
+        process.exit.restore();
+    });
 
-    t.equal(port, "3000", 'No env PORT default to value 3000');
-
-    t.end();
-});
-
-
-test('Set proper PORT value', (t) => {
-
-    t.test('Env PORT does not exist', (t) => {
-       
+    t.test('Env PORT does not exist', async (t) => {
+        
         delete require.cache[require.resolve('../lib/app-config.js')];
 
         delete process.env.PORT;
 
         const port = require('../lib/app-config.js').port;
-
+       
         t.equal(port, '3000', 'No env PORT default to value 3000');
 
         t.end();
     });
 
-    t.test('Env PORT is set', (t) => {
+    t.test('Env PORT is set', async (t) => {
+             
         delete require.cache[require.resolve('../lib/app-config.js')];
 
         process.env.PORT = "5999";
@@ -166,11 +160,6 @@ test('Set proper PORT value', (t) => {
 
         t.end();
     });
-
-
-
-
-
    
     t.end();
 });

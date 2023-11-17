@@ -4,16 +4,19 @@ In this part we will start to investigate how we move dynamic configuration para
 
 Steps:
 
-* Configure the environment variables for the application<br/>(As documented in the [readme.md](../readme.md))
+* Configure the environment variables for the application</br>!!Notice the whitespace in front of the second line? This prevents the command from entering shell command history
 
-```shell
+  ```shell
+  export NODE_ENV=production
+   export CLIENT_SECRET='the client secret from the AD app object'
+  export CLIENT_ID="the client id from the AD app object"
+  export TENANT_ID="the tenant id"
+  export PORT=3000
+  export REDIRECT_ID=$(aa-get-redirect-uri.sh)
+  ```
+* The `aa-get-redirect-uri.sh` scripts helps to extract and generate a redirect uri for your workspace</br>Examine the script at `../src/aa-get-redirect-uri.sh` (It's automatically added to the path)
+* If you have create a new code space since you configured the Entra ID Application Object for the client app, you may need to update the app registration with the proper redirect uri.
 
-export NODE_ENV=production
-export CLIENT_SECRET='the client secret from the AD app object'
-export CLIENT_ID="the client id from the AD app object"
-export TENANT_ID="the tenant id"
-export PORT=3000
-```
 
 ## --Now You--
 

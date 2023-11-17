@@ -1,6 +1,6 @@
 # EX-2 - Getting an access token using code
 
-The purpose of this exercise is get an access token using code. We are moving from the raw style using bare http requests to start exploring what's needed to get this done in code.
+The purpose of this exercise is get an access token using code. We are moving from the raw style http to exploring what's needed to get this done in code.
 
 ## Outline
 
@@ -54,6 +54,7 @@ Expects the following environment variables to execute properly
     export CLIENT_ID=""
     export TENANT_ID=""
     export PORT=3000
+    export REDIRECT_URI=https://...../callback
 
 ## Run
 

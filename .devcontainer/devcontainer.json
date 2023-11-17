@@ -58,7 +58,7 @@
 	},
 	"postCreateCommand": {
 		"sed": "sed -i 's/ZSH_THEME=\\\"devcontainers\\\"/ZSH_THEME=\\\"avit\\\"/g' ~/.zshrc",
-		"addPath": "echo 'export PATH=\\$PATH:$CODESPACE_VSCODE_FOLDER/src' >> ~/.zshrc",
+		"addPath": "echo 'export PATH=$PATH:$CODESPACE_VSCODE_FOLDER/src' >> ~/.zshrc",
 		"welcomeMessage": "sudo cp .devcontainer/welcome.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt"
 	},
 	"containerEnv": {

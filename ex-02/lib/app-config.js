@@ -19,25 +19,31 @@ const serverConfig = {
 const clientConfig = {
     client_id: process.env.CLIENT_ID,
     client_secret: process.env.CLIENT_SECRET,
-    redirect_uri: ['http://localhost:' + port +'/callback'],
+    redirect_uri: process.env.REDIRECT_URI
 };
 
 function isConfigOk() {
     
     if (__.isUndefined(tenantId)) {
-      logger.error('Config: Missing Tenant_Id in config');
+      logger.error('Config: Missing tenant_id in config');
       return false;  
     }
 
     if (__.isUndefined(clientConfig.client_id)) {
-        logger.error('Config: Missing Client_Id in config');
+        logger.error('Config: Missing client_Id in config');
         return false; 
     }
 
     if (__.isUndefined(clientConfig.client_secret)) {
-        logger.error('Config: Missing Client_Secret in config');
+        logger.error('Config: Missing client_Secret in config');
         return false; 
     }
+
+    if (__.isUndefined(clientConfig.redirect_uri)) {
+        logger.error('Config: Missing redirect_uri in config');
+        return false; 
+    }
+
 
     return true;
 }
