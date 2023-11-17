@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:jammy
+FROM mcr.microsoft.com/devcontainers/dotnet:8.0-bookworm-slim
 
 # Common tools, and packages for `pyenv` to be able to build and install different python versions,
 # see https://github.com/pyenv/pyenv/wiki#suggested-build-environment
