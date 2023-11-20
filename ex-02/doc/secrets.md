@@ -5,14 +5,22 @@ Let's spend a bit more time on discussing secrets -- and how to handle them.
 Steps:
 
 * Move your config into a .env file outside the source folder
-  * File name: appsec-course-client-eq.env
-  * Should contain the export statements
+  * We will create a new folder in you codespace to keep secrets. This folder will not be part of source code. It has the same life cycle as the codespace
+    ```shell
+    mkdir $HOME/envs
+    ```
+  * Create a file to hold the config (appsec-course-client-eq.env)
+    ```shell
+    code $HOME/envs/appsec-course-client-eq.env
+    ```
+  * Add all the necessary export statements and save the file (`history |grep -i export` may be handy)
 * Using a new **fresh** terminal window, source the file and run the application
 
-```shell
-source ~/path-to-env-file/appsec-course-client-eq.env
-npm start
-```
+  ```shell
+  cd ex-02
+  source ~/envs/appsec-course-client-eq.env
+  npm start
+  ```
 
 ## --Now You--
 

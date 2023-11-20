@@ -12,7 +12,7 @@ Steps:
   export CLIENT_ID="the client id from the AD app object"
   export TENANT_ID="the tenant id"
   export PORT=3000
-  export REDIRECT_ID=$(aa-get-redirect-uri.sh)
+  export REDIRECT_URI=$(aa-get-redirect-uri.sh)
   ```
 * The `aa-get-redirect-uri.sh` scripts helps to extract and generate a redirect uri for your workspace</br>Examine the script at `../src/aa-get-redirect-uri.sh` (It's automatically added to the path)
 * If you have create a new code space since you configured the Entra ID Application Object for the client app, you may need to update the app registration with the proper redirect uri.
