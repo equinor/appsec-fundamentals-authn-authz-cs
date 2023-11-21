@@ -30,8 +30,8 @@ fi
 
 if [ ! -d "$CFG_ENV_FILE_DIRECTORY" ];
 then
-    printf "Directory for env files does not exist (%s), exiting\n" "$CFG_ENV_FILE_DIRECTORY"
-    exit 1
+    printf "Directory for env files does not exist (%s), creating\n" "$CFG_ENV_FILE_DIRECTORY"
+    mkdir -p $CFG_ENV_FILE_DIRECTORY 
 fi
 
 
