@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
@@ -20,29 +20,34 @@ source "$CONFIG_FILE" 2> /dev/null
 
 printf "Successfully read config file (%s)\n" "$CONFIG_FILE"
 
-# Define the GitHub Codespace secret name
-SECRET_NAME="ENVFILES"
+printf "Extracting config files from %s and saving files to %s\n" "$GH_SECRET_NAME" "$CFG_ENV_FILE_DIRECTORY"
 
 # Create the output folder if it doesn't exist
 mkdir -p "$CFG_ENV_FILE_DIRECTORY"
 
 # Fetch the secret from GitHub Codespaces Environment Variable
-ENCODED_FILES=${!SECRET_NAME}
+ENCODED_FILES=${!GH_SECRET_NAME}
 
-# Counter for naming files
-COUNTER=1
+# Split the encoded string into an array of encoded files
+IFS=' ' read -ra array <<< "$ENCODED_FILES"
 
-# Split the encoded string by the 'END-OF-FILE' delimiter and decode each part
-IFS=$'\n' # Split on newline characters
-for block in $(echo "$ENCODED_FILES" | sed 's/END-OF-FILE/\n/g'); do
-    if [ ! -z "$block" ]; then
-        FILENAME=${block%%:*}
-        CONTENT=${block#*:}
+for element in "${array[@]}"
+do
+  # Split the element into filename and encoded content
+  IFS=':' read -r -a file <<< "$element"
+  
+  filename=$(echo "$element" | cut -d':' -f1)
+  content=$(echo "$element" | cut -d':' -f2)
 
-        if [ -f "$CFG_ENV_FILE_DIRECTORY/$FILENAME" ]; then
-            mv "$CFG_ENV_FILE_DIRECTORY/$FILENAME" "$CFG_ENV_FILE_DIRECTORY/$FILENAME.bak"
-        fi
 
-        echo "$CONTENT" | base64 --decode > "$CFG_ENV_FILE_DIRECTORY/$FILENAME"
-    fi
+  if [ -f "$CFG_ENV_FILE_DIRECTORY/$FILENAME" ]; then
+     mv "$CFG_ENV_FILE_DIRECTORY/$FILENAME" "$CFG_ENV_FILE_DIRECTORY/$filename.bak"
+  fi
+
+    # Base64 decode the file and save it to the directory
+    
+    printf "Creating %s\n" "$CFG_ENV_FILE_DIRECTORY/${file[0]}"
+
+    echo "${file[1]}" | base64 --decode > "$CFG_ENV_FILE_DIRECTORY/${file[0]}"
+
 done
