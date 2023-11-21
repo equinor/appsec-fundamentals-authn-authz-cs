@@ -1,8 +1,8 @@
 # EX-4 - Using Auth Frameworks
 
-This app will list the context of your inbox. A web page is presented, when **show inbox** is selected the app will trigger a **authorization code grant flow** and list content of your inbox.
+In this exercise we will explore authn and authz frameworks.
 
-This version of the app uses the [Microsoft Authentication Library for Javascript](https://github.com/AzureAD/microsoft-authentication-library-for-js) (MSAL) - the [NodeJS](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) version.
+Our app will list the context of your inbox. A web page is presented, when **show inbox** is selected the app will trigger a **authorization code grant flow** and list content of the inbox. This version of the app uses the [Microsoft Authentication Library for Javascript](https://github.com/AzureAD/microsoft-authentication-library-for-js) (MSAL) - the [NodeJS](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) version.
 
 ## Outline
 
@@ -53,6 +53,7 @@ Expects the following environment variables to execute properly
     export CLIENT_ID=""
     export TENANT_ID=""
     export PORT=3000
+    export REDIRECT_URI=https://...../callback
 
 ## Run
 
