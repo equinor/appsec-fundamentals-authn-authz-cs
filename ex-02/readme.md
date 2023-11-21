@@ -9,7 +9,7 @@ The purpose of this exercise is get an access token using code. We are moving fr
 * [Exploring the code](doc/exploring_the_code.md)
 * [Environment variables](doc/environment_variables.md)
 * [Running the application](doc/running_the_app.md)
-* [Secrets](doc/secrets.md)
+* [Config & Secrets](doc/secrets.md)
 * [Logging](doc/logging.md)
 
 ----
