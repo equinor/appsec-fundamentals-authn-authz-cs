@@ -81,6 +81,11 @@ This script will read the config file and delete all created AAD AppRegs as well
 
 This script will read the config file, copy .env files from template and then run the necessary scripts to create the AAD objects and update the .env files.
 
+### aa scripts
+
+TO be added
+
+
 ## Manual execution
 
 Make sure the config file is up-to-date for the PIPELINE in questions
