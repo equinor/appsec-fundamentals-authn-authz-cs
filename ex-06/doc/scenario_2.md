@@ -102,14 +102,15 @@ Steps:
 (Assuming you use the app from ex-5)
 
 * Do the steps above
-* Identify the roles claim in the proper token.
+* Identify the roles claim in the proper token (this step may involve altering the backend app code)
 * Explore the possible payload claims for [access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens#payload-claims) and [id tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#payload-claims)
 
 ## --Discuss security issues and good practices--
 
 * Did you observe the usage of app roles in our client application?
   * Who is responsible for validating the Id token?
-  * Why is it preferable to render gui logic on the back-end?
+  * Is it preferable to render gui logic on the back-end?
+  * We could do logic in the front-end, but stuff should always be verified by the back-end as well?
 * From an architecture view alternative using app roles would be a preferred approach. All logic related to groups, group-id etc are moved out of the application which only is concerned about roles. This means that groups, memberships etc will be handled outside the application code - which in most cases is a good pattern. (This will be quite obvious when we start challenge testability and move testing over to different Microsoft Entra ID tenant later)
 * **What if we want to send the app roles to API's?**</br> In our example we received the app roles in the ID token. What about getting the app roles into API's to drive business logic? This entirely possible. Add the necessary app roles to the API's AAD object. [Assign users / groups to the app role](https://learn.microsoft.com/nb-no/azure/active-directory/develop/howto-add-app-roles-in-apps#assign-users-and-groups-to-roles) by using the "Enterprise application" version of the API AAD object. The app roles claim will now be part of the access token that is provided to access the api. Read more on the topic in [MS Identity platform](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-add-app-roles-in-apps#usage-scenario-of-app-roles) (Adding groups is also possible)
 
@@ -117,7 +118,7 @@ Steps:
 
 ## Alternative 5 (Scope)
 
-Scope is not discussed in this context - it's been mentioned earlier. Scope can of course be used to handle permission and access. Scope can be delegated (on behalf of a user,) and consented/granted by the user - or an admin. Scope can also be of type application - the application (AAD App object) is givens permission to the scope.
+Scope is not discussed in this context - it's been mentioned earlier. Scope can of course be used to handle permission and access. Scope can be delegated (on behalf of a user,) and consented/granted by the user - or an admin. Scope can also be of type application - the application (Application Registration Object) is givens permission to the scope.
 
 Permissions through scope is done by requesting scope in the OAuth dance and it is represented in the scope claim of an access tokens. It's up to the application code in the resource server, typically an api, to implement the actual permissions in relation to the data it aiming to protect.
 

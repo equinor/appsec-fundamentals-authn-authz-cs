@@ -13,7 +13,7 @@ One analogy that could make sense to understand these two are; app registrations
 Steps:
 
 * From Microsoft Entra ID, select Enterprise Applications
-* Search for your client application (initial-aav2-client)
+* Search for your client application (INTIAL-appsec-course-client)
 * Select **Properties** on the left side menu
 * Observe
   * "Enables for users to sign-in?" (read info)

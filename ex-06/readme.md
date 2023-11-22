@@ -2,7 +2,7 @@
 
 In this section we will explore a few common authorization (and authentication) scenarios and how to configure these in Microsoft Entra ID.
 
-A typical way of implementing authorization in Equinor is to use AD (Active Directory) groups. Users apply for access to "something" in Access@IT. If approved, the user is added to a AD group. AD groups and members are synced to AAD (Azure Active Directory). Applications use the group membership to implement access control.
+A typical way of implementing authorization in Equinor is to use AD (Active Directory) groups. Users apply for access to "something" in Access@IT. If approved, the user is added to a AD group. AD groups and members are synced to AAD (Azure Active Directory / MS Entra ID). Applications use the group membership to implement access control.
 
 ## Scenarios
 
