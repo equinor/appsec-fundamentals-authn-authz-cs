@@ -80,7 +80,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-api-quotes-eq.env
+    source ~/envs/appsec-course-api-quotes-eq.env
     ```
 
 * Run the application
@@ -89,7 +89,7 @@ Steps:
     npm start 
     ```
 
-* Verify that the application is running at **http://localhost:3200**
+* Verify that the Quote Api is running in your browser
 
 ### --Now You--
 
