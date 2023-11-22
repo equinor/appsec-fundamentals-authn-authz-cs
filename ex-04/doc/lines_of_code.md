@@ -8,11 +8,36 @@ Counting lines of JavaScript code in project, my own code and code in modules/fr
 
 | Part | EX-2 | EX-4 |
 | ---  | ---  | ---  |
-| Exercise JS LOC   | 1022  |  842 |
-| Modules JS LOC   | 1.542.022  | 1.566.238  |
-| % own code | 0.066% | 0.053% |
+| Exercise JS LOC   | 797  |  838 |
+| Modules JS LOC   | 1.519.329  | 1.525.575  |
+| % own code | 0.052% | 0.054% |
 | Direct Node Modules | 16 | 16 |
-| Indirect Node Modules | 382 | 391 |
+| Indirect Node Modules | 363 | 391 |
+
+Steps:
+
+You will use the command line for the next steps
+* Navigate to the `./ex-04` directory
+* Remove installed dependencies
+    ```shell
+    rm -r node_modules
+    ```
+* Use CLOC to analyse code, observe technologies in use, lines of code etc.
+    ```shell
+    cloc .
+    ```
+* Install dependencies
+    ```shell
+    npm i
+    ```
+* Use CLOC to analyse code, observe technologies in use, lines of code etc.
+    ```shell
+    cloc .
+    ```
+
+## --Now You--
+
+* Do the steps
 
 ## --Dependency scanning--
 
