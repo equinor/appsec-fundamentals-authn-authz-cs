@@ -46,4 +46,4 @@ Steps:
 
 * Good practice: Don't use the "Implicit grant" for new development work (also goes for OIDC)
 * Good practice: Migrate away from "Implicit grant" for existing apps (also goes for OIDC)
-* Good practice: The hybrid model is the most secure?
+* Good practice: The hybrid model (SPA supported by own back-end, BFF pattern) is the most secure?
