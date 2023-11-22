@@ -6,7 +6,7 @@ In this part we will prepare the development environment for executing the web a
 
 Steps:
 
-* You will use the (bash)command line for the next steps
+* You will use the command line for the next steps
 * Navigate to the "./ex-09" directory
 * Install dependencies </br>(You want to consult the [Proxy Guide](../doc/../../doc/md/proxy.md) if you have connectivity issue)
   

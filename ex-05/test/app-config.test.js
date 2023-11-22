@@ -9,6 +9,8 @@ test('Environment Config should be persisted', (t) => {
     process.env.TENANT_ID = 'A';
     process.env.CLIENT_ID = 'B';
     process.env.CLIENT_SECRET = 'C';
+    process.env.REDIRECT_URI = 'D';
+
 
     delete require.cache[require.resolve('../lib/app-config.js')];
     const appConfig = require('../lib/app-config.js');
@@ -108,46 +110,29 @@ test('IsConfigOk', (t) => {
         t.end();
     });
 
-    t.test('Verify that port is used in client redirect uri', (t) => {
-        delete process.env.PORT;
-        process.env.PORT = 3333;
+    t.end();
+});
 
-        delete require.cache[require.resolve('../lib/app-config.js')];
-        const appConfig = require('../lib/app-config.js');
+test('Set proper PORT value', (t) => {
 
-        t.equal(
-            appConfig.msalConfig.request.authCodeUrlParameters.redirectUri,
-            'http://localhost:3333/callback',
-            'Redirect uri should include port for authcode request'
-        );
-        t.equal(
-            appConfig.msalConfig.request.tokenRequest.redirectUri,
-            'http://localhost:3333/callback',
-            'Redirect uri should include port for token request'
-        );
-        t.equal(appConfig.port,"3333",'Port returned from config should be ' + process.env.PORT);
+    t.beforeEach(function () {
+        //Defining config
+        process.env.TENANT_ID = 'A';
+        process.env.CLIENT_ID = 'B';
+        process.env.CLIENT_SECRET = 'C';
+        process.env.REDIRECT_URI = 'D';
 
-        t.end();
+        sinon.stub(process, 'exit');
+        process.exit.callsFake(() => {
+            console.log('Test triggered process.exit');
+            return true;
+        });   
     });
 
-    t.end();
-});
+    t.afterEach(function() {
+        process.exit.restore();
+    });
 
-test('Set proper PORT value', (t) => {
-  
-    delete require.cache[require.resolve('../lib/app-config.js')];
-    
-    delete process.env.PORT;
-
-    const port = require('../lib/app-config.js').port;
-
-    t.equal(port, "3000", 'No env PORT default to value 3000');
-
-    t.end();
-});
-
-
-test('Set proper PORT value', (t) => {
 
     t.test('Env PORT does not exist', (t) => {
        

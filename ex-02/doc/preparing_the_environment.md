@@ -4,7 +4,7 @@ In this part we will prepare the development environment for executing the web a
 
 Steps:
 
-* You will use the (bash)command line for the next steps
+* You will use the command line for the next steps
 * Navigate to the "./ex-02" directory
 * Verify the NodeJS environment
 ```shell

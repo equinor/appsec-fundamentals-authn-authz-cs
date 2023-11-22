@@ -2,8 +2,6 @@
 
 In this part we will explore the app and the code to get an idea of the moving parts and how they work together.
 
-The end-user facing functionality of the app is not changed. The changes are on the internal logic.
-
 ## Changes
 
 * We have introduced **session management**.
@@ -27,8 +25,8 @@ Steps:
   * Adding scope for **silentRequest** into the MSAL config
 * Web app (./src/app.js)
   * Adding support for cookies and sessions (for Fastify)
-  * Using random key to encrypt cookie (this is not scalable)
-  * Using memory store for sessions (this is not scalable)
+  * Using random key to encrypt cookie (this is not scalable but is ok for our purpose)
+  * Using memory store for sessions (this is not scalabl but is ok for our purpose)
   * Adding **isAuthenticated** which can be used to restrict access to end-points
   * Adding logic to app login/logout app (dependent on status of session)
   * /showinbox now uses getTokenSilently
@@ -70,5 +68,5 @@ Steps:
   * Execute the tests from "./ex-02" and "./ex-04" and compare coverage
 
     ```shell
-    npm run test-cover
+    npx tap report
     ```

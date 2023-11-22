@@ -4,16 +4,16 @@ In this part we will prepare the development environment for executing the web a
 
 Steps:
 
-* You will use the (bash)command line for the next steps
+* You will use the command line for the next steps
 * Navigate to the "./ex-05" directory
-* Install dependencies </br>(You want to consult the [Proxy Guide](../../Support/proxy.md) if you have connectivity issue)
-```shell
-npm install
-```
+* Install dependencies
+    ```shell
+    npm install
+    ```
 * Execute tests
-```shell
-npm test
-```
+    ```shell
+    npm test
+    ```
 
 ## --Now You--
 

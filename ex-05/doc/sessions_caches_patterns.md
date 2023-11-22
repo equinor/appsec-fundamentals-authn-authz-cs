@@ -1,6 +1,6 @@
 # Sessions & Token Cache Patterns
 
-In This section we will explore and discuss patterns relates to sessions and token caching. They may be somewhat related.
+In This section we will explore and discuss patterns relates to sessions and token caching.
 
 ## Sessions
 
