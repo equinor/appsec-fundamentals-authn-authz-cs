@@ -4,3 +4,4 @@ pydantic
 requests
 authlib
 pydantic-settings
+pytest
