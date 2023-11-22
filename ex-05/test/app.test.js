@@ -4,6 +4,7 @@
 process.env.TENANT_ID = 'A';
 process.env.CLIENT_ID = 'B';
 process.env.CLIENT_SECRET = 'C';
+process.env.REDIRECT_URI = 'D';
 
 const { test } = require('tap');
 const app = require('../src/app');

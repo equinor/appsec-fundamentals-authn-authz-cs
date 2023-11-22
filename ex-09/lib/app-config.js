@@ -17,17 +17,18 @@ const msalConfig = {
         clientId: process.env.CLIENT_ID,
         authority: 'https://login.microsoftonline.com/' + tenantId,
         clientSecret: process.env.CLIENT_SECRET,
+        redirectUri: process.env.REDIRECT_URI
     },
     request: {
         authCodeUrlParameters: {
             scopes: ['user.read mail.read'],
-            redirectUri: 'http://localhost:' + port + '/callback',
+            redirectUri: process.env.REDIRECT_URI,
             responseMode: 'query',
             // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {
-            redirectUri: 'http://localhost:' + port + '/callback',
+            redirectUri: process.env.REDIRECT_URI,
             scopes: ['user.read mail.read'],
         },
         silentRequest: {
@@ -41,7 +42,7 @@ const msalConfig = {
 
 
 function isConfigOk() {
-    
+
     if (__.isUndefined(tenantId)) {
       logger.error('Config: Missing Tenant_Id in config');
       return false;  
@@ -54,6 +55,11 @@ function isConfigOk() {
 
     if (__.isUndefined(msalConfig.authOptions.clientSecret)) {
         logger.error('Config: Missing Client_Secret in config');
+        return false; 
+    }
+
+    if (__.isUndefined(msalConfig.authOptions.redirectUri)) {
+        logger.error('Config: Missing redirect_uri in config');
         return false; 
     }
 

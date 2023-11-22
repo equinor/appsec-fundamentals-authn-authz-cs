@@ -9,6 +9,7 @@ const got = require('got');
 process.env.TENANT_ID = 'A';
 process.env.CLIENT_ID = 'B';
 process.env.CLIENT_SECRET = 'C';
+process.env.REDIRECT_URI = 'D';
 
 
 //Strategy for test will be to stub msal and just verify the various paths
@@ -238,7 +239,7 @@ test('Does authUtils work', (t) => {
         };
 
         const authUtils = require('../lib/auth-utils.js');
-        var token = await authUtils.requestAccessTokenUsingAuthCode(request, reply,'12324');  
+        var token = await authUtils.requestAccessTokenUsingAuthCode(request, reply,'12324');
 
         t.ok(
             msal.ConfidentialClientApplication.calledOnce,

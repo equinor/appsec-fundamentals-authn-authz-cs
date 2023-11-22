@@ -59,7 +59,7 @@ async function requestAccessTokenUsingAuthCode(request, reply, authCode) {
 }
 
 
-async function getTokenAuthCode (request, reply) {    
+async function getTokenAuthCode (request, reply) {
     const requestConfig = appConfig.msalConfig.request;
     const { authCodeUrlParameters } = requestConfig;
     var redirectUrl = '';
@@ -97,10 +97,10 @@ async function getTokenAuthCode (request, reply) {
         });
 
     if (!__.isEmpty(redirectUrl)) {
-     reply.redirect(302, redirectUrl);   
+        reply.redirect(302, redirectUrl);
     } else {
-     reply.code(500).send('Redirect to get auth code failed');
-    } 
+        reply.code(500).send('Redirect to get auth code failed');
+    }
 }
 
 //Using access_token to query the MS graph api for users inbox
@@ -123,7 +123,7 @@ async function readInbox(accessToken) {
         );
 
         logger.debug('Got inbox - building response');
-      
+
         var mailBody = JSON.parse(response.body);
 
         __.each(mailBody.value, function (item, index) {
@@ -234,7 +234,7 @@ function isAuthenticated(request) {
         return true
     } else {
         return false
-    } 
+    }
 }
 
 //Helper function to return  account objetName object

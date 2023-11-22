@@ -31,6 +31,7 @@ Expects the following environment variables to execute properly
     export CLIENT_ID=""
     export TENANT_ID=""
     export PORT=3000
+    export REDIRECT_URI=https://...../callback
 
 ## Run
 

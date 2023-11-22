@@ -150,7 +150,7 @@ async function readInbox(accessToken) {
         logger.debug('Got inbox - building response');
 
         var mailBody = JSON.parse(response.body);
- 
+
         __.each(mailBody.value, function (item, index) {
             newMails.push(item.sender.emailAddress.name + ' - ' + item.subject);
         });
@@ -222,10 +222,10 @@ async function logoutSessionUser(request, reply){
 
 
 //Getting an access token silently
-async function getTokenSilently (request, reply) {    
+async function getTokenSilently (request, reply) {
     var accessToken = '';
 
-     //Reading msal token cache from session
+    //Reading msal token cache from session
     logger.debug('Deserializing msal token cache from session id ' + request.session.sessionId + ' for account ' +  request.session.homeAccountId);
     msalTokenCache.deserialize(request.session.tokenCache);
 
@@ -242,7 +242,7 @@ async function getTokenSilently (request, reply) {
         .acquireTokenSilent(silentRequest)
         .then((authResponse) => {
             logger.debug('Got access token silently ' + authResponse.accessToken);
-            accessToken = authResponse.accessToken;         
+            accessToken = authResponse.accessToken;
         })
         .catch((error) => {
             logger.error('Failed to get access token silently');

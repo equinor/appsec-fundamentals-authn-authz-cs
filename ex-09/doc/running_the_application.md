@@ -9,7 +9,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-client-eq.env
+    source ~/envs/appsec-course-client-eq.env
     ```
 
 * Run the application
@@ -18,7 +18,7 @@ Steps:
     NODE_ENV=development npm start 
     ```
 
-* Use the application from your browser at **http://localhost:3000**
+* Use the application from your browser
 
 ## --Now You--
 
