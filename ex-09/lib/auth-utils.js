@@ -113,7 +113,7 @@ async function getTokenAuthCode (request, reply) {
         .then((authCodeUrl) => {
             logger.debug(
                 'Got redirect url for auth code request: ' + authCodeUrl
-                );
+            );
             redirectUrl = authCodeUrl;
         })
         .catch((error) => {
@@ -262,7 +262,7 @@ function isAuthenticated(request) {
     }
 }
 
-//Helper function to return  account objetName object
+//Helper function to return  account objectName object
 //Reading info from MSAL token cache
 //Alternative could be to put the names inside the session object
 async function getAccountName(homeAccountId) {

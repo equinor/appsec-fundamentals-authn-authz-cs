@@ -11,7 +11,7 @@ const port = (process.env.PORT || '3100' );
 const host = process.env.HOST || 'localhost';
 
 const jwksUri = 'https://login.microsoftonline.com/' + tenantId + '/discovery/v2.0/keys';
-const apiAudience = 'api://43390951-7218-43f4-bf7e-3acb76ba7a8c';
+const apiAudience = 'api://f6a763f4-932d-4784-8122-f2b526bb2364';
 
 const rateLimitAllowList = function () {
     return ['127.0.0.1','::1'];

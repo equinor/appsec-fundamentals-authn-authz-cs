@@ -19,10 +19,10 @@ Steps:
 * The Web App (./src/app.js)
   * Using new module **helmet** (fastify-helmet) to add security headers
   * Using new module **fastify-cors** to enable CORS for our application
-  * Adding logic for the **secure** param of the sessionID cookie
+  * Notes on the the **secure** param of the sessionID cookie
     * _Secure_ is defined in [rfc6265](https://datatracker.ietf.org/doc/html/rfc6265) - the cookie will only be transported over a secure channel - **https**)
     * Using secure defaults, **secure = true** is the default
-    * If **NODE_ENV=development/test**, then assume **http** and set secure to **false
+    * If your are developing on localhost (your own PC) you may need to add logic to set the param to **false** (unless you have SSL support on localhost)
     * This is also connected to "same-site" for cookies. Same-site = "lax" requires "secure. Same-site = "strict" will kill the logic for auth code flow and the redirect (callback).
   * Add new end-point for "/got" (got episodes)
     * Requests needs to be authenticated
@@ -52,11 +52,10 @@ Steps:
 ## --Discuss security issues and good practices--
 
 * Discuss: Risks related to persisting the token cache in a file
-* Discuss: Do the risk/re-ward for enabling **https*** on local development environment that we should use https locally as well?
+* Discuss: Do the risk/re-ward for enabling **https*** on local development environment
   * Potential approaches:
     * Using [mkcert](https://github.com/FiloSottile/mkcert) as a local CA
     * Shell Scripts to create and install self generated CA certs
     * [dotnet dev-certs](https://docs.microsoft.com/en-us/dotnet/core/additional-tools/self-signed-certificates-guide) for .Net
   * What would potentially not work?
-* Good advice: Use [https://securityheaders.com/](https://securityheaders.com/) to scan your applications
-
+* Good advice: Use [https://securityheaders.com/](https://securityheaders.com/) to scan your applications (expects public exposure)

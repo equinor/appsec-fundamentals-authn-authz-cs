@@ -8,9 +8,9 @@ After this part we have two object in Microsoft Entra ID, one for the client, an
 Steps:
 * Navigate to [portal.azure.com](https://portal.azure.com)
 * Activate your _Application Developer role_ in _Microsoft Entra ID Privileged Identity Management_
-  * _My roles_ -> _Microsoft Entra ID Roles_ -> _Application Developer_ -> _Activate_
+  * _My roles_ -> _Microsoft Entra Roles_ -> _Application Developer_ -> _Activate_
   * Be patient - it may take a minute ...
-* Select _Azure Active Directory_ from the Azure Portal Home page
+* Select _Microsoft Entra  ID_ from the Azure Portal Home page
 * Select _App Registrations_
 * Register your application with the following properties:
   * Name: "(your initial)-appsec-course-episodes-api" (example: "lksk-appsec-course-episodes-api")

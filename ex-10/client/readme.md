@@ -21,6 +21,7 @@ Expects the following environment variables to execute properly
     export CLIENT_ID=""
     export TENANT_ID=""
     export PORT=3000
+    export REDIRECT_URI=https://...../callback
     export TOKEN_CACHE_FILE="${HOME}/.tcache/cache.json"
 
 Other config, like the scope for the **got api**, is defined in './lib/app-config.js' and also needs to be verified.

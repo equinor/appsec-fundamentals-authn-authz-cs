@@ -145,9 +145,9 @@ async function readInbox(accessToken) {
         );
 
         logger.debug('Got inbox - building response');
-        
+
         var mailBody = JSON.parse(response.body);
- 
+
         __.each(mailBody.value, function (item, index) {
             newMails.push(item.sender.emailAddress.name + ' - ' + item.subject);
         });

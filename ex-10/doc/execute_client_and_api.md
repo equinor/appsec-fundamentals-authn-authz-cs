@@ -22,7 +22,7 @@ Steps:
     ```
 
 * Verify that the application is running by:
-  * Browse to **http://localhost:3100**
+  * Open the browser for the url that serves forwarded port 3100
   * Test the **/doc** end point
 
 ### --Now You--
@@ -50,7 +50,7 @@ Steps:
     npm start 
     ```
 
-* Use the application from your browser at **http://localhost:3000**
+* Use the application from your browser
 
 ### --Now You--
 
@@ -84,6 +84,18 @@ Steps:
 
 * Do the steps above
 * Revert back to client authorization for the **episodes.read** scope, revoke user consent, delete token cache, verify new set-up.
+
+## Saving config outside the temporal Codespace
+
+You now have updated config for your development environment. The configuration files are living in `$HOME/envs`. Now is a good time to store these in the Codespaces User Secret.
+
+Steps:
+
+* Store configuration in Codespaces User Secrets
+  ```shell
+  aa-save-env-files-to-github-user-secret.sh
+  ```
+* (You may want to select "Reload to apply" - but it's not needed at this stage)
 
 ## --Discuss security issues and good practices--
 

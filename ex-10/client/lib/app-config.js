@@ -20,17 +20,18 @@ const msalConfig = {
         clientId: process.env.CLIENT_ID,
         authority: 'https://login.microsoftonline.com/' + tenantId,
         clientSecret: process.env.CLIENT_SECRET,
+        redirectUri: process.env.REDIRECT_URI
     },
     request: {
         authCodeUrlParameters: {
             scopes: ['user.read'],
-            redirectUri: 'http://localhost:' + port + '/callback',
+            redirectUri: process.env.REDIRECT_URI,
             responseMode: 'query',
             // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {
-            redirectUri: 'http://localhost:' + port + '/callback',
+            redirectUri: process.env.REDIRECT_URI,
             scopes: [],
         },
         silentRequest: {
@@ -44,7 +45,7 @@ const msalConfig = {
         file: tokenCacheFile,
     },
     scopes: {
-        gotApi: ['api://43390951-7218-43f4-bf7e-3acb76ba7a8c/Episodes.Read'],
+        gotApi: ['api://f6a763f4-932d-4784-8122-f2b526bb2364/Episodes.Read'],
         inbox: ['user.read', 'mail.read'],
     },
 };
@@ -90,6 +91,11 @@ function isConfigOk() {
     if (__.isUndefined(msalConfig.authOptions.clientSecret)) {
         logger.error('Config: Missing Client_Secret in config');
         return false;
+    }
+
+    if (__.isUndefined(msalConfig.authOptions.redirectUri)) {
+        logger.error('Config: Missing redirect_uri in config');
+        return false; 
     }
 
     if (__.isUndefined(msalConfig.cache.file)) {

@@ -29,66 +29,35 @@ function build(opts = {}) {
 
     //Add support for security headers - CSP
     //developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
-    //Altering features for dev/test, mainly due to lack of https on localhost
 
     var cspConfig = {};
 
-    if (
-        __.isEqual(process.env.NODE_ENV, 'development') ||
-        __.isEqual(process.env.NODE_ENV, 'test')
-    ) {
-        cspConfig = {
-            useDefaults: false,
-            directives: {
-                'default-src': ["'self'"], // 'none' - would trigger errors in FF
-                'child-src': ["'self'"],
-                'connect-src': ["'self'"],
-                'font-src': ["'self'"],
-                'frame-src': ["'self'"],
-                'img-src': ["'self'"],
-                'manifest-src': ["'self'"],
-                'media-src': ["'self'"],
-                'object-src': ["'self'"],
-                // 'prefetch-src': ["'self'"], //Not supported by FF
-                'script-src': ["'self'"],
-                // 'script-src-elem': ["'self'"], //Not supported by FF
-                // 'script-src-attr': ["'self'"], // Not supported by FF
-                'style-src': ["'self'"],
-                // 'style-src-elem': ["'self'"], //Not supported by FF
-                // 'style-src-attr': ["'self'"], //Not supported by FF
-                'worker-src': ["'self'"],
-                'base-uri': ["'none'"],
-                // 'block-all-mixed-content': [],
-                // 'upgrade-insecure-requests': [],
-            },
-        };
-    } else {
-        cspConfig = {
-            useDefaults: false,
-            directives: {
-                'default-src': ["'self'"], // 'none' - would trigger errors in FF
-                'child-src': ["'self'"],
-                'connect-src': ["'self'"],
-                'font-src': ["'self'"],
-                'frame-src': ["'self'"],
-                'img-src': ["'self'"],
-                'manifest-src': ["'self'"],
-                'media-src': ["'self'"],
-                'object-src': ["'self'"],
-                // 'prefetch-src': ["'self'"], //Not supported by FF
-                'script-src': ["'self'"],
-                // 'script-src-elem': ["'self'"], //Not supported by FF
-                // 'script-src-attr': ["'self'"], // Not supported by FF
-                'style-src': ["'self'"],
-                // 'style-src-elem': ["'self'"], //Not supported by FF
-                // 'style-src-attr': ["'self'"], //Not supported by FF
-                'worker-src': ["'self'"],
-                'base-uri': ["'none'"],
-                'block-all-mixed-content': [],
-                'upgrade-insecure-requests': [],
-            },
-        };
-    }
+    cspConfig = {
+        useDefaults: false,
+        directives: {
+            'default-src': ["'self'"], // 'none' - would trigger errors in FF
+            'child-src': ["'self'"],
+            'connect-src': ["'self'"],
+            'font-src': ["'self'"],
+            'frame-src': ["'self'"],
+            'img-src': ["'self'"],
+            'manifest-src': ["'self'"],
+            'media-src': ["'self'"],
+            'object-src': ["'self'"],
+            // 'prefetch-src': ["'self'"], //Not supported by FF
+            'script-src': ["'self'"],
+            // 'script-src-elem': ["'self'"], //Not supported by FF
+            // 'script-src-attr': ["'self'"], // Not supported by FF
+            'style-src': ["'self'"],
+            // 'style-src-elem': ["'self'"], //Not supported by FF
+            // 'style-src-attr': ["'self'"], //Not supported by FF
+            'worker-src': ["'self'"],
+            'base-uri': ["'none'"],
+            'block-all-mixed-content': [],
+            'upgrade-insecure-requests': [],
+        },
+    };
+
 
     //    //https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src
     https: app.register(require('@fastify/helmet'), {
@@ -113,17 +82,6 @@ function build(opts = {}) {
         maxAge: 86400000,
         httpOnly: true,
     };
-
-    if (
-        __.isEqual(process.env.NODE_ENV, 'development') ||
-        __.isEqual(process.env.NODE_ENV, 'test')
-    ) {
-        sessionCookieConfig.secure = false;
-    }
-
-    logger.warn(
-        'Setting session cookie SECURE config to ' + sessionCookieConfig.secure
-    );
 
     app.register(fastifySession, {
         cookieName: 'sessionID',

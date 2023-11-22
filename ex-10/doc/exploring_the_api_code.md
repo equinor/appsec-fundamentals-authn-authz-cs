@@ -44,7 +44,7 @@ Steps:
 * Get an idea for test coverage by executing
 
   ```shell
-  npm run test-cover
+  npx tap report
   ```
 
 * When done - dehydrate and offer to help a fellow workshop participant

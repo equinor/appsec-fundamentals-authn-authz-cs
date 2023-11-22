@@ -6,6 +6,7 @@ process.env.NODE_ENV = 'development';
 process.env.TENANT_ID = 'A';
 process.env.CLIENT_ID = 'B';
 process.env.CLIENT_SECRET = 'C';
+process.env.REDIRECT_URI = 'D';
 process.env.TOKEN_CACHE_FILE = './test/cache.json';
 
 const { test } = require('tap');

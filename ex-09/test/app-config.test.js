@@ -128,7 +128,6 @@ test('IsConfigOk', (t) => {
         t.end();
     });
 
-
     t.end();
 });
 

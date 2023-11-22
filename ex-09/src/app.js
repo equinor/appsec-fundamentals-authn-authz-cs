@@ -6,7 +6,6 @@ const fastifyCookie = require('@fastify/cookie');
 const path = require('path');
 var __ = require('underscore');
 
-// const appConfig = require('./app-config.js'); //Loading config, will exit if config not ok
 const authUtils = require('../lib/auth-utils.js');
 const logger = require('../lib/logger.js').logger;
 

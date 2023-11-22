@@ -8,6 +8,7 @@ test('Environment Config should be persisted', (t) => {
     process.env.TENANT_ID = 'A';
     process.env.CLIENT_ID = 'B';
     process.env.CLIENT_SECRET = 'C';
+    process.env.REDIRECT_URI = 'D';
     process.env.TOKEN_CACHE_FILE = './test/cache.json';
 
     delete require.cache[require.resolve('../lib/app-config.js')];
@@ -130,6 +131,25 @@ test('IsConfigOk', (t) => {
         t.end();
     });
 
+    t.test('Missing REDIRECT_URI', (t) => {
+        delete process.env.REDIRECT_URI;
+
+        delete require.cache[require.resolve('../lib/app-config.js')];
+        const appConfig = require('../lib/app-config.js');
+
+        t.notOk(process.env.REDIRECT_URI, 'No REDIRECT_URI in process environment');
+        t.notOk(appConfig.msalConfig.authOptions.redirectUri, 'No redirectUri in config object');
+        t.notOk(appConfig.isConfigOk(), 'Config should not be ok');
+        t.equal(
+            appConfig.msalConfig.authOptions.clientId,
+            'B',
+            'Other config should be persisted'
+        );
+        t.ok(process.exit.called, 'Process exit called');
+
+        t.end();
+    });
+
     t.test('Missing token cache file', (t) => {
      
         delete require.cache[require.resolve('../lib/app-config.js')];
@@ -148,47 +168,28 @@ test('IsConfigOk', (t) => {
         t.end();
     });
 
+    t.end();
+});
 
-    t.test('Verify that port is used in client redirect uri', (t) => {
-        delete process.env.PORT;
-        process.env.PORT = 3333;
+test('Set proper PORT value', (t) => {
 
-        delete require.cache[require.resolve('../lib/app-config.js')];
-        const appConfig = require('../lib/app-config.js');
+    t.beforeEach(function () {
+        //Defining config
+        process.env.TENANT_ID = 'A';
+        process.env.CLIENT_ID = 'B';
+        process.env.CLIENT_SECRET = 'C';
+        process.env.REDIRECT_URI = 'D';
 
-        t.equal(
-            appConfig.msalConfig.request.authCodeUrlParameters.redirectUri,
-            'http://localhost:3333/callback',
-            'Redirect uri should include port for authcode request'
-        );
-        t.equal(
-            appConfig.msalConfig.request.tokenRequest.redirectUri,
-            'http://localhost:3333/callback',
-            'Redirect uri should include port for token request'
-        );
-        t.equal(appConfig.port,"3333",'Port returned from config should be ' + process.env.PORT);
-
-        t.end();
+        sinon.stub(process, 'exit');
+        process.exit.callsFake(() => {
+            console.log('Test triggered process.exit');
+            return true;
+        });   
     });
 
-    t.end();
-});
-
-test('Set proper PORT value', (t) => {
-  
-    delete require.cache[require.resolve('../lib/app-config.js')];
-    
-    delete process.env.PORT;
-
-    const port = require('../lib/app-config.js').port;
-
-    t.equal(port, "3000", 'No env PORT default to value 3000');
-
-    t.end();
-});
-
-
-test('Set proper PORT value', (t) => {
+    t.afterEach(function() {
+        process.exit.restore();
+    });
 
     t.test('Env PORT does not exist', (t) => {
        

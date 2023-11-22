@@ -20,9 +20,6 @@ export TENANT_ID="then tenant id"
 export PORT=3000
 export TOKEN_CACHE_FILE="${HOME}/.tcache/cache.json"
 ```
-
-For Windows users on Gitbash; please note the path for the TOKEN_CACHE_FILE. This should work on Gitbash as long as the MSYS_NO_PATHCONV variable is not set. Alternatively; use Windows notation for the variable (```export TOKEN_CACHE_FILE="c:\users\userid\.tcache\cache.json```). Consult the [FAQ](../../Support/faq.md) for more information on this topic.
-
 ### Additional config
 
 Additional config are defined in './lib/app-config.js'. Config that should be verified are:
@@ -51,7 +48,7 @@ The Episodes API follows the same pattern as the client application, it uses con
 Steps:
 
 * Create a new **.env** file for the api config. Give it the name **appsec-course-api-episodes-eq.env**
-  * This file should be kept out of version control and out of the source code folders!
+  * This file should be kept out of version control and out of the source code folders! Store it in the same location as the config file for the client.
 * Add the following config to the .env file
   ```shell
   export NODE_ENV=development
@@ -69,7 +66,7 @@ We have created and app registration for our episodes api. We have also created 
 
 For our set-up we are using the second option, we are authorizing a client application to use the api. This indicates that our api trust the Client - and that users will not be asked for any consent when the client calls this api. For our scenario this makes sense. There is no user specific data exposed by the api.
 
-There is also an Equinor quirk that makes the solution above interesting; admin consent is needed for all scope. When the admin has made the consent it is applied for all end-users, and the end-users cannot change/remove the consent. To trigger a user consent in our code, we would have to update the app to send a consent [request](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#requesting-individual-user-consent) to the **authorize** end-point for the Episodes.Read scope for the client
+There is also an Equinor configenc that makes the solution above interesting; admin consent is needed for all scope. When the admin has made the consent it is applied for all end-users, and the end-users cannot change/remove the consent. To trigger a user consent in our code, we would have to update the app to send a consent [request](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#requesting-individual-user-consent) to the **authorize** end-point for the Episodes.Read scope for the client
 
 Steps:
 
