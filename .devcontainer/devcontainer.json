@@ -7,7 +7,12 @@
 		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
 		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
 		"ghcr.io/devcontainers/features/github-cli:1": "latest",
-		"ghcr.io/devcontainers/features/node:1": { "version": "18.18" }
+		"ghcr.io/devcontainers/features/node:1": { "version": "18.18" },
+		"ghcr.io/devcontainers/features/dotnet:2": {
+			"version": "8.0",
+			"dotnetRuntimeVersions": "latest, lts",
+			"aspnetCoreRuntimeVersions": "latest, lts"
+		}
 	},
 	"customizations": {
 		"vscode": {
@@ -68,5 +73,3 @@
 		"PYTHONDONTWRITEBYTECODE": "1"
 	}
 }
-
-"liveServer.settings.donotShowInfoMsg": true
