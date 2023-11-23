@@ -4,27 +4,16 @@ Prior to joining the workshop the preconditions below should be met. This means 
 
 We assume that participant:
 
-* Have programming experience
-* Are using git and [github.com](https://github.com)
-* Are familiar with using the _command line_
-* Bring your own laptop (Windows, MacOs, Linux)
-* Have a good understanding of how to manage networking on your computer, especially __proxy__ issues.
-
-Some exposure to the following technologies will be beneficial:
-
-* Linux and Bash
-* JavaScript, NodeJS
-
-Make yourself familiar with the [FAQ](faq.md) and the [proxy documentation](proxy.md) before continuing!
+- You need a laptop with access to the internet
+- You need an updated and modern browser (like Firefox)
+- You need access to the [Equinor](https://github.com/equinor) organizations on [github.com](https://github.com). Test this by using the SSO end-points, [https://github.com/orgs/equinor/sso](https://github.com/orgs/equinor/sso)
+- *Some basic knowledge of the Linux command line and bash are always useful*
+- *Knowledge og Javascript and Python will be helpful*
 
 ---
 
 ### Accounts & Roles
 
-#### All Days
-
-* Personal Account on [github.com](https://github.com), verified to work with ssh authentication
-* A github.com account that have access to both the [Equinor](https://github.com/equinor) organization and the [equinor-playground](https://github.com/equinor-playground) organizations on github.com. Apply for access in Access@IT (Equinor org(GITHUB) and EQ-Playground (GITHUB)). Verify access by testing [https://github.com/orgs/equinor/sso](https://github.com/orgs/equinor/sso) and [https://github.com/orgs/equinor-playground/sso](https://github.com/orgs/equinor-playground/sso)
 * [Azure Application Developer](https://docs.omnia.equinor.com/governance/iam/App-General-Info/) role (requires Equinor Software developer on-boarding)
 
 __Windows__:

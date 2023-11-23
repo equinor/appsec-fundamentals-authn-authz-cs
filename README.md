@@ -51,7 +51,6 @@ Most of the topics and exercises have documentation as part of the exercise. We 
 
 ## Support documents
 
-* [Proxy configurations](Support/proxy.md)
 * [Frequently Asked Questions](Support/faq.md)
   
 ## Pre Workshop Preparations

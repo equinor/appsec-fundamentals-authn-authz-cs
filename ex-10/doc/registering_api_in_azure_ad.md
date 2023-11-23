@@ -13,7 +13,7 @@ Steps:
 * Select _Microsoft Entra  ID_ from the Azure Portal Home page
 * Select _App Registrations_
 * Register your application with the following properties:
-  * Name: "(your initial)-appsec-course-episodes-api" (example: "lksk-appsec-course-episodes-api")
+  * Name: "(your initial)-appsec-course-episodes-api" (example: "johnd-appsec-course-episodes-api")
   * Type: Single tenant
 * Augment app object to be compliant
   * Add an additional owner (select course instructor) (Owners)
