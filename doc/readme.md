@@ -15,8 +15,8 @@ The contents of the slide deck are contained in a set of markdown file in the [`
 
 ### Docker
 
-- `docker build -t pawa-slides .`
-- `docker run -d --name pawa-slides -p 8080:8080 pawa-slides`
+- `docker build -t aa-slides .`
+- `docker run -d -p 8080:8080 aa-slides`
 
 ### SRI - Integrity check for source files
 
