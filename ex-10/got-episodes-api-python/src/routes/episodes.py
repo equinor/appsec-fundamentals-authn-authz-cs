@@ -23,6 +23,9 @@ router = APIRouter(dependencies=[Depends(get_token_header)])
 
 @router.get("/episodes", response_model=List[Episode])
 def get_all_episodes(token: str = Depends(get_token_header)):
+    """
+    Test comment for swagger documentation
+    """    
     logger.info(f"Nice episodes API token: {token[:5]}...{token[-5:]}")
     obo_token= get_obo_token(token)
     episodes = episodes_controller.get_all_episodes()

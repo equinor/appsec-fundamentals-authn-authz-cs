@@ -2,6 +2,6 @@ from typing import Optional
 from pydantic import BaseModel
 
 class Episode(BaseModel):
-    id:  Optional[int] = None
+    id:  str
     title: str
     season: Optional[int] = None

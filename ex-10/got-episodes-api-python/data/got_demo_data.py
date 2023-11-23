@@ -17,7 +17,7 @@ episodes = [
                 },
                 {
                     "id": 4,
-                    "title": 'Crippels, Bastards and Broken Things',
+                    "title": 'Cripples, Bastards and Broken Things',
                     "season": 1,
                 },
                 {
@@ -47,7 +47,7 @@ episodes = [
                 },
                 {
                     "id": 9,
-                    "title": 'Fire and Blod',
+                    "title": 'Fire and Blood',
                     "season": 1,
                 },
             ];

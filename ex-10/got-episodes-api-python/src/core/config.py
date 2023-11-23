@@ -1,10 +1,11 @@
 import os
 import uvicorn
-import logging
+from logging import getLogger
+from fastapi import Depends
 from pydantic import HttpUrl, ValidationError
 from pydantic_settings import BaseSettings
 
-logger = logging.getLogger("uvicorn")
+logger = getLogger("uvicorn")
 
 class AppSettings(BaseSettings):
     tenant_id: str
@@ -21,12 +22,12 @@ class AppSettings(BaseSettings):
 
 def get_uvicorn_config():
     return uvicorn.Config(
-        app="main:app",         # Specify the ASGI application to run
+        app="main:app",
         host="0.0.0.0",
         port=3100,
         log_level="info",
         reload=True,
-        workers=1,              # Number of worker processes. Default is the number of CPU cores
+        workers=1,
         access_log=True,
     )
 
@@ -50,3 +51,13 @@ def get_settings():
             logger.warning(f"{err['type']}: {', '.join(err['loc'])}")
         exit(1)
     return app_settings
+
+def get_well_known_conf_url(config: AppSettings):
+    return f"https://login.microsoftonline.com/{config.tenant_id}/v2.0/.well-known/openid-configuration"
+
+def get_claims_options():
+    config = get_settings()
+    return {
+        "iss": { "essential": True, "value": str(config.issuer) },
+        "aud": { "essential": True, "value": config.api_audience }
+    }

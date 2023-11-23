@@ -61,3 +61,5 @@ node_modules/
 
 # Tap Test Results
 .tap
+
+.vscode/
