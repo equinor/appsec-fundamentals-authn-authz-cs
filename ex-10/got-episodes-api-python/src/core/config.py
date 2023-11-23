@@ -1,7 +1,6 @@
 import os
 import uvicorn
 from logging import getLogger
-from fastapi import Depends
 from pydantic import HttpUrl, ValidationError
 from pydantic_settings import BaseSettings
 
@@ -36,10 +35,7 @@ def get_settings():
         app_settings = AppSettings(
             tenant_id = os.environ['TENANT_ID'],
             client_id = os.environ['CLIENT_ID'],
-            client_secret = os.environ['CLIENT_SECRET'],
             episodes_api_uri = os.environ['EPISODES_API_URI'],
-            quotes_api_uri = os.environ['QUOTES_API_URI'],
-            quotes_api_url = os.environ['QUOTES_API_URL'],
             issuer = f"https://sts.windows.net/{os.environ['TENANT_ID']}/",
             port = os.environ['PORT'],
             host =  os.environ['HOST'],
@@ -51,9 +47,6 @@ def get_settings():
             logger.warning(f"{err['type']}: {', '.join(err['loc'])}")
         exit(1)
     return app_settings
-
-def get_well_known_conf_url(config: AppSettings):
-    return f"https://login.microsoftonline.com/{config.tenant_id}/v2.0/.well-known/openid-configuration"
 
 def get_claims_options():
     config = get_settings()

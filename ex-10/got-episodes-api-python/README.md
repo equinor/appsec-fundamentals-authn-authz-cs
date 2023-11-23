@@ -1,12 +1,22 @@
 # Episodes API Python
 
-Start with uvicorn
-
+Source environments
 ```sh
-uvicorn main:app --reload --log-level debug
+▶ source "$HOME/envs/<your_episodes_env_file>"
 ```
 
-Or just run with
+Install requirements
+```sh
+▶ pip install -r requirements.txt 
 ```
-./main.py
+
+Run tests
+```sh
+TBA
+```
+
+Run with `main.py`
+```
+▶ cd src
+▶ ./main.py
 ```

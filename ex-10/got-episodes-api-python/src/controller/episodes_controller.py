@@ -1,26 +1,15 @@
 # controllers.py
 from venv import logger
-import requests
-from fastapi import HTTPException, Depends
+from fastapi import HTTPException
 from typing import List
 from data.models import Episode
 from data.got_demo_data import episodes
-from core.config import get_settings
 from logging import getLogger
 
 logger = getLogger("uvicorn")
 
 def get_all_episodes() -> List[Episode]:
     return episodes
-
-def get_random_quote(obo_token: str):
-    config = get_settings()
-    quote_endpoint = f"{ config.quotes_api_url }api/quote"
-    quote_headers = {"Authorization": f"Bearer {obo_token}"}
-    logger.warning(f"{quote_endpoint = }")
-    quote = requests.get(url= quote_endpoint, headers = quote_headers)
-    logger.info(f"Got a quote: {quote} {repr(quote)}")
-    return quote.json()
 
 def get_episode(episode_id: int) -> Episode:
     episode = next((ep for ep in episodes if ep['id'] == episode_id), None)
