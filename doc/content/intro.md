@@ -41,8 +41,6 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * Exploring **Common** authorization scenarios in Equinor
 * Exploring Refresh tokens, Implicit grant and PKCE for Native, Mobile, SPA
 * Exploring Protecting Web API's and API chaining
-* Exploring Device Code Grant - for CLI's
-
 
 </div>
 

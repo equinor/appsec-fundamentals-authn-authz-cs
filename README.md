@@ -29,7 +29,7 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 * Exploring **PKCE** for Native, Mobile, SPA
 * Exploring Web **API's** protection
 * Exploring Web **API chaining** scenarios
-* Exploring **Device Code Grant** - authorization in CLI's
+
 
 ## Exercise index
 
@@ -44,7 +44,6 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 9. [Auth Code Grant with PKCE](ex-09/readme.md)
 10. [Protecting Web Api's](ex-10/readme.md)
 11. [Protecting Web Api's O-B-O](ex-11/readme.md)
-12. [Device Code Grant](ex-12/readme.md)
 
 ## Documentation and Slide deck
 
