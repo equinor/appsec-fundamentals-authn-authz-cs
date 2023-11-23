@@ -18,18 +18,30 @@ The contents of the slide deck are contained in a set of markdown file in the [`
 - `docker build -t aa-slides .`
 - `docker run -d -p 8080:8080 aa-slides`
 
-### SRI - Integrity check for source files
+### SRI - Integrity check for own provided source files
 
 To provide a hash for the .js and .css file provided in the source do:
 
 - `cat ./content/js/app.js | openssl dgst -sha512 -binary | openssl base64 -A`
 - `cat ./content/css/equinor.css | openssl dgst -sha512 -binary | openssl base64 -A`
-- `curl https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css | openssl dgst -sha512 -binary | openssl base64 -A`
+- `curl https://file-to-download | openssl dgst -sha512 -binary | openssl base64 -A`
 
 ... and so on.
 
-### Exporting Slides to PDF
+### Creating a pdf
 
-I use https://github.com/astefanutti/decktape to export slides to PDF.
+DeckTape (https://github.com/astefanutti/decktape) is useful to create pdf's of the slides.
 
-The command looks something like this: `decktape -s 1920x1080 http://localhost:5500 ./pdf/slides.pdf`
+To create a pdf of the slides, run the live server, or the Docker version - exposing the slides to localhost.Port 5500 is default for Liveserver, while port 8080 is default when serving from Docker.
+
+Using docker:
+
+```shell
+docker run --rm -t --net=host -v `pwd`:/slides  astefanutti/decktape --size 1920x1080 http://localhost:5050 ./slides.pdf
+```
+
+Using a local clone of DecTape:
+
+```shell
+node decktape.js reveal --size 1920x1080 http://localhost:5500 ./slides.pdf 
+```
