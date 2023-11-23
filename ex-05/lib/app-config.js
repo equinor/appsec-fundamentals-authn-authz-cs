@@ -44,18 +44,18 @@ const msalConfig = {
 function isConfigOk() {
 
     if (__.isUndefined(tenantId)) {
-      logger.error('Config: Missing Tenant_Id in config');
-      return false;  
+        logger.error('Config: Missing Tenant_Id in config');
+        return false;
     }
 
     if (__.isUndefined(msalConfig.authOptions.clientId)) {
         logger.error('Config: Missing Client_Id in config');
-        return false; 
+        return false;
     }
 
     if (__.isUndefined(msalConfig.authOptions.clientSecret)) {
         logger.error('Config: Missing Client_Secret in config');
-        return false; 
+        return false;
     }
 
     if (__.isUndefined(msalConfig.authOptions.redirectUri)) {
@@ -67,7 +67,7 @@ function isConfigOk() {
 }
 
 function exitHandler() {
- process.exit(1);
+    process.exit(1);
 }
 
 //Checking config and exiting app if not ok

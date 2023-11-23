@@ -64,7 +64,7 @@ test('Does authUtils work', (t) => {
                 return {};
             }
         });
-       
+
         const authUtils = require('../lib/auth-utils.js');
         await authUtils.getTokenAuthCode(request, reply);
 
@@ -157,7 +157,7 @@ test('Does authUtils work', (t) => {
             },
             accessToken: 'ey...ye',
         };
-                
+        
         //Creating object for stubbing the acquireTokenByCode
         const acquireTokenByCode = function (param) {
             return new Promise((resolve, reject) => {

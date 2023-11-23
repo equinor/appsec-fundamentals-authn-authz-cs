@@ -6,7 +6,6 @@ const appConfig = require('./app-config.js');
 var __ = require('underscore');
 const msal = require('@azure/msal-node');
 
-
 async function requestAccessTokenUsingAuthCode(authCode) {
 
     var accessToken;
@@ -17,7 +16,7 @@ async function requestAccessTokenUsingAuthCode(authCode) {
     };
 
     //https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.confidentialclientapplication.html#acquiretokenbycode
-    
+
     await confidentialClientApplication
         .acquireTokenByCode(tokenRequest)
         .then((response) => {
@@ -26,15 +25,15 @@ async function requestAccessTokenUsingAuthCode(authCode) {
         })
         .catch((error) => {
             logger.error('Failed to get access token');
-             logger.error(error);     
+            logger.error(error);
         });
-    
+
     return accessToken;
 
 }
 
 
-async function getTokenAuthCode(request, reply) {
+async function getTokenAuthCode (request, reply) {
     const requestConfig = appConfig.msalConfig.request;
     const { authCodeUrlParameters } = requestConfig;
     var redirectUrl = '';
@@ -67,7 +66,7 @@ async function getTokenAuthCode(request, reply) {
             redirectUrl = authCodeUrl;
         })
         .catch((error) => {
-            logger.error('Failed to get redirect url fro code request');
+            logger.error('Failed to get redirect url for code request');
             logger.error(error);
         });
 
@@ -98,7 +97,7 @@ async function readInbox(accessToken) {
         );
 
         logger.debug('Got inbox - building response');
-      
+
         var mailBody = JSON.parse(response.body);
 
         __.each(mailBody.value, function (item, index) {
@@ -112,7 +111,6 @@ async function readInbox(accessToken) {
         return newMails;
     }
 }
-
 
 //Generate useragent header (used by webserver and got)
 
@@ -153,10 +151,10 @@ const loggerOptions = {
 //https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.confidentialclientapplication.html
 const clientConfig = {
     auth: appConfig.msalConfig.authOptions,
-    system: {
+    system: {
         loggerOptions: loggerOptions,
         // proxyUrl: "http://127.0.0.1:8080"
-    }
+    },
 };
 
 //Creating the msal client

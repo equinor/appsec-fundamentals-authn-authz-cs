@@ -7,9 +7,7 @@ var __ = require('underscore');
 const msal = require('@azure/msal-node');
 const Crypto = require('crypto');
 
-
 async function requestAccessTokenUsingAuthCode(request, reply, authCode) {
-
 
     var accessToken;
     const requestConfig = appConfig.msalConfig.request;

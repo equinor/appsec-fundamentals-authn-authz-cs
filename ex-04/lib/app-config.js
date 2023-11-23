@@ -33,7 +33,6 @@ const msalConfig = {
     }
 };
 
-
 function isConfigOk() {
     
     if (__.isUndefined(tenantId)) {
@@ -55,6 +54,7 @@ function isConfigOk() {
         logger.error('Config: Missing redirect_uri in config');
         return false; 
     }
+
 
     return true;
 }

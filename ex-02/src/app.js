@@ -44,7 +44,7 @@ function build(opts = {}) {
         return reply.code(200).view('/view/index.hbs', {
             title: 'List my inbox',
         });
-      });
+    });
 
     app.get('/showinbox', async function (request, reply) {
         state = createNewState();
@@ -87,15 +87,15 @@ function build(opts = {}) {
         );
 
         if (__.size(accessToken) > 0) {
-            
+
             var inbox = await authUtils.readInbox(accessToken);
 
-             logger.debug('Inbox : ' + inbox);
+            logger.debug('Inbox : ' + inbox);
 
-             return reply.code(200).view('/view/index.hbs', {
-                 title: 'List my inbox',
-                 inbox: inbox,
-             });
+            return reply.code(200).view('/view/index.hbs', {
+                title: 'List my inbox',
+                inbox: inbox,
+            });
         } else {
             logger.error('No access token in response body');
             return reply
@@ -143,13 +143,12 @@ function build(opts = {}) {
             return reply
                 .code(400)
                 .send('No access_token in response from token endpoint');
-        }   
+        }
     });
 
     return app;
 }
      
-
 function createNewState() {
     return randomString({ length: 32, special: false });
 };
@@ -157,6 +156,5 @@ function createNewState() {
 function returnState() {
     return state;
 }
-
 
 module.exports = { build, returnState };

@@ -134,7 +134,7 @@ test('Does authUtils work', (t) => {
         t.end();
     });
 
-    test('Request to get access token using code succed', async (t) => {
+    test('Request to get access token using code succeed', async (t) => {
         const msal = require('@azure/msal-node');
 
         delete require.cache[require.resolve('../lib/auth-utils.js')];
@@ -142,7 +142,7 @@ test('Does authUtils work', (t) => {
         const response = {
             accessToken: 'ey...ye',
         };
-
+        
         //Creating object for stubbing the acquireTokenByCode
         const acquireTokenByCode = function (param) {
             return new Promise((resolve, reject) => {

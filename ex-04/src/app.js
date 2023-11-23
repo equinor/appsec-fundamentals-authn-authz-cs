@@ -92,7 +92,7 @@ function build(opts = {}) {
         );
 
         if (__.size(accessToken) > 0) {
-            
+
             var inbox = await authUtils.readInbox(accessToken);
 
             logger.debug('Inbox : ' + inbox);
