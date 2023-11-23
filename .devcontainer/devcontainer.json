@@ -5,13 +5,10 @@
 		"ghcr.io/devcontainers-contrib/features/snyk-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
 		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
-		"ghcr.io/devcontainers/features/github-cli:1": "latest",
-		"ghcr.io/devcontainers/features/node:1": { "version": "18.18" },
-		"ghcr.io/devcontainers/features/dotnet:2": {
-			"version": "8.0",
-			"dotnetRuntimeVersions": "latest, lts",
-			"aspnetCoreRuntimeVersions": "latest, lts"
-		}
+        "ghcr.io/devcontainers/features/dotnet:1": {
+            "version": "8.0",
+            "installUsingApt": "false",
+        },
 	},
 	"customizations": {
 		"vscode": {
@@ -40,24 +37,6 @@
 			"openFiles": [""]
 		}
 	},
-	"portsAttributes": {
-		// "3000": {
-		// 	"label": "Client",
-		// 	"onAutoForward": "openBrowser",
-		// 	"protocol": "https"
-		// },
-		// "3100": {
-		// 	"label": "Episodes API",
-		// 	"onAutoForward": "openPreview",
-		// 	"protocol": "https"
-		// },
-		// "3200": {
-		// 	"label": "Quote API",
-		// 	"onAutoForward": "ignore",
-		// 	"protocol": "https"
-		// }
-	},
-	// "forwardPorts": [3000, 3100, 3200],
 	"updateContentCommand": {
 		"trufflehog" : "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.62.1/trufflehog_3.62.1_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
 	},
