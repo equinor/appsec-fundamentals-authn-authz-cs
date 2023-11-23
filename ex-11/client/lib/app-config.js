@@ -105,7 +105,7 @@ function isConfigOk() {
 }
 
 function exitHandler() {
- process.exit(1);
+    process.exit(1);
 }
 
 //Checking config and exiting app if not ok

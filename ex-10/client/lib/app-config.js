@@ -53,7 +53,7 @@ const msalConfig = {
 //A helper function to check if cache file exists, if not then try to create it
 //Doing this in sync mode - we need the cache file to continue
 function handleTokeCacheFile(cFile) {
-  
+
     if (fs.existsSync(cFile)) {
         logger.info('Token Cache file does exist at ' + cFile);
     } else {

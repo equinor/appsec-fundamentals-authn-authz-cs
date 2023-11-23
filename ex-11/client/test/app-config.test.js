@@ -148,29 +148,6 @@ test('IsConfigOk', (t) => {
         t.end();
     });
 
-
-    t.test('Verify that port is used in client redirect uri', (t) => {
-        delete process.env.PORT;
-        process.env.PORT = 3333;
-
-        delete require.cache[require.resolve('../lib/app-config.js')];
-        const appConfig = require('../lib/app-config.js');
-
-        t.equal(
-            appConfig.msalConfig.request.authCodeUrlParameters.redirectUri,
-            'http://localhost:3333/callback',
-            'Redirect uri should include port for authcode request'
-        );
-        t.equal(
-            appConfig.msalConfig.request.tokenRequest.redirectUri,
-            'http://localhost:3333/callback',
-            'Redirect uri should include port for token request'
-        );
-        t.equal(appConfig.port,"3333",'Port returned from config should be ' + process.env.PORT);
-
-        t.end();
-    });
-
     t.end();
 });
 

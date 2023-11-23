@@ -14,7 +14,8 @@ Steps:
   ./bin/src-diff.sh
   ```
 * App config (./lib/app-config.js)
-  * Makes **EPISODES_API_URI** config dynamic, read from the environment 
+  * Makes **EPISODES_API_URI** config dynamic, read from the environment
+  * Makes **EPISODES_API_URL** config dynamic, read from the environment
  
 
 ### --Now You--
@@ -46,7 +47,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-client-eq.env 
+    source ~/envs/appsec-course-client-eq.env 
     ```
 
 * Run the application
@@ -55,8 +56,7 @@ Steps:
     npm start 
     ```
 
-* Verify that the application is running at **http://localhost:3000**
-
+* Verify that the application is running
 ### --Now You--
 
 * Do the steps above and verify that the client is running

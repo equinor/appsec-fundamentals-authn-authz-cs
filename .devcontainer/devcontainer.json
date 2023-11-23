@@ -27,6 +27,7 @@
 				"gitlens.showWelcomeOnInstall" :false,
 				"terminal.integrated.gpuAcceleration": "canvas",
     			"liveServer.settings.root": "/doc",
+				"liveServer.settings.donotShowInfoMsg": true,
 				"terminal.integrated.shell.linux": "/usr/bin/zsh",
 				"terminal.integrated.defaultProfile.linux": "zsh"
 			}
@@ -67,3 +68,5 @@
 		"PYTHONDONTWRITEBYTECODE": "1"
 	}
 }
+
+"liveServer.settings.donotShowInfoMsg": true

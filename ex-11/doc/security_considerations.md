@@ -8,7 +8,6 @@
   * Testability and frameworks are a potential issue.
 * Establish good practice around debugging/tracing to understand network flow (OWASP Zap)
   * For NodeJS i recommend the Global Agent module to enable debugging using a network proxy 
-  * We will visit this in a later exercise (ex-13)
 
 <div style="font-size:large">
 

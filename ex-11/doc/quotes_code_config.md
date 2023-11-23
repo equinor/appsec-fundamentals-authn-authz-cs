@@ -13,13 +13,13 @@ Steps:
 * App config (./lib/app-config.js)
   * The config we need is
   
-  ```shell
-  export NODE_ENV=development
-  export TENANT_ID=""
-  export PORT=3200
-  export QUOTES_API_URI=""
-  export EPISODES_API_URI=""
-  ```
+    ```shell
+    export NODE_ENV=development
+    export TENANT_ID=""
+    export PORT=3200
+    export QUOTES_API_URI=""
+    export EPISODES_API_URI=""
+    ```
 
 * The App
   * A new controller for quotes, exposes /api/quote. Will return a random quote if request is validated

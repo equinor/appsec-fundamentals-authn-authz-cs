@@ -66,7 +66,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-api-episodes-eq.env
+    source ~/envs/appsec-course-api-episodes-eq.env
     ```
 
 * Run the application
@@ -75,7 +75,7 @@ Steps:
     npm start 
     ```
 
-* Verify that the application is running at **http://localhost:3100**
+* Verify that the application is running at port 3100
 
 ### --Now You--
 
