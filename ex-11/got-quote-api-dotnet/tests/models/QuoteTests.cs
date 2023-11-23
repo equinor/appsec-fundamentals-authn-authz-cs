@@ -9,7 +9,7 @@ namespace GotQuotes.Tests
 
         public QuoteTests()
         {
-            _quote = new Quote { Title = "Default Title" };
+            _quote = new Quote { Id = "Quote:", Title = "Default Title" };
         }
 
         [Fact]
