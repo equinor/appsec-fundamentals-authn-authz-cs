@@ -21,7 +21,9 @@ Expects the following environment variables to execute properly
     export CLIENT_ID=""
     export TENANT_ID=""
     export PORT=3000
+    export REDIRECT_URI=
     export EPISODES_API_URI=
+    export EPISODES_API_URL="http://localhost:3100"
     export TOKEN_CACHE_FILE="${HOME}/.tcache/cache.json"
 
 ### Execute

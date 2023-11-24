@@ -22,8 +22,8 @@ Expects the following environment variables to execute properly
     export CLIENT_ID=""
     export CLIENT_SECRET=''
     export EPISODES_API_URI=""
-    export QUOTES_API_URL="http://localhost:3200"
     export QUOTES_API_URI=""
+    export QUOTES_API_URL="http://localhost:3200"
     
 
 ### Execute
