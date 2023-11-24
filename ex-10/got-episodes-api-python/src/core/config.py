@@ -8,11 +8,6 @@ logger = getLogger("uvicorn")
 
 class AppSettings(BaseSettings):
     tenant_id: str
-    client_id: str
-    client_secret: str
-    episodes_api_uri: str
-    quotes_api_url: HttpUrl
-    quotes_api_uri: str
     issuer: HttpUrl
     port: int
     host: str
@@ -22,9 +17,9 @@ class AppSettings(BaseSettings):
 def get_uvicorn_config():
     return uvicorn.Config(
         app="main:app",
-        host="0.0.0.0",
-        port=3100,
-        log_level="info",
+        host = os.environ.get('HOST', '127.0.0.1'),
+        port=int(os.environ.get('PORT', 3100)),
+        log_level = 'debug' if os.environ.get('PYTHON_ENV') == 'development' else 'info',
         reload=True,
         workers=1,
         access_log=True,
@@ -34,13 +29,11 @@ def get_settings():
     try:
         app_settings = AppSettings(
             tenant_id = os.environ['TENANT_ID'],
-            client_id = os.environ['CLIENT_ID'],
-            episodes_api_uri = os.environ['EPISODES_API_URI'],
             issuer = f"https://sts.windows.net/{os.environ['TENANT_ID']}/",
-            port = os.environ['PORT'],
-            host =  os.environ['HOST'],
+            port = os.environ.get('PORT', 3100),
+            host =  os.environ.get('HOST', '127.0.0.1'),
             jwks_uri = f"https://login.microsoftonline.com/{os.environ['TENANT_ID']}/discovery/v2.0/keys",
-            api_audience= f"api://{os.environ['EPISODES_API_URI']}"
+            api_audience= f"api://{os.environ.get('EPISODES_API_URI', '251bc275-eed7-49d6-83b3-9005c9779574')}"
         )
     except ValidationError as exc:
         for err in exc.errors():

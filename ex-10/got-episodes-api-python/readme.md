@@ -21,7 +21,7 @@ TBA
 
 Expects the following environment variables to execute properly
 
-    export NODE_ENV=production
+    export PYTHON_ENV=production
     export TENANT_ID=""
     export PORT=3100
 
