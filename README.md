@@ -12,7 +12,7 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 
 * The workshop level is intermediate/advanced.
 * The workshop is usually executed as aa virtual session (using MS Teams or similar)
-* The workshop will be organized as 2 full days sessions.
+* The workshop will be organized as 2 full days sessions
 * It recommended that more than one person participate from a team.
 * During the workshop we expect to spark a high number of relevant discussions. These discussion should naturally continue in the teams after the workshop.
 
@@ -57,9 +57,9 @@ Most of the topics and exercises have documentation as part of the exercise. We 
 
 * [Frequently Asked Questions](Support/faq.md)
   
-## Pre Workshop Preparations
+## Workshop Preparations and Pre-Requisites
 
-To enable a good flow and outcome of the workshop it is vital to come prepared. Preparations are defined in [Support/workshop_preparations](Support/workshop_preparations.md)
+To enable a good flow and outcome of the workshop it is vital to come prepared. Preparations and pre-requisites are defined in [Support/workshop_preparations](Support/workshop_preparations.md)
 
 ## Non Equinor adaptions
 
