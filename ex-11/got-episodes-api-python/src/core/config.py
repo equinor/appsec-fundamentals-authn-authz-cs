@@ -23,7 +23,7 @@ class AppSettings(BaseSettings):
 def get_uvicorn_config():
     return uvicorn.Config(
         app="main:app",
-        host = os.environ.get('HOST', '127.0.0.1'),
+        host = None, # allows for both ip4 and ip6
         port=int(os.environ.get('PORT', 3100)),
         log_level = 'debug' if os.environ.get('PYTHON_ENV') == 'development' else 'info',
         reload=True,
