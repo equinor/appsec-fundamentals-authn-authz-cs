@@ -31,9 +31,11 @@ def get_all_episodes(token: str = Depends(get_token_header)):
     episodes = episodes_controller.get_all_episodes()
     quote = episodes_controller.get_random_quote(obo_token)
     logger.info(f"{type(episodes) = } {type(quote) = }")
-    episodes.append(quote)
-    logger.info(f"{episodes = }")
-    return episodes
+    # Create a copy of the episodes list and append the quote to it
+    result = episodes.copy()
+    result.append(quote)
+    logger.info(f"{result = }")
+    return result
 
 @router.get("/episodes/{episode_id}", response_model=Episode)
 def get_episode(episode_id: int):
