@@ -7,17 +7,17 @@ After this part we have two object in Microsoft Entra ID, one for the client, an
 
 Steps:
 * Navigate to [portal.azure.com](https://portal.azure.com)
-* Activate your _Application Developer role_ in _Microsoft Entra ID Privileged Identity Management_
-  * _My roles_ -> _Microsoft Entra Roles_ -> _Application Developer_ -> _Activate_
+* Activate your _Application Developer role_ in _Microsoft Entra ID Privileged Identity Management_ ⚡️
+  * _My roles_ -> _Microsoft Entra Roles_ -> _Application Developer_ -> _Activate_ 
   * Be patient - it may take a minute ...
 * Select _Microsoft Entra  ID_ from the Azure Portal Home page
 * Select _App Registrations_
 * Register your application with the following properties:
   * Name: "(your initial)-appsec-course-episodes-api" (example: "johnd-appsec-course-episodes-api")
   * Type: Single tenant
-* Augment app object to be compliant
-  * Add an additional owner (select course instructor) (Owners)
-  * Update the "service management reference" to refer to the "AppSec-Training" - 119775 (Branding & Properties)
+* Augment app object to be compliant ⚡️
+  * Add an additional owner (select course instructor) (Owners) ⚡️
+  * Update the "service management reference" to refer to the "AppSec-Training" - 119775 (Branding & Properties)⚡️
 * Select the _Expose an API_ in the left side menu
 * Add new scope
   * Use the suggested **Application ID URI**, save and continue

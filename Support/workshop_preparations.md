@@ -11,7 +11,7 @@ Prior to joining the workshop the preconditions below should be met. This means 
 
 ## Important pre-requisites
 
-- You need the [Azure Application Developer](https://docs.omnia.equinor.com/governance/iam/App-General-Info/) role (Apply using Acccess@IT)
-- You need access to the [Equinor](https://github.com/equinor) organization on [github.com](https://github.com)</br>Verify access by opening the SSO end-point [https://github.com/orgs/equinor/sso](https://github.com/orgs/equinor/sso)
+- You need the [Azure Application Developer](https://docs.omnia.equinor.com/governance/iam/App-General-Info/) role (Apply using Acccess@IT) ⚡️
+- You need access to the [Equinor](https://github.com/equinor) organization on [github.com](https://github.com)</br>Verify access by opening the SSO end-point [https://github.com/orgs/equinor/sso](https://github.com/orgs/equinor/sso) ⚡️
 
 

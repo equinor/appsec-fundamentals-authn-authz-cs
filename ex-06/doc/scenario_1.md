@@ -27,7 +27,7 @@ Steps:
   * Audit Logs
 * Select **Users and groups** on the left side menu
   * This is where users and groups are assigned to the application
-  * (AD groups are synced from on-prem AD)
+  * (AD groups are synced from on-prem AD) ⚡️
 
 ## --Now You--
 

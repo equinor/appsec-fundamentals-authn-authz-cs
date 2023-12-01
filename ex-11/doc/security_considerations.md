@@ -11,6 +11,6 @@
 
 <div style="font-size:large">
 
-What could possibly go wrong? Do threat modeling! Visit [appsec.equinor.com](https://appsec.equinor.com/threat-modeling/) to get started!
+What could possibly go wrong? Do threat modeling! Visit [appsec.equinor.com](https://appsec.equinor.com/threat-modeling/) to get started! ⚡️
 
 </div>

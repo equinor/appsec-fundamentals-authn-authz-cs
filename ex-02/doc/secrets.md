@@ -30,7 +30,7 @@ Steps:
 
 ## --Persisting Config--
 
-We have stored out config in .env files. The config includes secrets. The life cycle of the .env files follow the codespace. When a codespace is deleted the .env files, and our config are gone. To facilitate this workshop we have implemented a pattern where we persist the .env files inside a Github Codespaces User Secret. This User Secret is made available as an environment variables for the repos's you have given access to. Users secrets are only accessible to a specific user, defined as part of their profile/settings. The size limit for Github secrets is 64Kb.
+We have stored out config in .env files. The config includes secrets. The life cycle of the .env files follow the codespace. When a codespace is deleted the .env files, and our config are gone. To facilitate this workshop we have implemented a pattern where we persist the .env files inside a Github Codespaces User Secret. This User Secret is made available as an environment variables for the repos's you have given access to. Users secrets are only accessible to a specific user, defined as part of their profile/settings. The size limit for Github secrets is 48Kb.
 
 Steps:
 
@@ -70,4 +70,4 @@ Steps:
 * Good Practice - MS Recommend using Certificates (non self signed for production) rather than client secret "strings"
   * Anyone have experience with this pattern? What's the root CA that's used?
 * Storing secrets as part of ordinary config may make sense in some scenarios (like we have done 👆)
-* Good Practice - Scan for Secrets in your dev environment. The AppSec Team has workshops on this as well, the [AppSec Fundamentals Secret Scanning](https://github.com/equinor/appsec-fundamentals-secret-scanning) workshop.
+* Good Practice - Scan for Secrets in your dev environment. The AppSec Team has workshops on this as well, the [AppSec Fundamentals Secret Scanning](https://github.com/equinor/appsec-fundamentals-secret-scanning) workshop.⚡️

@@ -43,7 +43,7 @@ You will use the command line for the next steps
 
 The patterns shown above is not unique to the JavaScript environment - it is more or less how it is these days. From a security perspective we should be able analyses issues in our own code - but what about the 99.9% of the code we have not written ourselves?
 
-This is where open source dependency scanning could make a difference. In Equinor we use Snyk do to open source dependency scanning. Scanning of source code is mandatory in Equinor. Read more about Snyk at [appsec.equinor.com](https://appsec.equinor.com/snyk/)
+This is where open source dependency scanning could make a difference. In Equinor we use Snyk do to open source dependency scanning. Scanning of source code is mandatory in Equinor. Read more about Snyk at [appsec.equinor.com](https://appsec.equinor.com/snyk/) ⚡️
 
 Snyk provide:
 

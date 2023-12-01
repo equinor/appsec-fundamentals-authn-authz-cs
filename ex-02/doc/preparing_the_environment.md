@@ -13,8 +13,8 @@ node --version
 ```shell
 npm --version
 ```
-* Node should be around v18.18.0 and NPM v10.0.1
-* Install dependencies </br>(You want to consult the [Proxy Guide](../../Support/proxy.md) if you have connectivity issue)
+* Node should be around v18.18.0 and NPM > 9
+
 ```shell
 npm install
 ```
