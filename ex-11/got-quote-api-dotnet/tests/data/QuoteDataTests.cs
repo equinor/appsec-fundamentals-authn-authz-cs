@@ -11,8 +11,8 @@ public class QuoteDataTests
     {
         var mockQuotes = new List<Quote> 
         { 
-            new() { Id = "Quote:", Title = "Test Quote 1" }, 
-            new() { Id = "Quote:", Title = "Test Quote 2" } 
+            new() { Title = "Test Quote 1" }, 
+            new() { Title = "Test Quote 2" } 
         };
         QuoteData.InitializeQuotes(mockQuotes);
         Assert.Equal(mockQuotes, QuoteData.Quotes);

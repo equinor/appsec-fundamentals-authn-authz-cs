@@ -3,7 +3,18 @@ using GotQuotes.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// https://aka.ms/aspnetcore/swashbuckle
+// Prefer environment variables over appsettings.json
+var TENANT_ID = Environment.GetEnvironmentVariable("TENANT_ID");
+var QUOTES_API_URI = Environment.GetEnvironmentVariable("QUOTES_API_URI");
+
+if (string.IsNullOrEmpty(TENANT_ID) || string.IsNullOrEmpty(QUOTES_API_URI)) {
+    throw new Exception("TENANT_ID and QUOTES_API_URI must be set");
+} else {
+    builder.Configuration["AzureAd:Jwt:Authority"] = $"https://login.microsoftonline.com/{TENANT_ID}/v2.0/";
+    builder.Configuration["AzureAd:Jwt:TokenValidationParameters:ValidIssuer"] = $"https://sts.windows.net/{TENANT_ID}/";
+    builder.Configuration["AzureAd:Jwt:TokenValidationParameters:ValidAudience"] = $"api://{QUOTES_API_URI}";
+} 
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

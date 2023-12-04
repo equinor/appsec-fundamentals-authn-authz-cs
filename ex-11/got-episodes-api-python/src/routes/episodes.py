@@ -30,10 +30,14 @@ def get_all_episodes(token: str = Depends(get_token_header)):
     obo_token= get_obo_token(token)
     episodes = episodes_controller.get_all_episodes()
     quote = episodes_controller.get_random_quote(obo_token)
-    logger.info(f"{type(episodes) = } {type(quote) = }")
+
     # Create a copy of the episodes list and append the quote to it
     result = episodes.copy()
-    result.append(quote)
+    result.append({
+        "id": "Quote:",
+        "title": quote["title"],
+        "season": 9999
+    })
     logger.info(f"{result = }")
     return result
 
