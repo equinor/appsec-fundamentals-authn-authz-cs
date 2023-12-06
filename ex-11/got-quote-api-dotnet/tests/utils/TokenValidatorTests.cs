@@ -2,37 +2,65 @@ using Microsoft.Extensions.Configuration;
 using GotQuotes.Utils;
 using Moq;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography;
 
 namespace GotQuotes.Tests.Utils;
 
 public class TokenValidatorTests
 {
-
     [Fact]
-    public async Task IsValidToken_WithInvalidToken_ReturnsFalse()
+    public async Task IsValidToken_ProvideInvalidToken_ReturnsFalse()
     {
-        
-        var TENANT_ID = Environment.GetEnvironmentVariable("TENANT_ID");
-        var QUOTES_API_URI = Environment.GetEnvironmentVariable("QUOTES_API_URI");
+        var validRoles = new string[] { "IAM_ROLE" };
+        var validAudience = "IAM_AUDIENCE";
+        var validIssuer = "IAM_ISSUER";
+        var jwtTokenDescriptor = CreateJwtTokenDescriptor(validRoles, true, validAudience, validIssuer);
+        var jwt = new JwtSecurityTokenHandler().CreateJwtSecurityToken(jwtTokenDescriptor);
+        TokenValidationParameters validationParameters = new()
+        {
+            ValidAudience = validAudience,
+            ValidIssuer = validIssuer,
+            IssuerSigningKey = jwtTokenDescriptor.SigningCredentials.Key
+        };
 
-        var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
-
-        if (string.IsNullOrEmpty(TENANT_ID) || string.IsNullOrEmpty(QUOTES_API_URI)) {
-            throw new Exception("TENANT_ID and QUOTES_API_URI must be set");
-        } else {    
-            config["AzureAd:Jwt:Authority"] = $"https://login.microsoftonline.com/{TENANT_ID}/v2.0/";
-            config["AzureAd:Jwt:TokenValidationParameters:ValidIssuer"] = $"https://sts.windows.net/{TENANT_ID}/";
-            config["AzureAd:Jwt:TokenValidationParameters:ValidAudience"] = $"api://{QUOTES_API_URI}";        
-        }
+        var config = new ConfigurationBuilder().AddInMemoryCollection().Build();
+        config["AzureAd:Jwt:TokenValidationParameters:ValidIssuer"] = validIssuer;
+        config["AzureAd:Jwt:TokenValidationParameters:ValidAudience"] = validAudience;
 
         var mockLogger = new Mock<ILogger<TokenValidator>>();
-        var tokenValidator = new TokenValidator(config, mockLogger.Object);
-        var invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJhdWQiOiJVbml0VGVzdCJ9.1NjVHdIqik-lFoY-bgXRUyDTFcuVRvkr0pcU5JEy1Ys";
+        var mockConfiguration = new Mock<IConfiguration>();
+        var tokenValidator = new TokenValidator(mockConfiguration.Object, mockLogger.Object);
 
         // Act
-        var result = await tokenValidator.IsValidToken(invalidToken);
+        var result = tokenValidator.IsValidToken(jwt.RawData, validationParameters);
 
         // Assert
         Assert.False(result);
     }
+    private static SecurityTokenDescriptor CreateJwtTokenDescriptor(string[] appRoles, bool signed, string aud, string iss)
+    {
+        SecurityTokenDescriptor tokenDescriptor = new()
+        {
+            Expires = DateTime.UtcNow.AddSeconds(60),
+            Claims = new Dictionary<string, object>() {
+                { "roles", new List<string>(appRoles) },
+                { "aud", aud },
+                { "iss", iss }
+            }
+        };
+        if (signed)
+        {
+            byte[] secret = new byte[64];
+            RandomNumberGenerator.Create().GetBytes(secret);
+            tokenDescriptor.SigningCredentials = new SigningCredentials(
+                new SymmetricSecurityKey(secret),
+                SecurityAlgorithms.HmacSha256Signature,
+                SecurityAlgorithms.Sha512Digest
+            );
+        };
+        return tokenDescriptor;
+        
+    }    
 }

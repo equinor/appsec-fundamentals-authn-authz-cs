@@ -1,5 +1,4 @@
 using GotQuotes.Models;
-using Xunit;
 
 namespace GotQuotes.Tests
 {

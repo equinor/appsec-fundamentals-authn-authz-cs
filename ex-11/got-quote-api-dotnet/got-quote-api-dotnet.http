@@ -1,9 +1,0 @@
-#@got_quote_api_dotnet_HostAddress = http://localhost:3200
-@got_quote_api_dotnet_HostAddress = https://musical-space-barnacle-qv9r64xp5264gg-3200.preview.app.github.dev/api/quote
-@bearer_token=ey...should.be.environment.variable
-
-GET {{got_quote_api_dotnet_HostAddress}}/
-Accept: application/json
-Authorization: Bearer {{bearer_token}}
-
-###
