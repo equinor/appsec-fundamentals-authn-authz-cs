@@ -47,7 +47,49 @@ public class TokenValidator : ITokenValidator
 
         try
         {
-            _ = tokenHandler.ValidateToken(token, _tokenValidationParameters, out _);
+            // Check issuer
+            if (jwtToken.Issuer != validationParameters.ValidIssuer) {
+                _logger.LogError("Issuer is invalid");
+                throw new SecurityTokenInvalidIssuerException("Issuer is invalid");
+            };
+
+            // Check audience
+            if (jwtToken.Audiences.All(a => a != validationParameters.ValidAudience)) {
+                _logger.LogError("Audience is invalid");
+                throw new SecurityTokenInvalidAudienceException("Audience is invalid");
+            };
+
+            // Check signature
+            var signingKey = validationParameters.IssuerSigningKeys.FirstOrDefault();
+            if (signingKey == null) {
+                _logger.LogError("Signing key is invalid");
+                throw new SecurityTokenInvalidSigningKeyException("Signing key is invalid");
+            };
+            
+            //Validate signature for jwt with symmetric key signingKey
+            var validationParametersWithSigningKey = new TokenValidationParameters
+            {
+                IssuerSigningKey = signingKey,
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ValidateLifetime = false,
+                ValidateIssuerSigningKey = true
+            };
+            _ = tokenHandler.ValidateToken(token, validationParametersWithSigningKey, out _);
+
+            // Check valid timeframe
+            if (jwtToken.ValidFrom > DateTime.UtcNow || jwtToken.ValidTo < DateTime.UtcNow) {
+                _logger.LogError("Token is not valid in timeframe");
+                throw new SecurityTokenInvalidLifetimeException("Token is not valid in timeframe");
+            };
+
+            // Check scope
+            if (jwtToken.Claims.All(c => c.Type != "scp" || !c.Value.Split(' ').Any(s => s == "Quote.Read"))) {
+                _logger.LogError("Token does not contain correct scope");
+                throw new SecurityTokenInvalidLifetimeException("Token does not contain correct scope");
+            };
+
+
             return true;
         }
         catch

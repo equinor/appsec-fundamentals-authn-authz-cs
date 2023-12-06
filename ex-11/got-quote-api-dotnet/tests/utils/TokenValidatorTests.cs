@@ -11,23 +11,49 @@ namespace GotQuotes.Tests.Utils;
 public class TokenValidatorTests
 {
     [Fact]
-    public async Task IsValidToken_ProvideInvalidToken_ReturnsFalse()
+    public void IsValidToken_WithValidToken_ReturnsTrue()
     {
-        var validRoles = new string[] { "IAM_ROLE" };
+        var validScopes = "Quote.Read";
         var validAudience = "IAM_AUDIENCE";
         var validIssuer = "IAM_ISSUER";
-        var jwtTokenDescriptor = CreateJwtTokenDescriptor(validRoles, true, validAudience, validIssuer);
+        var jwtTokenDescriptor = CreateJwtTokenDescriptor(validScopes, true, validAudience, validIssuer);
         var jwt = new JwtSecurityTokenHandler().CreateJwtSecurityToken(jwtTokenDescriptor);
         TokenValidationParameters validationParameters = new()
         {
             ValidAudience = validAudience,
             ValidIssuer = validIssuer,
-            IssuerSigningKey = jwtTokenDescriptor.SigningCredentials.Key
+            IssuerSigningKeys = [jwtTokenDescriptor.SigningCredentials.Key]
         };
 
         var config = new ConfigurationBuilder().AddInMemoryCollection().Build();
-        config["AzureAd:Jwt:TokenValidationParameters:ValidIssuer"] = validIssuer;
-        config["AzureAd:Jwt:TokenValidationParameters:ValidAudience"] = validAudience;
+
+        var mockLogger = new Mock<ILogger<TokenValidator>>();
+        var mockConfiguration = new Mock<IConfiguration>();
+        var tokenValidator = new TokenValidator(mockConfiguration.Object, mockLogger.Object);
+
+        // Act
+        var result = tokenValidator.IsValidToken(jwt.RawData, validationParameters);
+
+        // Assert
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void IsValidToken_WithInValidToken_ReturnsFalse()
+    {
+        var validScopes = "Quote.Read";
+        var validAudience = "IAM_AUDIENCE";
+        var validIssuer = "IAM_ISSUER";
+        var jwtTokenDescriptor = CreateJwtTokenDescriptor(validScopes, true, validAudience, validIssuer);
+        var jwt = new JwtSecurityTokenHandler().CreateJwtSecurityToken(jwtTokenDescriptor);
+        TokenValidationParameters validationParameters = new()
+        {
+            ValidAudience = "IAM_NOT_RIGHT_AUDIENCE",
+            ValidIssuer = validIssuer,
+            IssuerSigningKeys = [jwtTokenDescriptor.SigningCredentials.Key]
+        };
+
+        var config = new ConfigurationBuilder().AddInMemoryCollection().Build();
 
         var mockLogger = new Mock<ILogger<TokenValidator>>();
         var mockConfiguration = new Mock<IConfiguration>();
@@ -39,15 +65,16 @@ public class TokenValidatorTests
         // Assert
         Assert.False(result);
     }
-    private static SecurityTokenDescriptor CreateJwtTokenDescriptor(string[] appRoles, bool signed, string aud, string iss)
+
+    private static SecurityTokenDescriptor CreateJwtTokenDescriptor(string scopes, bool signed, string aud, string iss)
     {
         SecurityTokenDescriptor tokenDescriptor = new()
         {
             Expires = DateTime.UtcNow.AddSeconds(60),
+            Audience = aud,
+            Issuer = iss,
             Claims = new Dictionary<string, object>() {
-                { "roles", new List<string>(appRoles) },
-                { "aud", aud },
-                { "iss", iss }
+                { "scp", scopes},
             }
         };
         if (signed)
