@@ -34,14 +34,8 @@ public class TokenValidator : ITokenValidator
 
     public bool IsValidToken(string token, TokenValidationParameters validationParameters)
     {
-
-        if (validationParameters.IssuerSigningKeys == null || !validationParameters.IssuerSigningKeys.Any())
-        {
-            throw new Exception("Missing Issuer signing keys.");
-        }
-
         var jwtToken = new JwtSecurityToken(token);
-        _logger.LogWarning("Token for : {Audience}, valid from {ValidFrom} to {ValidTo}", jwtToken.Audiences.First(), jwtToken.ValidFrom, jwtToken.ValidTo);
+        _logger.LogWarning("Inspecting token for : {Audience}, valid from {ValidFrom} to {ValidTo}", jwtToken.Audiences.First(), jwtToken.ValidFrom, jwtToken.ValidTo);
 
         var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -59,21 +53,19 @@ public class TokenValidator : ITokenValidator
                 throw new SecurityTokenInvalidAudienceException("Audience is invalid");
             };
 
-            // Check signature
+            // Check signature and validate
             var signingKey = validationParameters.IssuerSigningKeys.FirstOrDefault();
             if (signingKey == null) {
                 _logger.LogError("Signing key is invalid");
                 throw new SecurityTokenInvalidSigningKeyException("Signing key is invalid");
             };
-            
-            //Validate signature for jwt with symmetric key signingKey
             var validationParametersWithSigningKey = new TokenValidationParameters
             {
                 IssuerSigningKey = signingKey,
+                ValidateIssuerSigningKey = true,
                 ValidateAudience = false,
                 ValidateIssuer = false,
-                ValidateLifetime = false,
-                ValidateIssuerSigningKey = true
+                ValidateLifetime = false
             };
             _ = tokenHandler.ValidateToken(token, validationParametersWithSigningKey, out _);
 
@@ -89,7 +81,7 @@ public class TokenValidator : ITokenValidator
                 throw new SecurityTokenInvalidLifetimeException("Token does not contain correct scope");
             };
 
-
+            // All checks passed
             return true;
         }
         catch

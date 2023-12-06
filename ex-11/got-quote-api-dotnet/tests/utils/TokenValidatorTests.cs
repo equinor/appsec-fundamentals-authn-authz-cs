@@ -10,29 +10,29 @@ namespace GotQuotes.Tests.Utils;
 
 public class TokenValidatorTests
 {
+    private readonly string _validScopes = "Quote.Read";
+    private readonly string _validAudience = "IAM_AUDIENCE";
+    private readonly string _validIssuer = "IAM_ISSUER";
+
+
     [Fact]
     public void IsValidToken_WithValidToken_ReturnsTrue()
     {
-        var validScopes = "Quote.Read";
-        var validAudience = "IAM_AUDIENCE";
-        var validIssuer = "IAM_ISSUER";
-        var jwtTokenDescriptor = CreateJwtTokenDescriptor(validScopes, true, validAudience, validIssuer);
+        // Arrange
+        var jwtTokenDescriptor = CreateJwtTokenDescriptor(_validScopes, true, _validAudience, _validIssuer);
         var jwt = new JwtSecurityTokenHandler().CreateJwtSecurityToken(jwtTokenDescriptor);
-        TokenValidationParameters validationParameters = new()
+        TokenValidationParameters validTokenValidationParams = new()
         {
-            ValidAudience = validAudience,
-            ValidIssuer = validIssuer,
+            ValidAudience = _validAudience,
+            ValidIssuer = _validIssuer,
             IssuerSigningKeys = [jwtTokenDescriptor.SigningCredentials.Key]
         };
-
-        var config = new ConfigurationBuilder().AddInMemoryCollection().Build();
-
         var mockLogger = new Mock<ILogger<TokenValidator>>();
         var mockConfiguration = new Mock<IConfiguration>();
         var tokenValidator = new TokenValidator(mockConfiguration.Object, mockLogger.Object);
 
         // Act
-        var result = tokenValidator.IsValidToken(jwt.RawData, validationParameters);
+        var result = tokenValidator.IsValidToken(jwt.RawData, validTokenValidationParams);
 
         // Assert
         Assert.True(result);
@@ -41,26 +41,21 @@ public class TokenValidatorTests
     [Fact]
     public void IsValidToken_WithInValidToken_ReturnsFalse()
     {
-        var validScopes = "Quote.Read";
-        var validAudience = "IAM_AUDIENCE";
-        var validIssuer = "IAM_ISSUER";
-        var jwtTokenDescriptor = CreateJwtTokenDescriptor(validScopes, true, validAudience, validIssuer);
+        // Arrange
+        var jwtTokenDescriptor = CreateJwtTokenDescriptor(_validScopes, true, "IAM_NOT_RIGHT_AUDIENCE", _validIssuer);
         var jwt = new JwtSecurityTokenHandler().CreateJwtSecurityToken(jwtTokenDescriptor);
-        TokenValidationParameters validationParameters = new()
+        TokenValidationParameters validTokenValidationParams = new()
         {
-            ValidAudience = "IAM_NOT_RIGHT_AUDIENCE",
-            ValidIssuer = validIssuer,
+            ValidAudience = _validAudience,
+            ValidIssuer = _validIssuer,
             IssuerSigningKeys = [jwtTokenDescriptor.SigningCredentials.Key]
         };
-
-        var config = new ConfigurationBuilder().AddInMemoryCollection().Build();
-
         var mockLogger = new Mock<ILogger<TokenValidator>>();
         var mockConfiguration = new Mock<IConfiguration>();
         var tokenValidator = new TokenValidator(mockConfiguration.Object, mockLogger.Object);
 
         // Act
-        var result = tokenValidator.IsValidToken(jwt.RawData, validationParameters);
+        var result = tokenValidator.IsValidToken(jwt.RawData, validTokenValidationParams);
 
         // Assert
         Assert.False(result);
