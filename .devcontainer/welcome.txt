@@ -1,6 +1,8 @@
-Welcome to AppSec Fundamentals A&A
+Welcome to AppSec Fundamentals AuthN & AuthZ - The CS Version
 
 ** Please note **
 
-A
-B
+- A
+- B
+- C
+
