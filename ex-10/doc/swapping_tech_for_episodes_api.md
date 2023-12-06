@@ -1,6 +1,6 @@
 # Swapping from Node to Python on the Episodes API
 
-In this part we change the technology used on the Episodes API from NodeJS to Python. The purpose is to show how _easy_ it is to include technologies as long as the contract is the same. We also want to make a simple Python example available. The functionallity between the NodeJS implementation and the Python implementation may not be 100% feature parity at all levels.
+In this part we change the technology used on the Episodes API from NodeJS to Python. The purpose is to explore how _easy_ it is to include technologies as long as the contract is the same. We also want to make a simple Python example available. The functionality between the NodeJS implementation and the Python implementation may not be 100% feature parity at all levels.
 
 Our Python implementation is not for production - it only serves as a _simple_ example for our exercise.
 
@@ -15,6 +15,10 @@ Steps:
 - The Controller (`./src/controller/episodes_controller.py`)
 - The Model (`./src/data/models.py`)
 - Core support (`./src/core/`)
+
+--Now You--
+
+- Examine the code
 
 ## Configuring the and preparing the Python API
 
@@ -34,6 +38,11 @@ Steps:
 - In `./src/core/config.py` update the API audience to reflect your API (AppSettings)
     - Follow the pattern in the code for this; use only the GUID not the whole URI
     - Remember to save
+
+--Now You--
+
+- Do the steps above
+
 
 ## Swapping the API's (Executing)
 
@@ -58,6 +67,10 @@ Steps:
     cd ./src
     ./main.py
     ```
+
+--Now You--
+
+- Do the steps above
 - Test the API by
     - Using the Client GUI and the "Show Got Episodes"
     - Exploring the api on PORT 3100 (you'll have to explore the routes to find proper paths)
@@ -65,6 +78,6 @@ Steps:
 
 ## Discuss security issues and good practices
 
-- .
+- How "close" does the api (NodeJS/Python) need to be, on a contract level?
 - .
 
