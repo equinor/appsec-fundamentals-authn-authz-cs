@@ -13,7 +13,7 @@ In this part we will re-visit the permissions and consent in Microsoft Entra ID
   * For delegated permissions - the least-privileged between the app and the signed in user. Never more permissions than the signed in user. <br/>(Example: App has User.ReadWriteAll, signed in user has no admin - so the effective rights will be to edit own user only)
   * For app permissions - the full privilege of the assigned permissions (Example: App has User.ReadWriteAll - app will be able to update user info for all users in the tenant)
 * Equinor [Application Management in Microsoft Entra ID](https://docs.omnia.equinor.com/governance/iam/App-General-Info/)⚡️
-  *  More than one owner of app object (App Registration/Enterprise App)⚡️
+  *  Add an additional owner to AppReg and to the Enterprise App (select course instructor) (Owners)⚡️
   *  Add "service management reference" (AppSec Training, 119775)⚡️
   *  Naming
   *  API Permissions require admin consent!!⚡️

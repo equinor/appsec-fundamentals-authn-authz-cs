@@ -16,7 +16,7 @@ Steps:
   * Name: "(your initial)-appsec-course-episodes-api" (example: "johnd-appsec-course-episodes-api")
   * Type: Single tenant
 * Augment app object to be compliant ⚡️
-  * Add an additional owner (select course instructor) (Owners) ⚡️
+  * Add an additional owner to AppReg and to the Enterprise App (select course instructor) (Owners) ⚡️
   * Update the "service management reference" to refer to the "AppSec-Training" - 119775 (Branding & Properties)⚡️
 * Select the _Expose an API_ in the left side menu
 * Add new scope
