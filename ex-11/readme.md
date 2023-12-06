@@ -1,6 +1,8 @@
 # Protecting Web Api's - OBO
 
-In this exercise we will investigate how to protect web api's using the OBO flow (On Behalf Of). 
+In this exercise we will investigate how to protect web api's using the OBO flow (On Behalf Of). We will even add some .Net code to the mix, still free of charge 😀
+
+## Outline
 
 ## Outline
 

@@ -1,6 +1,6 @@
 # Protecting Web Api's
 
-In this exercise we will investigate how to protect web api's using OAuth2. 
+In this exercise we will investigate how to protect web api's using OAuth2. We will even add some Python code to the mix, all free of charge 😀
 
 ## Outline
 
