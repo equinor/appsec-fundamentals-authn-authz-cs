@@ -58,7 +58,7 @@
 		},
 		"codespaces": {
 			"openFiles": [
-				"./devcontainer/welcome.txt"
+				".devcontainer/welcome.txt"
 			]
 		}
 	},
