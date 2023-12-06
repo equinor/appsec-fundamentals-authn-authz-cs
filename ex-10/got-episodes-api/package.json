@@ -15,21 +15,21 @@
     "author": "Lars Kåre Skjørestad",
     "license": "MIT",
     "dependencies": {
-        "@fastify/cors": "^8.4.0",
-        "@fastify/rate-limit": "^8.0.3",
-        "@fastify/swagger": "^8.10.1",
-        "@fastify/swagger-ui": "^1.9.3",
-        "fastify": "^4.23.2",
+        "@fastify/cors": "^8.4.2",
+        "@fastify/rate-limit": "^9.0.1",
+        "@fastify/swagger": "^8.12.1",
+        "@fastify/swagger-ui": "^2.0.1",
+        "fastify": "^4.24.3",
         "jsonwebtoken": "^9.0.2",
-        "jwks-rsa": "^3.0.1",
-        "pino": "^8.15.1",
-        "pino-pretty": "^10.2.0",
+        "jwks-rsa": "^3.1.0",
+        "pino": "^8.16.2",
+        "pino-pretty": "^10.2.3",
         "underscore": "^1.13.6"
     },
     "devDependencies": {
-        "nodemon": "^3.0.1",
-        "sinon": "^16.0.0",
-        "snyk": "^1.1225.0",
-        "tap": "^18.0.4"
+        "nodemon": "^3.0.2",
+        "sinon": "^17.0.1",
+        "snyk": "^1.1260.0",
+        "tap": "^18.6.1"
     }
 }
