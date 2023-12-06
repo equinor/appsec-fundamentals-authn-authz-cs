@@ -44,12 +44,14 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
 
 ```text
 
-Appsec Fundamentals - AuthN & AuthZ, new workshop is coming up! 
+Appsec Fundamentals - AuthN & AuthZ - The CS edition, new workshop is coming up! 
 
 We are preparing for a new run of the AuthN and AuthZ workshop.
 
-The workshop is a hands-on experience where we explore protecting API's and Web apps, all in an Equinor Context. This is AppSec fundamental topics revolving around Authentication (AuthN) and Authorization (AuthZ). In the workshop participants will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Microsoft Entra ID. Our journey will take us from specification, to manual flow inspection, to coding, to using frameworks, to debugging and to testing - all for relevant Equinor scenarios. After the workshop the participants should have a pretty good understanding of the mechanics behind the scenes, good ideas on how to test without turning off authentication and authorization features, and not the least - how to debug and observe what happening on the wire.
- 
+In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Microsoft Entra ID. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns
+
+The is the CS version of the A&A workshop. It's adapted to a 2 day course, using Github Codespaces. The scope is reduced, so is the requirements for preparations to your local developer environment. Everything happens in the cloud.
+
 Throughout the workshop we will discuss security issues, good practices and share experiences between the participants. This last part may be the most important one.
  
 - This is a technical hands-on workshop
@@ -60,7 +62,7 @@ Throughout the workshop we will discuss security issues, good practices and shar
 - Participant must be able to join both days.
 - Maximum number of participants for each workshop is XX
 
-The workshop lives in the [appsec-fundamentals-authn-authz]-cs(https://github.com/equinor/appsec-fundamentals-authn-authz-cs) repo on Github. Head over to the repo to get a better idea for content, exercises and preparations.
+The workshop lives in the [appsec-fundamentals-authn-authz-cs](https://github.com/equinor/appsec-fundamentals-authn-authz-cs) repo on Github. Head over to the repo to get a better idea for content, exercises and preparations.
 
 Dates: 
 Sign-up: link
@@ -80,7 +82,7 @@ Instructor A, Instructor B
 
 Greetings,
  
-Welcome to run #6 of the “AppSec Fundamentals Authn & Authz” workshop / course. This is a short email to let you know that you have a seat at the workshop and then some information on workshop preparations.
+Welcome to run #-00 of the “AppSec Fundamentals Authn & Authz” workshop / course. This is a short email to let you know that you have a seat at the workshop and then some information on workshop preparations.
  
 You will get calendar invites for the sessions. This workshop will be virtual – using MS Teams. Please accept/decline the calendar invites, this will help us in our planning!
  
