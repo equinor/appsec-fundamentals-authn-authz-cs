@@ -22,7 +22,7 @@ In our web application we use cookies to manage sessions. This is helpful in sta
 
 ## Token Caching
 
-Our application/client needs access tokens to gain access to api's. For performance and usability we cache tokens. MSAL supports token caching. Different caching mechanisms are supported/recommended for different types of _oAuth2 clients_.
+Our application/client needs access tokens to gain access to api's. For performance and usability we cache tokens. MSAL supports token caching. Different caching mechanisms are supported/recommended for different types of _OAuth2 clients_.
 
 Our application used the NodeJS platform and MSAL. Other platforms will have somewhat similar support by MSAL, but it could differ. Other authentication and authorization frameworks may have support for token caching. Consult each framework for token caching features.
 

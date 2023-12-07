@@ -10,7 +10,7 @@ Lower the risk of stealing the one time code
 
 ## What is PKCE
 
-* PKCE is "Proof Key for Code Exchange" for oAuth Public clients
+* PKCE is "Proof Key for Code Exchange" for OAuth Public clients
 * It is defined in [RFC 7636](https://datatracker.ietf.org/doc/draft-ietf-oauth-spop/15/) (doc at [oauth.net](https://oauth.net/2/pkce/))
 * It is replacing "Implicit grant" for public clients
 * It is an extension to the Authorization Code flow to prevent CSRF and authorization code injection attacks.

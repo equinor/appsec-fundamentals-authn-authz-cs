@@ -31,4 +31,4 @@ Steps:
   * [RFC7636 -  Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636#section-7)
   * [RFC6819 -  OAuth 2.0 Threat Model and Security Considerations](https://datatracker.ietf.org/doc/html/rfc6819)
 * Good advice - Move away from using "The Implicit grant". It will be be deprecated
-* Good advice - Monitor evolving standards like [oAuth 2.1](https://oauth.net/2.1/)
+* Good advice - Monitor evolving standards like [OAuth 2.1](https://oauth.net/2.1/)
