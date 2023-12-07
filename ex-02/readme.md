@@ -50,7 +50,7 @@ npm test
 Expects the following environment variables to execute properly
 
     export NODE_ENV=production|development
-    export CLIENT_SECRET=''
+    export CLIENT_SECRET="$APPSEC_AA_CLIENT_SECRET"
     export CLIENT_ID=""
     export TENANT_ID=""
     export PORT=3000

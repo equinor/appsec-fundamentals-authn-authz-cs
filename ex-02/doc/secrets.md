@@ -4,7 +4,7 @@ Let's spend a bit more time on discussing app configuration and secrets -- and h
 
 Steps:
 
-* Move your config into a .env file outside the source folder
+* Move your config into a `.env` file outside the source folder
   * We will create a new folder in you Codespace to keep config including secrets. This folder will not be part of source code. It has the same life cycle as the codespace
     ```shell
     mkdir $HOME/envs
@@ -30,7 +30,7 @@ Steps:
 
 ## --Persisting Config--
 
-We have stored out config in .env files. The config includes secrets. The life cycle of the .env files follow the codespace. When a codespace is deleted the .env files, and our config are gone. To facilitate this workshop we have implemented a pattern where we persist the .env files inside a Github Codespaces User Secret. This User Secret is made available as an environment variables for the repos's you have given access to. Users secrets are only accessible to a specific user, defined as part of their profile/settings. The size limit for Github secrets is 48Kb.
+We have stored out config in `.env` files. The config includes secrets. The life cycle of the .env files follow the codespace. When a codespace is deleted the .env files, and our config are gone. To facilitate this workshop we have implemented a pattern where we persist the .env files inside a Github Codespaces User Secret. This User Secret is made available as an environment variables for the repos's you have given access to. Users secrets are only accessible to a specific user, defined as part of their profile/settings. The size limit for Github secrets is 48Kb.
 
 Steps:
 
