@@ -12,7 +12,7 @@ This files contains the common configuration for all scripts.
 
 ### `aa-get-redirect-uri.sh`
 
-The script will return the dynamic redirect uri for the Codespace. This will be used bu the .env file for the client as well as in the app registration for the client.
+The script will return the dynamic redirect uri for the Codespace. This will be used by the .env file for the client as well as in the app registration for the client.
 
 ### `aa-save-env-files-to-github-user-secret.sh`
 
