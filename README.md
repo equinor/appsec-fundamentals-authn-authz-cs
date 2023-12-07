@@ -51,7 +51,7 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 
 ## Documentation and Slide deck
 
-Most of the topics and exercises have documentation as part of the exercise. We use a slide deck for some parts. The [doc/readme](doc/readme.md) shows you how to load the docs in your local environment.
+Most of the topics and exercises have documentation as part of the exercise. We use a slide deck for some parts. The [docs/readme](doc/readme.md) shows you how to load the docs in your local environment.
 
 ## Support documents
 
