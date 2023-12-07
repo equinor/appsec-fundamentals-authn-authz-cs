@@ -3,7 +3,6 @@ using GotQuotes.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Prefer environment variables over appsettings.json
 var TENANT_ID = Environment.GetEnvironmentVariable("TENANT_ID");
 var QUOTES_API_URI = Environment.GetEnvironmentVariable("QUOTES_API_URI");
 
