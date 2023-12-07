@@ -4,8 +4,6 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](/CONTRIBUTING.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) 
 
-<img src="doc/content/images/Web-Security-Shield.png" alt="Web Security Shield CC4 PNGALL" width="20%"/>
-
 This is a **hands-on** AppSec fundamentals workshop where we explore protecting API's and Web apps. We look at authentication (authn), authorization (authz) and friends.
 
 In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Microsoft Entra ID. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
