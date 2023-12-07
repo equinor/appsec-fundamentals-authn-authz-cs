@@ -5,7 +5,7 @@ At this point we will start the first leg of the OAuth2 Code Grant flow - gettin
 Steps:
 
 * Let's start by looking at the [auth code flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow) in the documentation of the _Microsoft Identity Platform_
-* We assume the you have not started VS Code
+* We assume that you have not started VS Code
   * Open a new terminal window
   * Current directory should be `/workspaces/appsec-fundamentals-authn-authz-cs `
 * Open the `./ex-01/authCode.http` file in VSCode.

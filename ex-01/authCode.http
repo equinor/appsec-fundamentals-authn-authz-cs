@@ -1,6 +1,7 @@
 ## Defining variables
 @tenant_id=
 @client_id=
+@client_secret={{$processEnv %APPSEC_AA_CLIENT_SECRET}}
 @scope=openid profile
 @state=123456789
 @redirect_uri=
@@ -15,7 +16,6 @@ GET https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/authorize
     &state={{state}}
 
 ### The Second Leg, assuming client_secret to be available in env variable prior to starting vs code
-# @prompt client_secret The Client Secret of the app registration
 POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token
 content-type: application/x-www-form-urlencoded
 
