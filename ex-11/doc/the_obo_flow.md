@@ -15,7 +15,7 @@
 
 ## The Flow
 
-![The Scenario](../../doc/content/images/o-b-o-scenario.jpg)
+![The Scenario](../../docs/content/images/o-b-o-scenario.jpg)
 
 ### The request
 

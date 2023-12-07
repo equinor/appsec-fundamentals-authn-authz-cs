@@ -4,7 +4,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](/CONTRIBUTING.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) 
 
-<img src="doc/content/images/Web-Security-Shield.png" alt="Web Security Shield CC4 PNGALL" width="20%"/>
+<img src="docs/content/images/Web-Security-Shield.png" alt="Web Security Shield CC4 PNGALL" width="20%"/>
 
 This is a **hands-on** AppSec fundamentals workshop where we explore protecting API's and Web apps. We look at authentication (authn), authorization (authz) and friends.
 

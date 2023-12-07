@@ -17,7 +17,7 @@ Sessions are used to manage state. A session in our context is the pattern that 
 In our web application we use cookies to manage sessions. This is helpful in stateless protocols such as http.
 
 
-![Session Flow](../../doc/content/images/session_flow.jpg)
+![Session Flow](../../docs/content/images/session_flow.jpg)
 
 
 ## Token Caching
@@ -41,7 +41,7 @@ Our application uses a typically web-application pattern, where we have a many-t
 
 In such a distributed scenario we need to make sure that all instances of "consumers" have access to the session storage. A typical production set-up will look like this:
 
-![Distributed sessions and token cache storage](../../doc/content/images/sessions_token_cache_scenario.jpg)
+![Distributed sessions and token cache storage](../../docs/content/images/sessions_token_cache_scenario.jpg)
 
 As the scenario show, we have an additional distributed cache, the token cache - which also needs to be available for all client instances.
 
