@@ -8,10 +8,15 @@ The contents of the slide deck are contained in a set of markdown file in the [`
 
 ### Live Server
 
-- To host the files, use the "Live Server" plugin to VSCode. (It's included in recommend extensions for the workspace)
+- To host the files, you can use the "Live Server" plugin to VSCode. 
 - Press to "Go Live" icon toolbar bottom right, and the port 5500 is forwarded to your client.
 
 (In order to be able to use the automatic reload up-on changes the 'unsafe-inline' needs to be added to the CSP in ``index.html``. Remember to remove before before making commits.)
+
+### Github Pages
+
+The slide deck is also served using Github Pages at [https://equinor.github.io/appsec-fundamentals-authn-authz-cs](https://equinor.github.io/appsec-fundamentals-authn-authz-cs)
+
 
 ### Docker
 
