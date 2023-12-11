@@ -5,8 +5,7 @@ At this point we will start the first leg of the OAuth2 Code Grant flow - gettin
 Steps:
 
 * Let's start by looking at the [auth code flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow) in the documentation of the _Microsoft Identity Platform_
-* We assume that you have not started VS Code
-  * Open a new terminal window
+* Open a new terminal window if one is not already available.
   * Current directory should be `/workspaces/appsec-fundamentals-authn-authz-cs `
 * Open the `./ex-01/authCode.http` file in VSCode.
   * Verify that the 'Rest Client' extension is active
@@ -27,11 +26,12 @@ Steps:
   * (Depending on the State of your browser you may have to authenticate or not, explore the get request header for cookies)
   * Make a copy of the 'code' parameter in the redirect.
 * For additional insight on the complete dance (optional)
+  * (This may not work dependent on your compliant device status ⚡️)
   * Open a "private/incognito" window in your browser.
   * Open the Developer Tools
   * Select the option to persist logs
   * Copy the "get request" from VSCode, paste into browser, and execute
-  * Explore the browser log, the auth and the final 302 redirect to the configured URI containing the code.
+  * Explore the browser log, the auth, the 302 redirect to the configured URI containing the code, and the 404 "not found" at the end.
 
 ## --Now You--
 

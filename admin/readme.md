@@ -10,10 +10,10 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
   * Coordinate with instructors/assistants
   * Reserve slots in calendar
   * If needed, reserve physical meeting rooms
-  * Create a sign-up document, open the sign-up document for **write** for everyone with and Eqn Account
+  * ⚡️ Create a sign-up document, open the sign-up document for **write** for everyone with and Eqn Account 
   * Add reminders in instructors calendars on relevant check-points (2 week, 1 week, 1 week after etc...)
 * 2-3 weeks prior
-  * Announce / Invite on Slack
+  * ⚡️ Announce / Invite on Slack
     * Title
     * Abstract
     * Teams are encouraged to send a group
@@ -30,17 +30,17 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
   * Collect feedback as part of last day
 * 1 week after
   * Evaluate, update, repeat
-  * Remove permission from sign-up document. Should only be available to the AppSec team after the WS for statistics
+  * ⚡️ Remove permission from sign-up document. Should only be available to the AppSec team after the WS for statistics
   * Review and summarize info gathered in workshop retrospective
   * Do a workshop retrospective amongst instructors
   * Decide on changes, create issues/tasks on board for updates
   * Delete groups output of exercises from course Slack channel?
 * 2 weeks after
-  * Run scripts to identify EQ AAD Objects and Course Repos
+  * ⚡️ Run scripts to identify EQ AAD Objects and Course Repos
   * Send reminder about cleaning up
-  * Remind about #appsec
+  * ⚡️ Remind about #appsec
 
-### Invitation proposal
+### Invitation proposal ⚡️
 
 ```text
 
@@ -76,7 +76,7 @@ Instructor A, Instructor B
 
 ```
 
-### Welcome email
+### Welcome email ⚡️
 
 ```text
 

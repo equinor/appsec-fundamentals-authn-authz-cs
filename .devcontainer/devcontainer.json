@@ -53,7 +53,8 @@
 				"liveServer.settings.root": "/docs",
 				"liveServer.settings.donotShowInfoMsg": true,
 				"terminal.integrated.shell.linux": "/usr/bin/zsh",
-				"terminal.integrated.defaultProfile.linux": "zsh"
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"csharp.suppressBuildAssetsNotification": true
 			}
 		},
 		"codespaces": {

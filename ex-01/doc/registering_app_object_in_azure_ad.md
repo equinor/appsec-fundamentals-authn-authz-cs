@@ -21,7 +21,14 @@ Steps:
   * Update the "service management reference" to refer to the "AppSec-Training" - 119775 (Branding & Properties) 
 * Register a client secret for your application (In 'Certificates and Secrets')
   * Expire: 7 days
-  * Make a note of the secret value
+  * Execute the following command to persist the client secret.
+
+    ```shell
+    aa-save-client-secret.sh
+    ```
+  * When asked for by the script, paste the value of the client secret
+  * Select "Reload to Apply" when the message on "Your Codespace Secrets have changed" pops-up.
+
 * Register a redirect uri for your `Web` application (In 'Authentication', Platform Configuration)
   * Use the following command from a terminal window in CodeSpaces to get your redirect uri
 

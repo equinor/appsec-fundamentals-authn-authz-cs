@@ -4,9 +4,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](/CONTRIBUTING.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) 
 
-<img src="docs/content/images/Web-Security-Shield.png" alt="Web Security Shield CC4 PNGALL" width="20%"/>
-
-This is a **hands-on** AppSec fundamentals workshop where we explore protecting API's and Web apps. We look at authentication (authn), authorization (authz) and friends.
+This is a **hands-on** AppSec fundamentals workshop where we explore protecting API's and Web apps. We look at authentication (authn), authorization (authz) and friends. This version of the workshop is the **Codespaces** edition. Using you browser we run all exercises in a _all inclusive_ virtual environment.
 
 In the workshop participant will get to know key technologies such as OAuth2, OpenID Connect (OIDC) and Microsoft Entra ID. Our journey will take us from the rfc specifications, to manual request, to coding, to using frameworks, to debugging and to testing. After the workshop participants should have a pretty good understanding of the mechanics behind the scenes as well as relevant security/privacy concerns.
 
@@ -32,7 +30,7 @@ In the workshop participant will get to know key technologies such as OAuth2, Op
 * Exploring The **Implicit grant** for Native, Mobile, SPA
 * Exploring **PKCE** for Native, Mobile, SPA
 * Exploring Web **API's** protection
-* Exploring Web **API chaining** scenarios
+* Exploring Web **API chaining** scenarios (OBO)
 
 
 ## Exercise index
@@ -64,7 +62,3 @@ To enable a good flow and outcome of the workshop it is vital to come prepared. 
 ## Non Equinor adaptions ⚡️
 
 The workshop makes a few assumptions about the availability of various infrastructure components we use in Equinor. These are marked with ⚡️ and may need to be adopted to your context.
-
-### Section 1
-
-### Section 2
