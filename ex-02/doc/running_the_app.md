@@ -64,7 +64,7 @@ Steps:
 ## Prologue
 
 ### response_mode vs. response_type
-
+URL parameters from 1st leg, "getting authorization code"
 * **response_type** is part of oauth2 spec [rfc6749](https://datatracker.ietf.org/doc/html/rfc6749)
 * **response_mode** is part of OIDC [core](https://openid.net/specs/openid-connect-core-1_0.html)
   * Specifies the method for sending back the token to the client

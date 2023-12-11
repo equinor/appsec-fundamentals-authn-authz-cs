@@ -54,4 +54,4 @@ Steps:
 
 When you are done:
 
-* Post a message to the [appsec-fundamentals-authn-authz](https://equinor.slack.com/archives/C051G3JV7NE) Slack channel and include the "oAuth 2.0 Authorization endpoint (v2)" for your application ⚡️
+* Post a message to the [appsec-fundamentals-authn-authz](https://equinor.slack.com/archives/C051G3JV7NE) Slack channel and include the "OAuth 2.0 Authorization endpoint (v2)" for your application ⚡️

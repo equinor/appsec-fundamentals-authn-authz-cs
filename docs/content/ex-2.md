@@ -4,7 +4,7 @@
 
 ---
 
->The purpose of this exercise is get an access token using code. We are moving from the raw style using bare http requests to start exploring what's need to get this done in code.
+>The purpose of this exercise is get an access token using code. We are moving from the raw style using bare http requests to start exploring what's needed to get this done in code.
 
 Open the file `ex-02/readme.md` for the exercise. ([official repo](https://github.com/equinor/appsec-fundamentals-authn-authz/blob/main/ex-02/readme.md))
 

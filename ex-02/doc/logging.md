@@ -19,7 +19,7 @@ Steps:
     * One log goes to console
     * One more detailed log goes to a log-service
 * Good practice - Don't mix logs and metrics - they have different purposes
-  * Logs are messages describing and event - the message is the data
+  * Logs are messages describing an event - the message is the data
   * Metrics are measurements at a point in time for the app/system. Metrics usually consist of a timestamp, and identifier and a value - and are done at regular intervals (the resolution)
 
 

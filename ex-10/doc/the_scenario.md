@@ -4,7 +4,7 @@ The purpose of this part is to explain the API scenario we are using in the exer
 
 ## Architecture
 
-![The Scenario](../../doc/content/images/api_scenario.jpg)
+![The Scenario](../../docs/content/images/api_scenario.jpg)
 
 ## Components
 

@@ -68,7 +68,7 @@ function buildUrl(base, searchP) {
 // Construct url that will be used the trigger the authorize part of the workflow
 function buildAuthorizeUrl(state, scope, responseMode) {
 
-    logger.info('Building URL to oAuth authorization end-point');
+    logger.info('Building URL to OAuth authorization end-point');
  
     var redirectUrl = buildUrl(appConfig.serverConfig.authorizationEndpoint, {
         response_type: 'code',

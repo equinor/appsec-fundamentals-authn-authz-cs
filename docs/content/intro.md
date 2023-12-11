@@ -73,4 +73,4 @@ Throughout the workshop we will discuss security issues, good practices and shar
 
 ### THE MOST IMPORTANT REMINDER
 
-Be curious - don't be afraid to ask questions. You are never the only one with a problem or a challenge. Sharing screens an solving problems together maximizes learning for everyone!
+Be curious - don't be afraid to ask questions. You are never the only one with a problem or a challenge. Sharing screens and solving problems together maximizes learning for everyone!

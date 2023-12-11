@@ -5,7 +5,6 @@ In this part we will start to investigate how we move dynamic configuration para
 Steps:
 
 * Configure the environment variables for the application</br>!!Notice the whitespace in front of the second line? This prevents the command from entering shell command history
-
   ```shell
   export NODE_ENV=production
    export CLIENT_SECRET='the client secret from the AD app object'
@@ -27,6 +26,6 @@ Steps:
 
 * A good practice is to move config into files, potentially **.env** files
   * The .env files should be stored outside the code repository
-  * The .env files should be included in .gitignore
+  * The .env files should be included in `.gitignore`
 * Establish good overview over which config that needs to be treated as secrets and which does not
 

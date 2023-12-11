@@ -25,9 +25,9 @@
 
 ## OAuth2 vs OpenID Connect (OIDC)
 
-* oAuth is for delegation, the goal is to access api's
+* OAuth is for delegation, the goal is to access api's
   * To get a ticket (token) which gives access to a protected resource
-* OpenID Connect is an identify layer on top of oAuth
+* OpenID Connect is an identify layer on top of OAuth
   * Answering key question: Who is logged in?
   * Defines user authentication metadata
   * Can control authentication
@@ -106,7 +106,7 @@ Many scenarios will require __your__ app/api's to play multiples roles, often in
 
 ---
 
-## Obtaining the authorization <br/>- the oAuth dance
+## Obtaining the authorization <br/>- the OAuth dance
 
 <div style="font-size:0.7em">
 

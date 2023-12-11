@@ -25,7 +25,7 @@ For the reminder of this discussion we will focus on #3, for an *typical* API.
 
 We use the illustration below for discussion purposes. Our strategy is to reject invalid calls to our API as fast as possible. This is a simple model - real world could be a lot more complex and less straight forward.
 
-![Protecting](../../doc/content/images/protecting_apis.jpg)
+![Protecting](../../docs/content/images/protecting_apis.jpg)
 
 (Inspiration for the illustration+ from [https://omegapoint.se/defence-in-depth](https://omegapoint.se/defence-in-depth))
 
@@ -70,7 +70,7 @@ There are other security measures in the API implementation that we don't discus
 
 * [Secure By Design](https://www.manning.com/books/secure-by-design) by Johnsson, Deogun and Sawano.
   
-   <img src="../../doc/content/images/secure-by-design-manning.jpg" width="20%">
+   <img src="../../docs/content/images/secure-by-design-manning.jpg" width="20%">
 
 * [The OWASP Security Project](https://owasp.org/www-project-api-security/)
 * [The OWASP Cheat Sheet Series](https://owasp.org/www-project-cheat-sheets/)

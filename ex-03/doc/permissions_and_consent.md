@@ -22,7 +22,7 @@ In this part we will re-visit the permissions and consent in Microsoft Entra ID
   *  Application permissions will have to be defined for the application (Api Permission) as Static (Configured Permission) and granted by Admin. 
   *  For scope that we (our client expose, we can use "Expose an api" and authorize client applications without going though the admin concent)
     * Why do we have a set-up where admin concent is needed?
-      * oAuth based phishing attacks and the general behavior of "click-ing OK on all requests" are a few. ([Consent Phishing Attack](https://www.microsoft.com/security/blog/2021/07/14/microsoft-delivers-comprehensive-solution-to-battle-rise-in-consent-phishing-emails/), [Tweet on recent Consent Phishing attack](https://twitter.com/MsftSecIntel/status/1484623341155610624))
+      * OAuth based phishing attacks and the general behavior of "click-ing OK on all requests" are a few. ([Consent Phishing Attack](https://www.microsoft.com/security/blog/2021/07/14/microsoft-delivers-comprehensive-solution-to-battle-rise-in-consent-phishing-emails/), [Tweet on recent Consent Phishing attack](https://twitter.com/MsftSecIntel/status/1484623341155610624))
 
 ## --Now You--
 

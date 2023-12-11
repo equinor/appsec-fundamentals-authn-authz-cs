@@ -4,7 +4,7 @@ The purpose of this part is to explain the basic CLIENT scenario we are using in
 
 ## Architecture  (The Back-end For Front-end (BFF) pattern)
 
-![The Scenario](../../doc/content/images/basic_client_scenario.jpg)
+![The Scenario](../../docs/content/images/basic_client_scenario.jpg)
 
 ## Components
 
