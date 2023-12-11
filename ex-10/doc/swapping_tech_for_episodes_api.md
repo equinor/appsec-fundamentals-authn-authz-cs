@@ -73,7 +73,7 @@ Steps:
 - Do the steps above
 - Test the API by
     - Using the Client GUI and the "Show Got Episodes"
-    - Exploring the api on PORT 3100 (you'll have to explore the routes to find proper paths)
+    - Exploring the api on PORT 3100 on path `/docs` 
 - Explore the API differences by stopping the Python version and then starting the NodeJS version (back-and-forth)
 
 ## Discuss security issues and good practices

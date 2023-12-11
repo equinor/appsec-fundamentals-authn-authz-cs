@@ -29,9 +29,9 @@ Steps:
 
 The general use case flow is as follow:
 
-* The user log in to the web application
-* The user selects "Show GOT Episodes"
-* An Access token for the Episodes API is acquired
-* The client requests a list of episodes from the API
-* The API receives and validates the request
-* Depending on the validation, the API returns either a list of episodes or an error message
+1. The user log in to the web application
+1. The user selects "Show GOT Episodes"
+1. An Access token for the Episodes API is acquired
+1. The client requests a list of episodes from the API
+1. The API receives and validates the request
+1. Depending on the validation, the API returns either a list of episodes or an error message

@@ -45,5 +45,5 @@ In this section we will examine the characteristics of refresh tokens.
 * Keep the refresh tokens safe
 * In Microsoft Entra ID we are not able to set life time for refresh tokens ([MS Docs](https://learn.microsoft.com/en-us/azure/active-directory/develop/refresh-tokens))
   * Default are 24 hours for single page apps
-  * Default are 90 for other scenarios
+  * Default are 90 days for other scenarios
 * Certain events will [revocate](https://learn.microsoft.com/en-us/azure/active-directory/develop/refresh-tokens#revocation) refresh tokens

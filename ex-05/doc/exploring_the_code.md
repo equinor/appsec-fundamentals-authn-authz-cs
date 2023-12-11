@@ -26,9 +26,9 @@ Steps:
 * Web app (./src/app.js)
   * Adding support for cookies and sessions (for Fastify)
   * Using random key to encrypt cookie (this is not scalable but is ok for our purpose)
-  * Using memory store for sessions (this is not scalabl but is ok for our purpose)
+  * Using memory store for sessions (this is not scalable but is ok for our purpose)
   * Adding **isAuthenticated** which can be used to restrict access to end-points
-  * Adding logic to app login/logout app (dependent on status of session)
+  * Adding logic to login/logout of app (dependent on status of session)
   * /showinbox now uses getTokenSilently
 * Html templating (./public, ./view)
   * Using the session status to relevant information (login, logout)

@@ -22,7 +22,7 @@ export TOKEN_CACHE_FILE="${HOME}/.tcache/cache.json"
 ```
 ### Additional config
 
-Additional config are defined in './lib/app-config.js'. Config that should be verified are:
+Additional config are defined in `./lib/app-config.js`code . Config that should be verified are:
 
 * gotApiUrl (where to look for the  got episodes api)
 * scopes.gotApi (the scope definition)
@@ -66,7 +66,7 @@ We have created and app registration for our episodes api. We have also created 
 
 For our set-up we are using the second option, we are authorizing a client application to use the api. This indicates that our api trust the Client - and that users will not be asked for any consent when the client calls this api. For our scenario this makes sense. There is no user specific data exposed by the api.
 
-There is also an Equinor configenc that makes the solution above interesting; admin consent is needed for all scope. When the admin has made the consent it is applied for all end-users, and the end-users cannot change/remove the consent. To trigger a user consent in our code, we would have to update the app to send a consent [request](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#requesting-individual-user-consent) to the **authorize** end-point for the Episodes.Read scope for the client
+There is also an Equinor config that makes the solution above interesting; admin consent is needed for all scope. When the admin has made the consent it is applied for all end-users, and the end-users cannot change/remove the consent. To trigger a user consent in our code, we would have to update the app to send a consent [request](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#requesting-individual-user-consent) to the **authorize** end-point for the Episodes.Read scope for the client
 
 Steps:
 
