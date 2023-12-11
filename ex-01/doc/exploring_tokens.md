@@ -18,7 +18,6 @@ Steps:
 
 ## --Now You--
 
-* The "email" scope will put/remove info from the _id_token_
 * Experiment with scope, add _offline_access_ to the scope and explore the "refresh_token"
 
 ## --Discuss security issues and good practices--
