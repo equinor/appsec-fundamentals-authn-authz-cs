@@ -56,7 +56,7 @@ async function getTokenAuthCode (request, reply) {
             authCodeUrlParameters.domainHint = request.query.domainHint;
     }
 
-    //https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.confidentialclientapplication.html#getauthcodeurl
+    //https://learn.microsoft.com/en-us/javascript/api/%40azure/msal-node/confidentialclientapplication?view=msal-js-latest#@azure-msal-node-confidentialclientapplication-acquiretokenbycode
     await confidentialClientApplication
         .getAuthCodeUrl(requestConfig.authCodeUrlParameters)
         .then((authCodeUrl) => {
