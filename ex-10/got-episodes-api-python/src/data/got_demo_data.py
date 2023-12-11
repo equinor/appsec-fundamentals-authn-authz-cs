@@ -7,6 +7,6 @@ episodes = [
     {"id": "6", "title": 'A Golden Crown',                          "season": 1},
     {"id": "7", "title": 'You Win or You Die',                      "season": 1},
     {"id": "8", "title": 'The Pointy End',                          "season": 1},
-    {"id": "8", "title": 'Bealor',                                  "season": 1},
-    {"id": "9", "title": 'Fire and Blood',                          "season": 1},
+    {"id": "9", "title": 'Bealor',                                  "season": 1},
+    {"id": "10", "title": 'Fire and Blood',                          "season": 1},
 ]

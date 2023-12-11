@@ -22,7 +22,7 @@ def get_random_quote(obo_token: str):
     logger.info(f"Got a quote: {quote} {repr(quote)}")
     return quote.json()
 
-def get_episode(episode_id: int) -> Episode:
+def get_episode(episode_id: str) -> Episode:
     episode = next((ep for ep in episodes if ep['id'] == episode_id), None)
     if episode:
         return episode
@@ -31,23 +31,25 @@ def get_episode(episode_id: int) -> Episode:
 
 def add_episode(episode_data: Episode) -> Episode:
     new_episode = episode_data.dict()
-    new_episode['id'] = max(ep['id'] for ep in episodes) + 1
+    new_episode['id'] = str(max(int(ep['id']) for ep in episodes) + 1)
     episodes.append(new_episode)
     return new_episode
 
-def update_episode(episode_id: int, episode_data: Episode) -> Episode:
+def update_episode(episode_id: str, episode_data: Episode) -> Episode:
     for index, current_episode in enumerate(episodes):
         if current_episode['id'] == episode_id:
-            updated_episode = episode_data.dict()
+            updated_episode = episode_data.model_dump()
             updated_episode['id'] = episode_id
             episodes[index] = updated_episode
             return updated_episode
     else:
         raise HTTPException(status_code=404, detail="Episode not found")
 
-def delete_episode(episode_id: int) -> None:
+def delete_episode(episode_id: str) -> None:
     global episodes
+    before = len(episodes)
     episodes = [ep for ep in episodes if ep['id'] != episode_id]
-    if len(episodes) == len(episodes):
+    after = len(episodes)
+    if before == after:
         raise HTTPException(status_code=404, detail="Episode not found")
 

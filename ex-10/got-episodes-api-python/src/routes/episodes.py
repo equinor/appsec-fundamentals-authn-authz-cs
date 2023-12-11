@@ -32,7 +32,7 @@ def get_all_episodes(token: str = Depends(get_token_header)):
     return episodes
 
 @router.get("/episodes/{episode_id}", response_model=Episode)
-def get_episode(episode_id: int):
+def get_episode(episode_id: str):
     return episodes_controller.get_episode(episode_id)
 
 @router.post("/episodes", response_model=Episode, status_code=status.HTTP_201_CREATED)
@@ -40,10 +40,10 @@ def add_episode(episode: Episode):
     return episodes_controller.add_episode(episode)
 
 @router.put("/episodes/{episode_id}", response_model=Episode)
-def update_episode(episode_id: int, episode: Episode = Body(...)):
+def update_episode(episode_id: str, episode: Episode = Body(...)):
     return episodes_controller.update_episode(episode_id, episode)
 
 @router.delete("/episodes/{episode_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_episode(episode_id: int):
+def delete_episode(episode_id: str):
     episodes_controller.delete_episode(episode_id)
     return {"msg": f"Episode with ID {episode_id} has been deleted."}
