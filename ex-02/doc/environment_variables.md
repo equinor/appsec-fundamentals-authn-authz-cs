@@ -4,7 +4,7 @@ In this part we will start to investigate how we move dynamic configuration para
 
 Steps:
 
-* Configure the environment variables for the application</br>
+* Configure the environment variables for the application</br>!!Notice the whitespace in front of the second line? This prevents the command from entering shell command history
   ```shell
   export NODE_ENV=production
    export CLIENT_SECRET='the client secret from the AD app object'
