@@ -22,7 +22,7 @@ export TOKEN_CACHE_FILE="${HOME}/.tcache/cache.json"
 ```
 ### Additional config
 
-Additional config are defined in `./lib/app-config.js`code . Config that should be verified are:
+Additional config are defined in `./lib/app-config.js`. Config that should be verified are:
 
 * gotApiUrl (where to look for the  got episodes api)
 * scopes.gotApi (the scope definition)
