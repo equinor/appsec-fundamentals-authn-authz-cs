@@ -1,0 +1,13 @@
+# Test episodes API and/or Client
+
+@bearer = ey...
+@episodes_url=https://musical-space-barnacle-qv9r64xp5264gg-3100.preview.app.github.dev/api/episodes
+#@episodes_url=http://localhost:3100/api/episodes
+
+# Episodes getAll
+GET {{episodes_url}} HTTP/1.1
+User-agent: ex-10-client
+Authorization: Bearer {{bearer}}
+
+### Swagger
+GET http://localhost:3100/docs HTTP/1.1

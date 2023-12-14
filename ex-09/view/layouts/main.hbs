@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>A-and-A to ftw</title>
+
+    <!-- adding Bootstrap 5 for UI components  -->
+    <link href="/public/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/styles/style.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eb0037;">
+      <a class="navbar-brand px-3" style="color: white" href="/">Modern A-and-A</a>
+        {{#if ShowLoginButton}}
+         <div class="ms-auto px-3">
+            <a type="button" id="SignIn" class="btn btn-secondary" href="/login" aria-haspopup="true" aria-expanded="false">
+                Sign In
+            </a>
+        </div>
+        {{/if}}
+         {{#if ShowLogoutButton}}
+         <div class="ms-auto px-3">
+            <a type="button" id="Logout" class="btn btn-secondary" href="/logout" aria-haspopup="true" aria-expanded="false">
+                Logout
+            </a>
+        </div>
+        {{/if}}
+    </nav>
+    <br>
+    {{!-- <h5 class="card-header text-center">Show my InBox</h5> --}}
+    <br>
+    <div class="row" style="margin:auto" >
+      {{{body}}}
+    </div>
+    <br>
+    <br>
+  </body>
+</html>

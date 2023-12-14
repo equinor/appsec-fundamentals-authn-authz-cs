@@ -1,0 +1,37 @@
+{
+    "name": "ex-11-episodes-api",
+    "version": "1.1.1",
+    "description": "The Got Episodes API",
+    "main": "./src/server.js",
+    "useragent": "ex-11-episodes-api",
+    "scripts": {
+        "start": "node ./src/server.js | pino-pretty -c -S",
+        "dev": "nodemon ./src/server.js -e js,json --ignore data/ --verbose | pino-pretty -c -S",
+        "snyk": "snyk test",
+        "test": "tap",
+        "test-cover": "tap --coverage-report=lcov",
+        "test-repl": "tap repl"
+    },
+    "author": "Lars Kåre Skjørestad",
+    "license": "MIT",
+    "dependencies": {
+        "@fastify/cors": "^8.4.2",
+        "@fastify/rate-limit": "^9.0.1",
+        "@fastify/swagger": "^8.12.1",
+        "@fastify/swagger-ui": "^2.0.1",
+        "fastify": "^4.24.3",
+        "got": "^11.8.6",
+        "jsonwebtoken": "^9.0.2",
+        "jwks-rsa": "^3.1.0",
+        "pino": "^8.16.2",
+        "pino-pretty": "^10.2.3",
+        "underscore": "^1.13.6"
+    },
+    "devDependencies": {
+        "global-agent": "^3.0.0",
+        "nodemon": "^3.0.2",
+        "sinon": "^17.0.1",
+        "snyk": "^1.1260.0",
+        "tap": "^18.6.1"
+    }
+}

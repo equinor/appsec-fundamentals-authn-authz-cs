@@ -1,0 +1,78 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"username": "vscode",
+			"userUid": "1000",
+			"userGid": "1000"
+		},
+		// "ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/snyk-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "18.19"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.10.13",
+			"installJupyterlab": "false",
+			"useOryxIfAvailable": "false"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/dotnet:2.0.1": {
+			"version": "8.0",
+			"installUsingApt": "false"
+		},
+	},
+	"overrideFeatureInstallOrder": [
+		"ghcr.io/devcontainers/features/common-utils",
+		"ghcr.io/devcontainers/features/dotnet",
+		"ghcr.io/devcontainers/features/node",
+		"ghcr.io/devcontainers/features/python",
+		"ghcr.io/devcontainers/features/github-cli",
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode-remote.remote-containers",
+				"GitHub.codespaces",
+				"mhutchie.git-graph",
+				"humao.rest-client",
+				"streetsidesoftware.code-spell-checker",
+				"dbaeumer.vscode-eslint",
+				"ms-azuretools.vscode-docker",
+				"charliermarsh.ruff",
+				"ms-dotnettools.csharp",
+				"ritwickdey.liveserver"
+			],
+			"settings": {
+				"gitlens.showWelcomeOnInstall": false,
+				"terminal.integrated.gpuAcceleration": "canvas",
+				"liveServer.settings.root": "/docs",
+				"liveServer.settings.donotShowInfoMsg": true,
+				"terminal.integrated.shell.linux": "/usr/bin/zsh",
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"csharp.suppressBuildAssetsNotification": true
+			}
+		},
+		"codespaces": {
+			"openFiles": [
+				".devcontainer/welcome.txt"
+			]
+		}
+	},
+	"updateContentCommand": {
+		"trufflehog": "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.63.3/trufflehog_3.63.3_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
+	},
+	"postCreateCommand": {
+		"sed": "sed -i 's/ZSH_THEME=\\\"devcontainers\\\"/ZSH_THEME=\\\"avit\\\"/g' ~/.zshrc",
+		"addPath": "echo 'export PATH=$PATH:$CODESPACE_VSCODE_FOLDER/src' >> ~/.zshrc",
+		"cloc": "sudo apt update && sudo apt install -y cloc"
+	},
+	"containerEnv": {
+		"PIPELINE": "development",
+		"PYTHONDONTWRITEBYTECODE": "1"
+	}
+}

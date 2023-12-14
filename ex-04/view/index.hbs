@@ -1,0 +1,23 @@
+<div id="card-div" class="col-md-3">
+  <div class="card text-center">
+    <div class="card-body">
+        <a class="btn btn-primary" href="/showinbox" id="showinbox" data-toggle="tooltip" title="Get access token and then the InBox">get InBox</a>
+        <p></p>
+        <a class="btn btn-primary" href="/" id="showindex" data-toggle="tooltip" title="Get me home">Home</a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="col-md-7">
+  <div class="tab-content" id="nav-tabContent">
+    {{#if inbox}}
+      <id="inbox-list">
+        <ul>
+       {{#each inbox}}
+          <li>{{this}}</li>
+        {{/each}}
+        </ul>     
+     {{/if}}
+  </div>
+</div>

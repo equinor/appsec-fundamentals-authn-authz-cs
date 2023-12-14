@@ -1,0 +1,8 @@
+* text=auto
+* text eol=lf
+
+# Do not change these
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
