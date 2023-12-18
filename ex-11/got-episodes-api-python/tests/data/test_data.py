@@ -1,6 +1,6 @@
 import pytest
-from src.data.models import Episode
-from src.data.got_demo_data import episodes
+from data.models import Episode
+from data.got_demo_data import episodes
 
 @pytest.fixture
 def sample_episode():

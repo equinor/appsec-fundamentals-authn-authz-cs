@@ -2,7 +2,7 @@ import os
 import pytest
 import uvicorn
 from pydantic import HttpUrl
-from src.core.config import AppSettings, get_settings, get_well_known_conf_url, get_claims_options, get_uvicorn_config
+from core.config import AppSettings, get_settings, get_well_known_conf_url, get_claims_options, get_uvicorn_config
 
 # monkeypatch the environment
 @pytest.fixture
