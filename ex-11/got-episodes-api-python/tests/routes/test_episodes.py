@@ -1,5 +1,9 @@
 import pytest
+from fastapi.testclient import TestClient
 from routes.episodes import get_all_episodes
+from main import app
+
+client = TestClient(app)
 
 @pytest.fixture
 def patchenv(monkeypatch):
@@ -35,6 +39,10 @@ def patchenv(monkeypatch):
     monkeypatch.setattr("controller.episodes_controller.get_random_quote", mock_get_random_quote)
 
     yield monkeypatch
+
+def test_missing_authorization_header():
+    response = client.get("/api/episodes") 
+    assert response.status_code == 403
 
 def test_get_all_episodes(patchenv):
     expected = [
