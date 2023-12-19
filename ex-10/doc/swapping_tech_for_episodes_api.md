@@ -79,4 +79,5 @@ Steps:
 ## Discuss security issues and good practices
 
 - How "close" does the api (NodeJS/Python) need to be, on a contract level?
+- Where is JWT validation happening in the Python code?
 
