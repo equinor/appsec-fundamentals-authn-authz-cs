@@ -1,7 +1,7 @@
 # Test episodes API and/or Client
 
 @bearer = ey...
-@episodes_url=https://musical-space-barnacle-qv9r64xp5264gg-3100.preview.app.github.dev/api/episodes
+@episodes_url=
 #@episodes_url=http://localhost:3100/api/episodes
 
 # Episodes getAll
