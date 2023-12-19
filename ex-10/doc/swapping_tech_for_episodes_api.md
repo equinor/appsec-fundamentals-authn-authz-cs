@@ -33,7 +33,7 @@ Steps:
 - Execute tests
 
     ```shell
-    TBA 
+    pytest
     ```
 - In `./src/core/config.py` update the API audience to reflect your API (AppSettings)
     - Follow the pattern in the code for this; use only the GUID not the whole URI
@@ -79,4 +79,5 @@ Steps:
 ## Discuss security issues and good practices
 
 - How "close" does the api (NodeJS/Python) need to be, on a contract level?
+- Where is JWT validation happening in the Python code?
 
