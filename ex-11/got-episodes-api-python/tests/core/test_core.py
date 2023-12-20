@@ -16,7 +16,7 @@ def patchenv(monkeypatch):
     monkeypatch.setenv('QUOTES_API_URI', 'test_quotes_api_uri')
     monkeypatch.setenv('PORT', '7777')
     monkeypatch.setenv('HOST', 'test_host')
-
+    
     yield monkeypatch
 
 def test_valid_app_settings(patchenv):
@@ -35,7 +35,8 @@ def test_valid_app_settings(patchenv):
     assert config.api_audience == f"api://{config.episodes_api_uri}"
     assert config.issuer == HttpUrl(f"https://sts.windows.net/{config.tenant_id}/")
 
-def test_missing_environment_variables():
+def test_missing_environment_variables(patchenv):
+    patchenv.delenv('TENANT_ID')
     with pytest.raises(KeyError):
         get_settings()
 

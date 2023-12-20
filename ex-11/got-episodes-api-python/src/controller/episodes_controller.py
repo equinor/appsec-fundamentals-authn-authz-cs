@@ -1,5 +1,5 @@
-import requests
 from fastapi import HTTPException
+from requests import get
 from typing import List
 from data.models import Episode
 from data.got_demo_data import episodes
@@ -15,10 +15,13 @@ def get_random_quote(obo_token: str):
     config = get_settings()
     quote_endpoint = f"{ config.quotes_api_url }api/quote"
     quote_headers = {"Authorization": f"Bearer {obo_token}"}
-    logger.warning(f"{quote_endpoint = }")
-    quote = requests.get(url= quote_endpoint, headers = quote_headers)
-    logger.info(f"Got a quote: {quote} {repr(quote)}")
-    return quote.json()
+    logger.info(f"{quote_endpoint = }")
+    try:
+        quote = get(url= quote_endpoint, headers = quote_headers).json()
+        logger.info(f"Got a quote: {quote} {repr(quote)}")
+    except Exception:
+        quote = {"title": "Quote error"}
+    return quote
 
 def get_episode(episode_id: str) -> Episode:
     episode = next((ep for ep in episodes if ep['id'] == episode_id), None)
