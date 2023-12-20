@@ -11,7 +11,7 @@ The is the Episodes API. For authenticated requests the api will return a list o
 ## Test
 
 ```sh
-TBA
+    ▶ pytest
 ```
 
 ## Run

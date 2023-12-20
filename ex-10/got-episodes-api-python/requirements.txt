@@ -5,3 +5,4 @@ requests
 authlib
 pydantic-settings
 pytest
+httpx

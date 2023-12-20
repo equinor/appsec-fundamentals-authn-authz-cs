@@ -11,7 +11,7 @@ The is the Episodes API. For authenticated requests the api will return a list o
 ## Test
 
 ```sh
-    TBA
+    ▶ pytest
 ```
 
 ## Run
@@ -38,8 +38,7 @@ Expects the following environment variables to execute properly
     ▶ source "$CFG_ENV_FILE_DIRECTORY/<your_episodes_env_file>"
 ```
 
-### Run with `main.py`
+### Run with `main.py` in folder `./src`
 ```
-    ▶ cd src
-    ▶ ./main.py
+    ▶ src/main.py
 ```

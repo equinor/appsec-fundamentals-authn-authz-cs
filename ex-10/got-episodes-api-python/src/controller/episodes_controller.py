@@ -1,5 +1,3 @@
-# controllers.py
-from venv import logger
 from fastapi import HTTPException
 from typing import List
 from data.models import Episode
