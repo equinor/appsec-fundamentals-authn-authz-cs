@@ -7,6 +7,11 @@ from data.models import Episode
 @pytest.fixture
 def patchenv(monkeypatch):
     monkeypatch.setenv('QUOTES_API_URL', 'https://test_quotes_api.url')
+    monkeypatch.setenv('TENANT_ID', '123')
+    monkeypatch.setenv('CLIENT_ID', '123')
+    monkeypatch.setenv('CLIENT_SECRET', '123')
+    monkeypatch.setenv('EPISODES_API_URI', 'api://123')
+    monkeypatch.setenv('QUOTES_API_URI', 'api://123')
     test_episodes = [
         {"id": "1", "title": 'Winter is coming',                        "season": 1},
         {"id": "2", "title": 'The Kingsroad',                           "season": 1},
