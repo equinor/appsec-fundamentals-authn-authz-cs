@@ -43,19 +43,16 @@ public class TokenValidator : ITokenValidator
         {
             // Check issuer
             if (jwtToken.Issuer != validationParameters.ValidIssuer) {
-                _logger.LogError("Issuer is invalid");
                 throw new SecurityTokenInvalidIssuerException("Issuer is invalid");
             };
 
             // Check audience
             if (jwtToken.Audiences.All(a => a != validationParameters.ValidAudience)) {
-                _logger.LogError("Audience is invalid");
                 throw new SecurityTokenInvalidAudienceException("Audience is invalid");
             };
 
             // Check signature and validate
             if (!validationParameters.IssuerSigningKeys.Any()) {
-                _logger.LogError("Signing key is invalid");
                 throw new SecurityTokenInvalidSigningKeyException("No signing keys!");
             };
             var validationParametersWithSigningKey = new TokenValidationParameters
@@ -70,13 +67,11 @@ public class TokenValidator : ITokenValidator
 
             // Check valid timeframes
             if (jwtToken.ValidFrom > DateTime.UtcNow || jwtToken.ValidTo < DateTime.UtcNow) {
-                _logger.LogError("Token is not valid in timeframe");
                 throw new SecurityTokenInvalidLifetimeException("Token is not valid in timeframe");
             };
 
             // Check scope
             if (jwtToken.Claims.All(c => c.Type != "scp" || !c.Value.Split(' ').Any(s => s == "Quote.Read"))) {
-                _logger.LogError("Token does not contain correct scope");
                 throw new SecurityTokenInvalidLifetimeException("Token does not contain correct scope");
             };
 
