@@ -1,10 +1,17 @@
 import pytest
-from controller.episodes_controller import get_all_episodes, get_episode, add_episode, update_episode, delete_episode
+from unittest.mock import Mock
+from controller.episodes_controller import get_all_episodes, get_episode, add_episode, update_episode, delete_episode, get_random_quote
 from data.got_demo_data import episodes
 from data.models import Episode
 
 @pytest.fixture
 def patchenv(monkeypatch):
+    monkeypatch.setenv('QUOTES_API_URL', 'https://test_quotes_api.url')
+    monkeypatch.setenv('TENANT_ID', '123')
+    monkeypatch.setenv('CLIENT_ID', '123')
+    monkeypatch.setenv('CLIENT_SECRET', '123')
+    monkeypatch.setenv('EPISODES_API_URI', 'api://123')
+    monkeypatch.setenv('QUOTES_API_URI', 'api://123')
     test_episodes = [
         {"id": "1", "title": 'Winter is coming',                        "season": 1},
         {"id": "2", "title": 'The Kingsroad',                           "season": 1},
@@ -17,8 +24,14 @@ def patchenv(monkeypatch):
         {"id": "9", "title": 'Bealor',                                  "season": 1},
         {"id": "10", "title": 'Fire and Blood',                          "season": 1},
     ]    
-    monkeypatch.setattr("data.got_demo_data.episodes", test_episodes)
     monkeypatch.setattr("controller.episodes_controller.episodes", test_episodes)
+
+    def mock_requests_get(*args, **kwargs):
+        mock_response = Mock()
+        mock_response.json.side_effect = Exception("Triggered exception")
+        return mock_response
+    monkeypatch.setattr("controller.episodes_controller.get", mock_requests_get)    
+    
     yield monkeypatch    
 
 def test_get_all_episodes(patchenv):
@@ -56,3 +69,6 @@ def test_delete_episode(patchenv):
     with pytest.raises(Exception):
         get_episode(episode_id)
 
+def test_get_random_quote(patchenv):
+    quote = get_random_quote("test_obo_token")
+    assert quote == {"title": "Quote error"}

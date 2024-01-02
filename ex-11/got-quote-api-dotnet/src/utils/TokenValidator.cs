@@ -43,25 +43,21 @@ public class TokenValidator : ITokenValidator
         {
             // Check issuer
             if (jwtToken.Issuer != validationParameters.ValidIssuer) {
-                _logger.LogError("Issuer is invalid");
                 throw new SecurityTokenInvalidIssuerException("Issuer is invalid");
             };
 
             // Check audience
             if (jwtToken.Audiences.All(a => a != validationParameters.ValidAudience)) {
-                _logger.LogError("Audience is invalid");
                 throw new SecurityTokenInvalidAudienceException("Audience is invalid");
             };
 
             // Check signature and validate
-            var signingKey = validationParameters.IssuerSigningKeys.FirstOrDefault();
-            if (signingKey == null) {
-                _logger.LogError("Signing key is invalid");
-                throw new SecurityTokenInvalidSigningKeyException("Signing key is invalid");
+            if (!validationParameters.IssuerSigningKeys.Any()) {
+                throw new SecurityTokenInvalidSigningKeyException("No signing keys!");
             };
             var validationParametersWithSigningKey = new TokenValidationParameters
             {
-                IssuerSigningKey = signingKey,
+                IssuerSigningKeys = validationParameters.IssuerSigningKeys,
                 ValidateIssuerSigningKey = true,
                 ValidateAudience = false,
                 ValidateIssuer = false,
@@ -69,23 +65,22 @@ public class TokenValidator : ITokenValidator
             };
             _ = tokenHandler.ValidateToken(token, validationParametersWithSigningKey, out _);
 
-            // Check valid timeframe
+            // Check valid timeframes
             if (jwtToken.ValidFrom > DateTime.UtcNow || jwtToken.ValidTo < DateTime.UtcNow) {
-                _logger.LogError("Token is not valid in timeframe");
                 throw new SecurityTokenInvalidLifetimeException("Token is not valid in timeframe");
             };
 
             // Check scope
             if (jwtToken.Claims.All(c => c.Type != "scp" || !c.Value.Split(' ').Any(s => s == "Quote.Read"))) {
-                _logger.LogError("Token does not contain correct scope");
                 throw new SecurityTokenInvalidLifetimeException("Token does not contain correct scope");
             };
 
             // All checks passed
             return true;
         }
-        catch
+        catch (Exception e)
         {
+            _logger.LogError("Invalid token: {e.Message}", e.Message);
             return false;
         }
     }
