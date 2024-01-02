@@ -54,14 +54,13 @@ public class TokenValidator : ITokenValidator
             };
 
             // Check signature and validate
-            var signingKey = validationParameters.IssuerSigningKeys.FirstOrDefault();
-            if (signingKey == null) {
+            if (!validationParameters.IssuerSigningKeys.Any()) {
                 _logger.LogError("Signing key is invalid");
-                throw new SecurityTokenInvalidSigningKeyException("Signing key is invalid");
+                throw new SecurityTokenInvalidSigningKeyException("No signing keys!");
             };
             var validationParametersWithSigningKey = new TokenValidationParameters
             {
-                IssuerSigningKey = signingKey,
+                IssuerSigningKeys = validationParameters.IssuerSigningKeys,
                 ValidateIssuerSigningKey = true,
                 ValidateAudience = false,
                 ValidateIssuer = false,
@@ -69,7 +68,7 @@ public class TokenValidator : ITokenValidator
             };
             _ = tokenHandler.ValidateToken(token, validationParametersWithSigningKey, out _);
 
-            // Check valid timeframe
+            // Check valid timeframes
             if (jwtToken.ValidFrom > DateTime.UtcNow || jwtToken.ValidTo < DateTime.UtcNow) {
                 _logger.LogError("Token is not valid in timeframe");
                 throw new SecurityTokenInvalidLifetimeException("Token is not valid in timeframe");
@@ -84,8 +83,9 @@ public class TokenValidator : ITokenValidator
             // All checks passed
             return true;
         }
-        catch
+        catch (Exception e)
         {
+            _logger.LogError("Invalid token: {e.Message}", e.Message);
             return false;
         }
     }
