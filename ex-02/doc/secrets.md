@@ -77,6 +77,6 @@ Steps:
   * Observe: This is NOT a 100% secure solution. It still requires high confidence/trust into client environment
 * Good Practice - Rotate secrets often - preferably automated
 * Good Practice - MS Recommend using Certificates (non self signed for production) rather than client secret "strings"
-  * Anyone have experience with this pattern? What's the root CA that's used?
+  * Anyone have experience with this pattern? Ant takes on Pros and Cons?
 * Storing secrets as part of ordinary config may make sense in some scenarios (like we have done 👆)
 * Good Practice - Scan for Secrets in your dev environment. The AppSec Team has workshops on this as well, the [AppSec Fundamentals Secret Scanning](https://github.com/equinor/appsec-fundamentals-secret-scanning) workshop.⚡️
