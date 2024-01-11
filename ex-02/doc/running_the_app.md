@@ -33,8 +33,9 @@ Steps:
   ```shell
   export NODE_ENV=development
   ```
+* Start the back-end (`npm start`)
 * Observe that the "automatic port forwarding" is adding the forward for port 3000
-* Run the application again and observer the logging
+* Use the application again and observer the logging
 * Observe that the port forwarding is public so it remembered your decision
 
 ## --Now You--
@@ -45,7 +46,7 @@ Steps:
   * First leg: redirect to login.microsoftonline.com (the 302) with params and redirect_uri
   * Second leg: receive code on redirect_uri endpoint, use code to request access token 
 * Extract the access token and inspect at [jwt.ms](https://jwt.ms)
-* Experiment with changing a few parameters of the authorization request
+* Experiment with changing a few parameters of the authorization request (auth-utils.js)
   * (npm will use the NODE_ENV to determine which dependencies to install)
   * Using "dev" mode with auto restart on changes is nice when experimenting
     ```shell
@@ -55,7 +56,7 @@ Steps:
   * response_mode
   * scope
 * Explore what consent you have given to apps on Microsoft Entra ID on [myapps.microsoft.com](https://myapps.microsoft.com/)
- * Test revoking for your app (if available in the list)
+ * Test revoking for your app (if available in the list, if not can you find how to add it to the list? :) )
 
 ## --Discuss security issues and good practices--
 
