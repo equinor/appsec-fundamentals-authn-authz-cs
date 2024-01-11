@@ -10,6 +10,7 @@ Steps:
   * Format (header, payload, signature)
   * Decoded
   * Claims (aud, iss, nbf, exp, appid, scp)
+* Explore the ID Token
 * Remember the _token config_ in the AD App Object? This can be used to include additional claims
   * Standard claims in a JWT token - [RFC 7519](https://tools.ietf.org/html/rfc7519#section-4)
   * Registry for public claims to avoid naming conflicts - [IANA](https://www.iana.org/assignments/jwt/jwt.xhtml)
@@ -18,6 +19,7 @@ Steps:
 
 ## --Now You--
 
+* Do the steps, explore tokens
 * Experiment with scope, add _offline_access_ to the scope and explore the "refresh_token"
 
 ## --Discuss security issues and good practices--
