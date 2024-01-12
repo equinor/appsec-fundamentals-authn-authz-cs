@@ -28,7 +28,7 @@ Steps:
 ### --Now You--
 
 * Do the steps above
-* Play around with the Swagger interface
+* Play around with the Swagger interface, it may not work 100% 😀
 
 
 ## The Client
@@ -50,6 +50,7 @@ Steps:
     NODE_ENV=development npm start 
     ```
 
+* You may have to fix an error before the application will start
 * Use the application from your browser
 
 ### --Now You--
