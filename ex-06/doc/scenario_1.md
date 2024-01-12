@@ -40,9 +40,10 @@ Steps:
 * Configure the Enterprise Application object for your client and observe changes
   * Disable sign-in
     * Test => Not able to sign-in
+    * Revert the change
   * Enable "user assignment required"
     * Remove yourself from assigned users
-    * Test => Not able to get access token, not able to sign-in
+    * Test => Not able to sign-in
   * Add yourself to assigned users
     * Test => Able to sign in
   * "Sign-in" should be enabled, "Assignment required" should be disabled.
