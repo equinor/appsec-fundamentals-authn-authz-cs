@@ -2,7 +2,7 @@
 
 In this part we will explore the Episodes Api code and configuration.
 
-The client is based on the previous examples like ex-10. We will only focus on the significant parts. The api resides in `ex-11/got-episodes-api`.
+The api is based on the previous examples like ex-10. We will only focus on the significant parts. The api resides in `ex-11/got-episodes-api`.
 
 ## The Code
 

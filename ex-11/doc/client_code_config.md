@@ -2,7 +2,7 @@
 
 In this part we will explore the client code and configuration.
 
-The client code is based on the previous examples like ex-10. We will only focus on the significant parts.
+The client is based on the previous examples like ex-10. We will only focus on the significant parts. The client resides in `ex-11/client`.
 
 ## The Code
 
