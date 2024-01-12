@@ -8,7 +8,7 @@ The purpose of this part is to explain the API scenario we are using in the exer
 
 ## Components
 
-This scenario has 3+1 key components. The 3 key components are independent of each-other and can be seen as microservices.
+This scenario has 3+2 key components. The 3 key components are independent of each-other and can be seen as microservices.
 
 * The Client
   * Serving the Web front end
@@ -28,6 +28,7 @@ This scenario has 3+1 key components. The 3 key components are independent of ea
   * Sends a random GOT Quote back to the Episodes API
 * Microsoft Entra ID
   * The identity provider and the Authority Server
+* Microsoft Office 365 (Resource Server)
 
 Steps:
 
