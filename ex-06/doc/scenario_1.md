@@ -44,7 +44,7 @@ Steps:
   * Enable "user assignment required"
     * Remove yourself from assigned users
     * Test => Not able to sign-in
-  * Add yourself to assigned users
+  * Add a group you belong to, to assigned users/group
     * Test => Able to sign in
   * "Sign-in" should be enabled, "Assignment required" should be disabled.
     * Test => Able to sign in.
@@ -53,3 +53,4 @@ Steps:
 
 * Valid account means all accounts in the Microsoft Entra ID tenant, not only "employees". It could be externals, guests accounts or similar.
 * Be aware of security considerations for multi tenant applications ([MS Guidance](https://msrc.microsoft.com/blog/2023/03/guidance-on-potential-misconfiguration-of-authorization-of-multi-tenant-applications-that-use-azure-ad/))
+
