@@ -44,10 +44,11 @@ Steps:
 
 ### --Further experiments--
 
-* Do the following experiments (remember to save in AAD and to restart the client back-end between changes)
+* Do the following experiments (remember to save in AAD and to restart the client back-end between changes. Changes can take "some time" to be reflected)
   * Experiment-1
-    * Uncheck "Security Groups" and Check "Groups Assigned to Application"
+    * Uncheck "Security Groups" and Check "Groups Assigned to Application" (Use "+ Add Groups Claim")
     * (This will reduce the number of groups included to only be those a user is assigned too - direct or via a AD group)
+    * (You will have to assign a group to the Enterprise app to populate the claim)
   * Experiment-2
     * "Emit groups as role claims" for "ID" token
     * (The groups will be in the role claim rather than the group claim)
@@ -89,12 +90,13 @@ Steps:
   * Display name "Writers"
   * Allow "Users, Groups and Applications"
   * Value "app.write"
-  * Description "Writer than can write"
+  * Description "Writers than can write"
   * Enable the app role
 * Identify the new role in the App Manifest (the "appRoles" key)
 * Assign yourself this role in the Enterprise Applications for your client
   * "Users and groups"
   * (Some time it may take a minute until the app role is available)
+  * (Using user-defined-approles together with token configuration which has selected "Emit groups as role claims" will give precedence to token config, hence your user-defined-approles will not show if this features is turned on. These features are competing)
 * Login to your application
 
 ### --Now You--
@@ -103,6 +105,7 @@ Steps:
 
 * Do the steps above
 * Identify the roles claim in the proper token (this step may involve altering the backend app code)
+* Identify the change to the application gui?
 * Explore the possible payload claims for [access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens#payload-claims) and [id tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#payload-claims)
 
 ## --Discuss security issues and good practices--

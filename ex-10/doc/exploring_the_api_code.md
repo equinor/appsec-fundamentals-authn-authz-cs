@@ -56,10 +56,12 @@ Steps:
   * "Trust but verify"?
 * Good practice: Use frameworks to do token validation, especially the crypto part
 * Good practice: [OWASP Top 10 for api security](https://owasp.org/www-project-api-security/) is a good resource for securing your api's
-  * #1 - Broken Object Level Authorization (handled with fastify schemas)
-  * #2 - Broken User Authentication (the basic validation is in place (jwt))
-  * #3 - Excessive Data Exposure (not a problem for this api)
-  * #4 - Lack of resource and rate limiting (we have implemented rate limiting)
-  * #5 - Broken Function Level Authentication (we have simple func auth with jwt, scope and schemas)
+  * #1 - API1:2023 - Broken Object Level Authorization (handled with fastify schemas)
+  * #2 - API2:2023 - Broken Authentication  (the basic validation is in place (jwt))
+  * #3 - API3:2023 - Broken Object Property Level Authorization (we have simple func auth with jwt, scope and schemas)
+  * #4 - API4:2023 - Unrestricted Resource Consumption (we have implemented rate limiting)
+  * #5 - API5:2023 - Broken Function Level Authorization (we have simple func auth with jwt, scope and schemas)
   * #6 .....
+
+* 4 of the top 5 API security issues has to do with Authentication and Authorization
 * Good practice: Create automated documentation of your api, Swagger or OpenApi are good choices.

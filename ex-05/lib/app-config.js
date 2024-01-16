@@ -22,14 +22,14 @@ const msalConfig = {
     request: {
         authCodeUrlParameters: {
             scopes: ['user.read mail.read'],
-            redirectUri: process.env.REDIRECT_URI,
             responseMode: 'query',
+            redirectUri: process.env.REDIRECT_URI
             // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {
-            redirectUri: process.env.REDIRECT_URI,
             scopes: ['user.read mail.read'],
+            redirectUri: process.env.REDIRECT_URI,            
         },
         silentRequest: {
             scopes: ['user.read mail.read'],
@@ -39,7 +39,6 @@ const msalConfig = {
         endpoint: 'https://graph.microsoft.com/v1.0/me',
     },
 };
-
 
 function isConfigOk() {
 
@@ -63,6 +62,7 @@ function isConfigOk() {
         return false; 
     }
 
+    
     return true;
 }
 

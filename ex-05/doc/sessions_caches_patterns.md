@@ -88,4 +88,4 @@ This would be the full blown architecture shown in the drawing above.
 
 This option will solve all issues in section #1 and is the most flexible, scalable and performant solution. **It's obviously also the most complex!**
 
-As mentioned earlier - we transport and storage should be encrypted!
+As mentioned earlier - the transport and storage should be encrypted!

@@ -7,9 +7,7 @@ var __ = require('underscore');
 const msal = require('@azure/msal-node');
 const Crypto = require('crypto');
 
-
 async function requestAccessTokenUsingAuthCode(request, reply, authCode) {
-
 
     var accessToken;
     const requestConfig = appConfig.msalConfig.request;
@@ -159,7 +157,6 @@ async function readInbox(accessToken) {
         return newMails;
     }
 }
-
 
 //Generate useragent header (used by webserver and got)
 

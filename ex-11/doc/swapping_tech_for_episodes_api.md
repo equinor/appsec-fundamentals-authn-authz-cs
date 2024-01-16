@@ -34,7 +34,7 @@ Steps:
 - Execute tests
 
     ```shell
-    TBA 
+    pytest 
     ```
 --Now You--
 

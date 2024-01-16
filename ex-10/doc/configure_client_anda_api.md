@@ -59,7 +59,6 @@ Steps:
   * Update the value of apiAudience (the Application ID URI for your api)
     * Hint: App Registrations -> (initials)-appsec-course-episodes-api -> Expose and Api -> Application ID URI
     * Remember to save the change
-* Run `aa-save-env-files-to-github-user-secret.sh` to persist the new environment files
 
 
 ### Microsoft Entra ID

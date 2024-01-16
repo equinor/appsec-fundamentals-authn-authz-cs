@@ -17,7 +17,8 @@ Steps:
 
 ## --Discuss security issues and good practices--
 
-* This part of the communication happens in the "back-channel" <br/> (will be more obvious later on)
+* This part of the communication happens in the "back-channel"  
+(will be more obvious later on)
 * Public vs. Confidential Client (Trust level)
 * The importance of proper SSL, exception of localhost
-* The importance of handling client_secret as a secret
+* The importance of handling `client_secret` as a secret

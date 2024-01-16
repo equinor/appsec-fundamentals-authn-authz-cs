@@ -4,7 +4,7 @@ In this part we will explore the app and the code to get an idea of the moving p
 
 Steps:
 
-* Explore the [Microsoft Entra ID end-points](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) once again
+* Explore the [Microsoft Entra ID end-points](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps) once again
 * Explore the app config (./lib/app-config.js)
 * Explore the server & web app end-points (./src/server.js, ./src/app.js)
 * Explore html templating (./public, ./view)

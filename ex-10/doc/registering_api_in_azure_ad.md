@@ -18,7 +18,7 @@ Steps:
 * Augment app object to be compliant ⚡️
   * Add an additional owner to AppReg and to the Enterprise App (select course instructor) (Owners) ⚡️
   * Update the "service management reference" to refer to the "AppSec-Training" - 119775 (Branding & Properties)⚡️
-* Select the _Expose an API_ in the left side menu
+* Select the _Expose an API_ in the left side menu of "App Registrations"
 * Add new scope
   * Use the suggested **Application ID URI**, save and continue
   * Scope name: **Episodes.Read**

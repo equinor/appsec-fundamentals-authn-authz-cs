@@ -15,13 +15,9 @@ Steps:
   ```
 * The `aa-get-redirect-uri.sh` scripts helps to extract and generate a redirect uri for your workspace</br>Examine the script at `../src/aa-get-redirect-uri.sh` (It's automatically added to the path)
 * You can extract the value from the CLIENT_SECRET from the environment using the following command
-  ```shell
-  echo $APPSEC_AA_CLIENT_SECRET 
-  ```
-  alternatively this command to set value directly into CLIENT_SECRET
 
   ```shell
-   export CLIENT_SECRET=$(echo $APPSEC_AA_CLIENT_SECRET) 
+  echo $APPSEC_AA_CLIENT_SECRET 
   ```
 * If you have create a new code space since you configured the Entra ID Application Object for the client app, you may need to update the app registration with the proper redirect uri.
 

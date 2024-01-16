@@ -10,16 +10,14 @@ Steps:
 
     ```shell
     source ~/path-to-env-file/appsec-course-client-eq.env
-    npm start
     ```
 
 * Run the application 
-    * If problems; remember that the forwarded port needs to be PUBLIC and that the redirect uri is dynamic.
-
+   
     ```shell
     npm start
     ```
-
+  * If problems; remember that the forwarded port needs to be PUBLIC and that the redirect uri is dynamic.
 * Use the application and test the "get Inbox" feature
 * Stop the application and set the NODE_ENV to "development"
 

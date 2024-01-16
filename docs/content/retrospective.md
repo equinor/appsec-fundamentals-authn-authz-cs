@@ -5,7 +5,7 @@ A tiny  <!-- .element style="font-size: 0.40em"-->
 
 ## Setting the stage
 
-We have been together 4 days exploring protecting api's and web apps. Along the road we have discussed good practices, security and testing.
+We have been together 2 days exploring protecting api's and web apps. Along the road we have discussed good practices, security and testing.
 
 Our objective was to "de-mystify, build confidence and prepare for further exploration of A&A"
 

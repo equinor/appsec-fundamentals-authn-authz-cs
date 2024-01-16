@@ -14,7 +14,7 @@ One analogy that could make sense to understand these two are; app registrations
 
 Steps:
 
-* From Microsoft Entra ID, select Enterprise Applications
+* From [Microsoft Entra ID](https://portal.azure.com), select Enterprise Applications
 * Search for your client application (INTIAL-appsec-course-client)
 * Select **Properties** on the left side menu
 * Observe
@@ -40,10 +40,11 @@ Steps:
 * Configure the Enterprise Application object for your client and observe changes
   * Disable sign-in
     * Test => Not able to sign-in
+    * Revert the change
   * Enable "user assignment required"
     * Remove yourself from assigned users
-    * Test => Not able to get access token, not able to sign-in
-  * Add yourself to assigned users
+    * Test => Not able to sign-in
+  * Add a group you belong to, to assigned users/group
     * Test => Able to sign in
   * "Sign-in" should be enabled, "Assignment required" should be disabled.
     * Test => Able to sign in.
@@ -52,3 +53,4 @@ Steps:
 
 * Valid account means all accounts in the Microsoft Entra ID tenant, not only "employees". It could be externals, guests accounts or similar.
 * Be aware of security considerations for multi tenant applications ([MS Guidance](https://msrc.microsoft.com/blog/2023/03/guidance-on-potential-misconfiguration-of-authorization-of-multi-tenant-applications-that-use-azure-ad/))
+

@@ -8,16 +8,16 @@ Steps:
 * Sign in using your Equinor account
 * Query `/v1.0/me`
 * Explore
-  * Permissions tab
+  * Modify Permissions tab
   * Access token (extract access token and explore in [jwt.ms](https://jwt.ms))
   * Response preview
 * Query `/v1.0/me/memberOf`
 * Explore
-  * Permissions tab
+  * Modify Permissions tab
   * Response preview
 * Query `v1.0/me/mailFolders('Inbox')/messages?$select=sender,subject`
 * Explore
-  * Permissions tab
+  * Modify Permissions tab
   * Response preview
 * Take a look at the [Graph Api Documentation](https://docs.microsoft.com/nb-no/graph/api/overview?view=graph-rest-1.0)
 * Explore other parts of the Graph API, explore response and permissions

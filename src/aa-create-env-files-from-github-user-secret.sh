@@ -40,8 +40,8 @@ do
   content=$(echo "$element" | cut -d':' -f2)
 
 
-  if [ -f "$CFG_ENV_FILE_DIRECTORY/$FILENAME" ]; then
-     mv "$CFG_ENV_FILE_DIRECTORY/$FILENAME" "$CFG_ENV_FILE_DIRECTORY/$filename.bak"
+  if [ -f "$CFG_ENV_FILE_DIRECTORY/$filename" ]; then
+     mv "$CFG_ENV_FILE_DIRECTORY/$filename" "$CFG_ENV_FILE_DIRECTORY/$filename.bak"
   fi
 
     # Base64 decode the file and save it to the directory

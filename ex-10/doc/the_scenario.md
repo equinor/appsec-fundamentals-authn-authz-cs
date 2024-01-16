@@ -8,7 +8,7 @@ The purpose of this part is to explain the API scenario we are using in the exer
 
 ## Components
 
-This scenario has 2+1 key components. The 2 key components are independent of each-other and can be seen as microservices.
+This scenario has 2+2 key components. The 2 key components are independent of each-other and can be seen as microservices.
 
 * The Client
   * Serving the Web front end
@@ -22,6 +22,7 @@ This scenario has 2+1 key components. The 2 key components are independent of ea
   * Requests needs to be validated, tokens needs to be issued by Microsoft Entra ID
 * Microsoft Entra ID
   * The identity provider and the Authority Server
+* Microsoft Office 365 (Resource Server)
 
 Steps:
 
