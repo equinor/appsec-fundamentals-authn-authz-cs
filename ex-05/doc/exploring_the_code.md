@@ -48,7 +48,7 @@ Steps:
 ## --A note on SameSite attribute for the sessionId cookie--
 
 * We use the _sessionId_ cookie to manage state between the end-user session and the back-end.
-* We are using the [_SameSite_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) attribute to only allow the cookie to be sendt to a first-party or same site context. (Security, avoid CSRF )
+* We are using the [_SameSite_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) attribute to only allow the cookie to be sent to a first-party or same site context. (Security, avoid CSRF )
 * Browser handles the _SameSite_ attribute a bit differently - if not set explicitly
   * FireFox will from [v96](https://www.ghacks.net/2022/01/11/mozilla-firefox-96-0-release-here-is-what-is-new/) default to "Lax" as default if not specified.
   * Chrome is currently accepting _no value_ for the _SameSite_ attribute

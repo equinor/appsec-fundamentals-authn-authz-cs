@@ -34,7 +34,7 @@ Steps:
 ---
 ## The Config
 
-* The episodes env file (appse-course-api-episodes-eq.env) needs to be updated with new config
+* The episodes env file (appsec-course-api-episodes-eq.env) needs to be updated with new config
   
   ```shell
   export NODE_ENV="development"
