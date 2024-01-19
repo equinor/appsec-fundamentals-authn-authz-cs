@@ -9,7 +9,7 @@ To get started contributing, you should engage using a [fork and pull request fl
 1. Fork the repository on GitHub.
 2. Clone your forked repository to your local machine.
 3. Create a new branch for your changes.
-4. Make your changes and commit them to your branch.
+4. Make your changes and commit them to your branch (_use signed commits_)
 5. Push your changes to your forked repository on GitHub.
 6. Open a pull request to merge your changes into the main repository.
 
