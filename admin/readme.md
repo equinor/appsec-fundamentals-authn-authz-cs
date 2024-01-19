@@ -28,6 +28,7 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
   * Update the registration sheet sign-up permission to read-only for none course admins.
 * Execute WS
   * Collect feedback as part of last day
+  * 10 minutes breaks is a _must_ for the intense virtual workshop.
 * 1 week after
   * Evaluate, update, repeat
   * ⚡️ Remove permission from sign-up document. Should only be available to the AppSec team after the WS for statistics

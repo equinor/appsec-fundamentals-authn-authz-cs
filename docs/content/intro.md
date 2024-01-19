@@ -53,8 +53,8 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * Course channel on Slack [#appsec-fundamentals-authn-authz](https://equinor.slack.com/archives/C051G3JV7NE)
 * Typical schedule is
   * 09:00 - 15:45
-  * Break for lunch sometime around 11:00, approx 30 minutes.
-  * 5-10 minutes break every hour - don't be afraid to do gentle reminders on breaks :)
+  * Break for lunch sometime around 11:30, approx 30 minutes.
+  * 10 minutes break every hour - don't be afraid to give gentle reminders on breaks 😊
 * Keeping the camera on increases the experience for everyone
 
 </div>
