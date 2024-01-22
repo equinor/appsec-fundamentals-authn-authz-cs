@@ -11,7 +11,7 @@ Our app will list the context of your inbox. A web page is presented, when **sho
 * [Exploring the code](doc/exploring_the_code.md)
 * [Running the application](doc/running_the_application.md)
 * [Security considerations](doc/security_considerations.md)
-* [Lines of code - dependency scanning](doc/lines_of_code.md)
+* [Lines of code - dependency scanning](doc/lines_of_code.md) (🥸)
 
 ---
 

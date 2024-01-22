@@ -39,10 +39,12 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * The basics of Authentication and Authorization (part 2)
 * Exploring Scope, Frameworks and Sessions
 * Exploring **Common** authorization scenarios in Equinor
-* Exploring Refresh tokens, Implicit grant and PKCE for Native, Mobile, SPA
+* Exploring Refresh tokens, Implicit grant (🥸) and PKCE for Native, Mobile, SPA
 * Exploring Protecting Web API's and API chaining
 
+Some exercises, and parts of exercises, are marked as optional (🥸). We will include these parts if time permits. The same goes for group work.
 
+<hr>
 The workshop's pace can be perceived as quite high. It will be beneficial for your learning to spend some time with the material and the exercises at your own pace after the course.
 </div>
 
@@ -56,7 +58,7 @@ The workshop's pace can be perceived as quite high. It will be beneficial for yo
 * Typical schedule is
   * 09:00 - 15:45
   * Break for lunch sometime around 11:30, approx 30 minutes.
-  * 10 minutes break every hour - don't be afraid to give gentle reminders on breaks 😊
+  * 10 minutes break every hour </br>- don't be afraid to give gentle reminders on breaks 😊
 * Keeping the camera on increases the experience for everyone
 
 </div>

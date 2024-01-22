@@ -6,7 +6,7 @@ At the end we the application will consist of 3 technologies working together in
 
 Our .Net implementation is not for production - it only serves as a _simple_ example for our exercise.
 
-## Exploring the .Net Code
+## Exploring the .Net Code (🥸)
 
 The .Net version of the Episodes Api lives in `./ex-11/got-quote-api-dotnet`
 

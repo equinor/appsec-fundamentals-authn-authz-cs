@@ -1,4 +1,4 @@
-# EX-8 - Implicit grant
+# EX-8 - Implicit grant (🥸)
 
 In this section we will briefly discuss the OAuth2 Implicit Grant. It may be important to understand from a legacy perspective.
 
