@@ -13,7 +13,7 @@ workshop (the CS version)
 
 * Give an introduction to the basics of modern web/api A&A
 * Explore RFC (specs) and Equinor Azure Implementation (⚡️)
-* Explore code & test automation for selected A&A scenarios
+* Explore code & tests for selected A&A scenarios
 * Insights into threats and security best current practices (BCP)
 
 Throughout the workshop we will discuss security issues, good practices and share experiences between the participants. This last part may be the most important one.
@@ -42,6 +42,8 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * Exploring Refresh tokens, Implicit grant and PKCE for Native, Mobile, SPA
 * Exploring Protecting Web API's and API chaining
 
+
+The workshop's pace can be perceived as quite high. It will be beneficial for your learning to spend some time with the material and the exercises at your own pace after the course.
 </div>
 
 ---
