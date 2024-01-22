@@ -28,8 +28,7 @@ Steps:
 
 * New environment variables `EPISODES_API_URI` and `EPISODES_API_URL` that needs to be added to then env file
   * Hint: Microsoft Entra ID -> App Registrations -> Episodes Api -> Expose An Api -> Application ID URI
-  * Hint: Exclude the prefix 'api://'
-* Update the client env file (appsec-course-client-eq.env)
+  * Update the client env file (appsec-course-client-eq.env)
 * Run `aa-save-env-files-to-github-user-secret.sh` in a terminal window to persist the new environment variables (don't __reload__)
 
 

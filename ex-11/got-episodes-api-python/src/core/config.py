@@ -43,7 +43,7 @@ def get_settings():
             port = os.environ.get('PORT', 3100),
             host =  os.environ.get('HOST', '127.0.0.1'),
             jwks_uri = f"https://login.microsoftonline.com/{os.environ['TENANT_ID']}/discovery/v2.0/keys",
-            api_audience= f"api://{os.environ.get('EPISODES_API_URI', '251bc275-eed7-49d6-83b3-9005c9779574')}"
+            api_audience= os.environ['EPISODES_API_URI']
         )
     except ValidationError as exc:
         for err in exc.errors():

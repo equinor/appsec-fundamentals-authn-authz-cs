@@ -36,7 +36,7 @@ def get_obo_token(assertion: str):
             "client_id": config.client_id,
             "client_secret": config.client_secret,
             "assertion": assertion,
-            "scope": f"api://{config.quotes_api_uri}/Quote.Read",
+            "scope": f"{config.quotes_api_uri}/Quote.Read",
             "requested_token_use": "on_behalf_of",
         }
     tokenEndpoint = get_token_endpoint(well_known_conf_url)

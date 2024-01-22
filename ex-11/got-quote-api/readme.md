@@ -21,6 +21,7 @@ Expects the following environment variables to execute properly
     export PORT=3200
     export QUOTES_API_URI=""
     export EPISODES_API_URI=""
+    export EPISODES_API_CLIENT_ID=""
 
   
 Other config, like ratelimiting and **apiAudience** , is defined in './lib/app-config.js' and also needs to be verified.
