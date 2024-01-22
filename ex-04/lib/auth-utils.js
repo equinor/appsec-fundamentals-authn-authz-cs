@@ -105,7 +105,6 @@ async function readInbox(accessToken) {
         });
 
         return newMails;
-
     } catch (error) {
         logger.error('Request for emails failed: ' + error);
         return newMails;

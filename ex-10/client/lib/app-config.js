@@ -27,7 +27,6 @@ const msalConfig = {
             scopes: ['user.read'],
             redirectUri: process.env.REDIRECT_URI,
             responseMode: 'query',
-            // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {
