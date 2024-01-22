@@ -28,30 +28,6 @@ Expects the following environment variables to execute properly
     export EPISODES_API_URI=""
 ```
 
-Also visit application important settings in `appsettings.json` and correct all fieds for validation of JWT token
-
-```json
-{
-  "AzureAd": {
-    "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "<TENANT_ID>",
-    "ClientId": "<QUOTE_CLIENT_ID>",
-    "Jwt": {
-      "Authority": "https://login.microsoftonline.com/<TENANT_ID>/v2.0/",
-      "TokenValidationParameters": {
-        "ValidateIssuer": true,
-        "ValidIssuer": "https://sts.windows.net/<TENANT_ID>/",
-        "ValidateAudience": true,
-        "ValidAudience": "api://<QUOTE_URI>",
-        "ValidateLifetime": true,
-        "ValidateIssuerSigningKey": true
-      }
-    },
-  },
-}
-
-```
-
 ### Execute
 
 ```sh
