@@ -1,4 +1,4 @@
-# Defence in Depth - Protecting APIs
+# Defence in Depth - Protecting APIs (🥸)
 
 In this section we will have a general discussion of protecting/securing api's. APIs come in many shapes and forms. The level of protection, or the effort we put into secure our APIs, will have to relate to the data/systems we protect and the potential consequence of thing getting bad. 
 

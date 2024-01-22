@@ -48,9 +48,7 @@ function build(opts = {}) {
 
     app.get('/showinbox', async function (request, reply) {
         state = createNewState();
-        const response_mode = 'form_post';
-        // const response_mode = 'query';
-
+        const response_mode = 'query';  //recommended, default from the MS Identity platform
         const scope = 'user.read mail.read';
 
         return reply.redirect(

@@ -10,8 +10,7 @@ When using Github Codespaces we are running out applications in a virtual enviro
 - You can configure Port Forwarding as part of the `/.devcontainer/devcontainer.json`
 - You can configure Port Forwarding using the github CLI (`gh`)
 - Ports have visibility "Private", "Private to Organization" and "Public". The two first ones expects an authenticated session with Github. The "Public" is public to the world - not authentication control is added by Codespaces.
-- For our application we need to make the port forwarding public (The cookies/session information needed to drive the Github authentication is not able to follow the request to login.microsoft.com and will hence break the Github auth regime)
-- We will configure the port forwarding in the next steps
+- For our application using "Private" will work for all out-of-the-box exercises
 
 ## Starting the application
 
@@ -22,21 +21,20 @@ Steps:
   ```shell
   npm start
   ```
-* Open the application using the Popup indicating that the app i running on port 3000 and offering a "Open in Browser" button
-* Select the "get Inbox" button, notice that the request fails
-* Locate the "Ports" section of the Codespace
-* Change the visibility of port 3000 to "public" (right click port -> port visibility)
-* Go back to the "application tab" and select the "get Inbox" button and observe that the content of your inbox is shown.
+* Open the application using the Popup indicating that the app i running on port 3000 and offering a "Open in Browser" button. No need to make the port public
+* Open the browser and test the application
 * Stop the application
 * Observe that the "automatic port forwarding" is removing the forward for port 3000
 * Set the NODE_ENV to "development"
+
   ```shell
   export NODE_ENV=development
   ```
+
 * Start the back-end (`npm start`)
 * Observe that the "automatic port forwarding" is adding the forward for port 3000
 * Use the application again and observer the logging
-* Observe that the port forwarding is public so it remembered your decision
+* Observe that the port forwarding is Private so it remembered your decision
 
 ## --Now You--
 
@@ -53,7 +51,6 @@ Steps:
     npm run dev
     ````
   * prompt
-  * response_mode
   * scope
 * Explore what consent you have given to apps on Microsoft Entra ID on [myapps.microsoft.com](https://myapps.microsoft.com/)
  * Test revoking for your app (if available in the list, if not can you find how to add it to the list? :) )
@@ -62,7 +59,7 @@ Steps:
 
 * It is bad practice to extract information from tokens that are not intended for you
   * Example: Extracting "given_name" at the client from the Access Token
-* The "public port forward" represents a security risk
+* Port forwarding with "public" represents a security risk
 
 ## Prologue
 
@@ -71,5 +68,5 @@ URL parameters from 1st leg, "getting authorization code"
 * **response_type** is part of oauth2 spec [rfc6749](https://datatracker.ietf.org/doc/html/rfc6749)
 * **response_mode** is part of OIDC [core](https://openid.net/specs/openid-connect-core-1_0.html)
   * Specifies the method for sending back the token to the client
-  * One of the reasons why our code supports both GET and POST requests to the redirect_uri endpoint
-* The Microsoft Identity Platform seems to expect a few optional parameters (from RFC) to be mandatory and adds new ones (like response_mode for oAuth2 code grant)
+  * Not part of rfc6749 (oAuth2)
+  * The Microsoft Identity Platform add this as a optional/recommended parameters for oAuth2 as well. Default value is "query"

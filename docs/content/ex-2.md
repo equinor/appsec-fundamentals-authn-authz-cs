@@ -8,9 +8,9 @@
 
 Open the file `ex-02/readme.md` for the exercise. ([official repo](https://github.com/equinor/appsec-fundamentals-authn-authz-cs/blob/main/ex-02/readme.md))
 
-👷‍♀️👷‍♂️👇
+(🥸)👷‍♀️👷‍♂️👇
 ---
-## Group Work
+## Group Work (🥸)
 
 * We split into a few small groups
 * We time box discussion to 10 minutes

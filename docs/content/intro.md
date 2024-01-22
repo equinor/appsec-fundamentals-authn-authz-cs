@@ -13,7 +13,7 @@ workshop (the CS version)
 
 * Give an introduction to the basics of modern web/api A&A
 * Explore RFC (specs) and Equinor Azure Implementation (⚡️)
-* Explore code & test automation for selected A&A scenarios
+* Explore code & tests for selected A&A scenarios
 * Insights into threats and security best current practices (BCP)
 
 Throughout the workshop we will discuss security issues, good practices and share experiences between the participants. This last part may be the most important one.
@@ -39,9 +39,13 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * The basics of Authentication and Authorization (part 2)
 * Exploring Scope, Frameworks and Sessions
 * Exploring **Common** authorization scenarios in Equinor
-* Exploring Refresh tokens, Implicit grant and PKCE for Native, Mobile, SPA
+* Exploring Refresh tokens, Implicit grant (🥸) and PKCE for Native, Mobile, SPA
 * Exploring Protecting Web API's and API chaining
 
+Some exercises, and parts of exercises, are marked as optional (🥸). We will include these parts if time permits. The same goes for group work.
+
+<hr>
+The workshop's pace can be perceived as quite high. It will be beneficial for your learning to spend some time with the material and the exercises at your own pace after the course.
 </div>
 
 ---
@@ -53,8 +57,8 @@ Throughout the workshop we will discuss security issues, good practices and shar
 * Course channel on Slack [#appsec-fundamentals-authn-authz](https://equinor.slack.com/archives/C051G3JV7NE)
 * Typical schedule is
   * 09:00 - 15:45
-  * Break for lunch sometime around 11:00, approx 30 minutes.
-  * 5-10 minutes break every hour - don't be afraid to do gentle reminders on breaks :)
+  * Break for lunch sometime around 11:30, approx 30 minutes.
+  * 10 minutes break every hour </br>- don't be afraid to give gentle reminders on breaks 😊
 * Keeping the camera on increases the experience for everyone
 
 </div>

@@ -4,14 +4,14 @@ In this part we change the technology used on the Episodes API from NodeJS to Py
 
 Our Python implementation is not for production - it only serves as a _simple_ example for our exercise.
 
-## Exploring the Python Code
+## Exploring the Python Code (🥸)
 
 The Python version of the Episodes Api lives in `./ex-11/got-episodes-api-python`
 
 Steps:
 
 - (Assuming you have a new terminal session open in `./ex-11/got-episodes-api-python`)
-- Observe the highlights in changes to the api code (ex-10 vs. ex-11)
+- Observe the highlights in changes to the api code (ex-10 vs. ex-11) 
 
     ```shell
     ./bin/src-diff.sh

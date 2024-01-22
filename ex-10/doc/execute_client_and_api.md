@@ -59,7 +59,7 @@ Steps:
 * Log in and use the "Show Got Episodes" functionality
 * Observe how the two components interacts (via logs in the terminal windows)
 
-### -- Add-on -- (if time)
+### -- Add-on -- (🥸)
 
 * We will use the Swagger interface to work with the API
 * The Swagger Base URL will support a dynamic environment like Codespaces
@@ -75,7 +75,7 @@ Steps:
 * Extract an access token from the client and use it to delete episode #3 utilizing the Episodes API's Swagger interface (Hints, define scope, assign permissions on scope, request scope)
   
 
-## User consent, rather than client authorization
+## User consent, rather than client authorization (🥸)
 
 Let's experiment wih user consent, rather than authorizing a client for a scope.
 

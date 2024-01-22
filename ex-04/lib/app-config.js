@@ -22,7 +22,7 @@ const msalConfig = {
     request: {
         authCodeUrlParameters: {
             scopes: ['user.read mail.read'],
-            responseMode: 'form_post',
+            responseMode: 'query',
             redirectUri: process.env.REDIRECT_URI
             // prompt: 'none',
         },

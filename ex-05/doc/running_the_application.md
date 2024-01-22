@@ -38,7 +38,7 @@ Steps:
 
 ## --Discuss security issues and good practices--
 
-* Good practice: Cookies holding session information should be marked as "secure" (available using http only)
+* Good practice: Cookies holding session information should be marked as "secure" (available using HTTPS only)
 * Good practice: Move the session store out of the in-memory store. The cookie signing key should be part of app config params.
 * Good practice: Move the token cache out of the in-memory store.
 * Good practice: Follow security advices and recommendations for frameworks
