@@ -49,8 +49,9 @@ Steps:
   * "Sign-in" should be enabled, "Assignment required" should be disabled.
     * Test => Able to sign in.
 
-## --Security considerations--
+## --Security considerations and recommendations--
 
 * Valid account means all accounts in the Microsoft Entra ID tenant, not only "employees". It could be externals, guests accounts or similar.
+* Default configuration for enterprise app registrations should be **"Enabled for users to sign-in=Yes" and "Assignment Required=Yes"**
 * Be aware of security considerations for multi tenant applications ([MS Guidance](https://msrc.microsoft.com/blog/2023/03/guidance-on-potential-misconfiguration-of-authorization-of-multi-tenant-applications-that-use-azure-ad/))
 
