@@ -11,7 +11,7 @@ def patchenv(monkeypatch):
     monkeypatch.setenv('TENANT_ID', 'test_tenant_id')
     monkeypatch.setenv('PORT', '7777')
     monkeypatch.setenv('HOST', 'test_host')
-
+    monkeypatch.setenv('EPISODES_API_URI', 'api://00000000-7e57-c0de-0000-000000000000')
     yield monkeypatch
 
 def test_valid_app_settings(patchenv):
@@ -22,10 +22,11 @@ def test_valid_app_settings(patchenv):
     assert config.host == 'test_host'
     # Generated
     assert config.jwks_uri == HttpUrl(f"https://login.microsoftonline.com/{config.tenant_id}/discovery/v2.0/keys")
-    assert config.api_audience == f"api://00000000-7e57-c0de-0000-000000000000"
+    assert config.api_audience == "api://00000000-7e57-c0de-0000-000000000000"
     assert config.issuer == HttpUrl(f"https://sts.windows.net/{config.tenant_id}/")
 
-def test_missing_environment_variables():
+def test_missing_environment_variables(patchenv):
+    patchenv.delenv('TENANT_ID')
     with pytest.raises(KeyError):
         get_settings()
 
@@ -38,7 +39,7 @@ def test_get_uvicorn_config(patchenv):
 def test_get_claims_options(patchenv):
     expected_claims_options = {
         "iss": {"essential": True, "value": f"https://sts.windows.net/{os.environ['TENANT_ID']}/",},
-        "aud": {"essential": True, "value": f"api://00000000-7e57-c0de-0000-000000000000"},
+        "aud": {"essential": True, "value": "api://00000000-7e57-c0de-0000-000000000000"},
     }
     result_claims_options = get_claims_options()
     assert result_claims_options == expected_claims_options
