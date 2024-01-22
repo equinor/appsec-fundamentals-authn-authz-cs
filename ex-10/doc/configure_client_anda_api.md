@@ -18,6 +18,7 @@ export NODE_ENV=development
 export CLIENT_ID="the client id from the AD app object"
 export TENANT_ID="then tenant id"
 export PORT=3000
+export REDIRECT_URI=$(aa-get-redirect-uri.sh)
 export TOKEN_CACHE_FILE="${HOME}/.tcache/cache.json"
 ```
 ### Additional config
