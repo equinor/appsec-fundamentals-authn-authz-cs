@@ -1,6 +1,6 @@
 # Lines of Code - Dependency Scanning
 
-In this section we will explore the impact using frameworks has on the amount of code in our projects.
+In this section we will explore the some of the impact using open source frameworks and modules has on our project.
 
 ## --Code Analysis--
 
