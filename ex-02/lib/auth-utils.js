@@ -77,9 +77,8 @@ function buildAuthorizeUrl(state, scope, responseMode) {
         state: state,
         scope: scope,
         response_mode: responseMode,
+        
         prompt: 'select_account',
-        // response_mode: 'form_post',
-        // response_mode: 'query',
     });
 
     logger.debug('Returning URL : ' + redirectUrl);

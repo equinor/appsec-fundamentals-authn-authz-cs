@@ -4,7 +4,7 @@ In this part we change the technology used on the Episodes API from NodeJS to Py
 
 Our Python implementation is not for production - it only serves as a _simple_ example for our exercise.
 
-## Exploring the Python Code
+## Exploring the Python Code (🥸)
 
 The Python version of the Episodes Api lives in `./ex-10/got-episodes-api-python`
 

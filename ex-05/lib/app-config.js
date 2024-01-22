@@ -24,7 +24,6 @@ const msalConfig = {
             scopes: ['user.read mail.read'],
             responseMode: 'query',
             redirectUri: process.env.REDIRECT_URI
-            // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {

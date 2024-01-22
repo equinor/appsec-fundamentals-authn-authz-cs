@@ -24,7 +24,6 @@ const msalConfig = {
             scopes: ['user.read mail.read'],
             redirectUri: process.env.REDIRECT_URI,
             responseMode: 'query',
-            // responseMode: 'form_post',
             // prompt: 'none',
         },
         tokenRequest: {
@@ -39,7 +38,6 @@ const msalConfig = {
         endpoint: 'https://graph.microsoft.com/v1.0/me',
     },
 };
-
 
 function isConfigOk() {
 
@@ -62,6 +60,7 @@ function isConfigOk() {
         logger.error('Config: Missing redirect_uri in config');
         return false; 
     }
+
 
     return true;
 }

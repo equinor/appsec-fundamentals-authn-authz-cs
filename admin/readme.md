@@ -9,7 +9,7 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
 * 3-5 weeks prior
   * Coordinate with instructors/assistants
   * Reserve slots in calendar
-  * If needed, reserve physical meeting rooms
+  * (If needed, reserve physical meeting rooms)
   * ⚡️ Create a sign-up document, open the sign-up document for **write** for everyone with and Eqn Account 
   * Add reminders in instructors calendars on relevant check-points (2 week, 1 week, 1 week after etc...)
 * 2-3 weeks prior
@@ -28,17 +28,18 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
   * Update the registration sheet sign-up permission to read-only for none course admins.
 * Execute WS
   * Collect feedback as part of last day
-* 1 week after
+  * 10 minutes breaks is a _must_ for the intense virtual workshop.
+* Within 1 week after
   * Evaluate, update, repeat
   * ⚡️ Remove permission from sign-up document. Should only be available to the AppSec team after the WS for statistics
   * Review and summarize info gathered in workshop retrospective
   * Do a workshop retrospective amongst instructors
   * Decide on changes, create issues/tasks on board for updates
   * Delete groups output of exercises from course Slack channel?
-* 2 weeks after
-  * ⚡️ Run scripts to identify EQ AAD Objects and Course Repos
+* Within 2 weeks after
+  * ⚡️ Run scripts to identify EQ AAD Objects 
   * Send reminder about cleaning up
-  * ⚡️ Remind about #appsec
+  * ⚡️ Remind about joining #appsec
 
 ### Invitation proposal ⚡️
 

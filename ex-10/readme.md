@@ -11,4 +11,4 @@ In this exercise we will investigate how to protect web api's using OAuth2. We w
 * [Configure the Client and the API](doc/configure_client_anda_api.md)
 * [Execute the Client and the API](doc/execute_client_and_api.md)
 * [Swapping from Node to Python on the Episodes API](doc/swapping_tech_for_episodes_api.md)
-* [Defense in depth - protecting API's](doc/protecting_apis.md)
+* [Defense in depth - protecting API's](doc/protecting_apis.md) (🥸)

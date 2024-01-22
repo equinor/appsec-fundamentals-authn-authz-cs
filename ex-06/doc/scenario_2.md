@@ -42,7 +42,7 @@ Steps:
 * Login to your application and figure out how to observe the changes (Hint: "id token")
 * When done - post how many AD groups you are member of into the course Slack channel.
 
-### --Further experiments--
+### --Further experiments-- (🥸)
 
 * Do the following experiments (remember to save in AAD and to restart the client back-end between changes. Changes can take "some time" to be reflected)
   * Experiment-1

@@ -1,4 +1,4 @@
-## Exercise 8
+## Exercise 8 (🥸)
 
 ## The Implicit grant
 
