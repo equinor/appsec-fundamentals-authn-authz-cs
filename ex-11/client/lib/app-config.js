@@ -44,7 +44,7 @@ const msalConfig = {
         file: tokenCacheFile,
     },
     scopes: {
-        gotApi: ['api://' + process.env.EPISODES_API_URI + '/episodes.read'],
+        gotApi: [process.env.EPISODES_API_URI + '/episodes.read'],
         inbox: ['user.read', 'mail.read'],
     },
 };

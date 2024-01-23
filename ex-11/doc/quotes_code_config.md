@@ -19,6 +19,7 @@ Steps:
     export PORT=3200
     export QUOTES_API_URI=""
     export EPISODES_API_URI=""
+    export EPISODES_API_CLIENT_ID=""
     ```
 
 * The App
@@ -62,6 +63,7 @@ Using the procedure from [exercise-10](../../ex-10/doc/registering_api_in_azure_
   export PORT=3200
   export QUOTES_API_URI=""
   export EPISODES_API_URI=""
+  export EPISODES_API_CLIENT_ID=""
   ```
 
 ### --Now You--

@@ -32,7 +32,7 @@ def test_valid_app_settings(patchenv):
     assert config.host == 'test_host'
     # Generated
     assert config.jwks_uri == HttpUrl(f"https://login.microsoftonline.com/{config.tenant_id}/discovery/v2.0/keys")
-    assert config.api_audience == f"api://{config.episodes_api_uri}"
+    assert config.api_audience == f"{config.episodes_api_uri}"
     assert config.issuer == HttpUrl(f"https://sts.windows.net/{config.tenant_id}/")
 
 def test_missing_environment_variables(patchenv):
@@ -55,7 +55,7 @@ def test_get_well_known_conf_url(patchenv):
 def test_get_claims_options(patchenv):
     expected_claims_options = {
         "iss": {"essential": True, "value": f"https://sts.windows.net/{os.environ['TENANT_ID']}/",},
-        "aud": {"essential": True, "value": f"api://{os.environ['EPISODES_API_URI']}"},
+        "aud": {"essential": True, "value": f"{os.environ['EPISODES_API_URI']}"},
     }
     result_claims_options = get_claims_options()
     assert result_claims_options == expected_claims_options

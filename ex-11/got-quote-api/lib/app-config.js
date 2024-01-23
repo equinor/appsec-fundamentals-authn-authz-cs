@@ -12,8 +12,8 @@ const host = process.env.HOST || 'localhost';
 const swaggerHost = process.env.SWAGGER_HOST || host + ':' + port;
 
 const jwksUri = 'https://login.microsoftonline.com/' + tenantId + '/discovery/v2.0/keys';
-const apiAudience = 'api://' + process.env.QUOTES_API_URI; // This API
-const quoteApiApprovedCallingApps = [process.env.EPISODES_API_URI];
+const apiAudience = process.env.QUOTES_API_URI; // This API
+const quoteApiApprovedCallingApps = [process.env.EPISODES_API_CLIENT_ID];
 
 const rateLimitAllowList = function () {
     return ['127.0.0.1', '::1'];

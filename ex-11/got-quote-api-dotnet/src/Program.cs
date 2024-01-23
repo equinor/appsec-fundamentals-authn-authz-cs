@@ -12,7 +12,7 @@ if (string.IsNullOrEmpty(TENANT_ID) || string.IsNullOrEmpty(QUOTES_API_URI)) {
 } else {
     builder.Configuration["AzureAd:Jwt:Authority"] = $"https://login.microsoftonline.com/{TENANT_ID}/v2.0/";
     builder.Configuration["AzureAd:Jwt:TokenValidationParameters:ValidIssuer"] = $"https://sts.windows.net/{TENANT_ID}/";
-    builder.Configuration["AzureAd:Jwt:TokenValidationParameters:ValidAudience"] = $"api://{QUOTES_API_URI}";
+    builder.Configuration["AzureAd:Jwt:TokenValidationParameters:ValidAudience"] = $"{QUOTES_API_URI}";
 }
 
 builder.Services.AddEndpointsApiExplorer();

@@ -44,7 +44,7 @@ const msalConfig = {
         file: tokenCacheFile,
     },
     scopes: {
-        gotApi: ['api://f6a763f4-932d-4784-8122-f2b526bb2364/Episodes.Read'],
+        gotApi: ['api://00000000-0000-0000-0000-000000000000/Episodes.Read'],
         inbox: ['user.read', 'mail.read'],
     },
 };
