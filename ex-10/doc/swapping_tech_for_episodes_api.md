@@ -36,7 +36,7 @@ Steps:
     pytest
     ```
 - In `./src/core/config.py` update the API audience to reflect your API (AppSettings)
-    - Follow the pattern in the code for this; use only the GUID not the whole URI
+    - Follow the pattern in the code for this; use the Application ID URI.
     - Remember to save
 
 --Now You--
