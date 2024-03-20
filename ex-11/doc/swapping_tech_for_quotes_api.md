@@ -62,7 +62,7 @@ Steps:
 - Source your configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-api-quotes-eq.env 
+    source $HOME/envs/appsec-course-api-quotes-eq.env 
     ```
 - Start the .Net Api
 
