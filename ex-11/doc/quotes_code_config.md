@@ -82,7 +82,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-api-quotes-eq.env
+    source $HOME/envs/appsec-course-api-quotes-eq.env
     ```
 
 * Run the application

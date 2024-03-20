@@ -12,7 +12,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-api-episodes-eq.env 
+    source $HOME/envs/appsec-course-api-episodes-eq.env 
     ```
 
 * Run the application 
@@ -41,7 +41,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-client-eq.env
+    source $HOME/envs/appsec-course-client-eq.env
     ```
 
 * Run the application

@@ -9,7 +9,7 @@ Steps:
 * Source the configuration file</br>(`aa-create-env-files-from-github-user-secret.sh` may be helpful if you have lost the config)
   
     ```shell
-    source ~/path-to-env-file/appsec-course-client-eq.env
+    source $HOME/envs/appsec-course-client-eq.env
     ```
 
 * Run the application 

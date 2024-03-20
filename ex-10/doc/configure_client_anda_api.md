@@ -10,7 +10,7 @@ The readme.md file for both component include the basic information on which con
 
 ### Environment config
 
-For the client you have already crated a **.env** file that contains the basic configuration (~/path-to-env-file/appsec-course-client-eq.env). We need to add an additional variable for the MSAL token cache. This file now should hold the following environment parameters:
+For the client you have already crated a **.env** file that contains the basic configuration ($HOME/envs/appsec-course-client-eq.env). We need to add an additional variable for the MSAL token cache. This file now should hold the following environment parameters:
 
 ```shell
 export NODE_ENV=development

@@ -21,7 +21,7 @@ Steps:
 
   ```shell
   cd ex-02
-  source ~/path-to-env-file/appsec-course-client-eq.env
+  source $HOME/envs/appsec-course-client-eq.env
   npm start
   ```
 * Once the needed config is saved into the .env file we can delete the Codespace user secret for Client Secret.
