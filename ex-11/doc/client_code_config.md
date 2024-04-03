@@ -48,7 +48,7 @@ Steps:
 * Source the configuration file
 
     ```shell
-    source ~/path-to-env-file/appsec-course-client-eq.env 
+    source $HOME/envs/appsec-course-client-eq.env 
     ```
 
 * Run the application
