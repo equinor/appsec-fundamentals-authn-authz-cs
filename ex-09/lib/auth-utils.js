@@ -17,6 +17,9 @@ async function requestAccessTokenUsingAuthCode(request, reply, authCode) {
         codeVerifier: request.session.pkceCodes.verifier, // PKCE Code Verifier
     };
 
+    logger.debug('Making token request:');
+    logger.debug(tokenRequest);
+
     //https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.confidentialclientapplication.html#acquiretokenbycode
 
     await confidentialClientApplication
@@ -102,8 +105,8 @@ async function getTokenAuthCode (request, reply) {
         authCodeUrlParameters.codeChallengeMethod = request.session.pkceCodes.challengeMethod;
     });
  
-   logger.debug(request.session.pkceCodes);
-
+   
+    logger.debug('PKCE codes used in this session: ' + JSON.stringify(request.session.pkceCodes));
 
     //https://learn.microsoft.com/en-us/javascript/api/%40azure/msal-node/confidentialclientapplication?view=msal-js-latest#@azure-msal-node-confidentialclientapplication-acquiretokenbycode
     await confidentialClientApplication

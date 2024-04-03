@@ -7,9 +7,6 @@ The api lives in `./ex-10/got-episodes-api`
 
 Steps:
 
-* The Controller (./controller/episodes_controller.js)
-  * The controller code for the api, adding functions to get all episodes, get one episode, add an episode, update an episode and delete an episode 
-  * The controller reads episodes demo data from './data/got_demo_data'. No data is persisted, it's in memory for this version.
 * Server and app code (./src/server.js, ./src/app.js)
   * The Server creates an instance of the web app (app.js)
   * The app code is the main api server
@@ -23,6 +20,9 @@ Steps:
     * POST - /api/episodes
     * PUT - /api/episodes/:id
     * DELETE - /api/episodes/:id
+* The Controller (./controller/episodes_controller.js)
+  * The controller code for the api, adding functions to get all episodes, get one episode, add an episode, update an episode and delete an episode 
+  * The controller reads episodes demo data from './data/got_demo_data'. No data is persisted, it's in memory for this version.
 * Lib contains helpers (./lib)
   * 'app-config.js' to build and validate configuration params
   * 'auth.js' to help validating api requests, jwt token and scope vs api verbs
