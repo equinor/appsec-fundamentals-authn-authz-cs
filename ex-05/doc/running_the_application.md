@@ -18,7 +18,7 @@ Steps:
     npm start
     ```
 
-* Open the application in the browser. Remember that the forwarded port needs to be public.
+* Open the application in the browser.
 * Stop the application and set the NODE_ENV to "development"
 
     ```shell
