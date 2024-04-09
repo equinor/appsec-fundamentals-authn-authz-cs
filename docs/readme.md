@@ -11,25 +11,39 @@ The contents of the slide deck are contained in a set of markdown file in the [`
 - To host the files, you can use the "Live Server" plugin to VSCode. 
 - Press to "Go Live" icon toolbar bottom right, and the port 5500 is forwarded to your client.
 
-(In order to be able to use the automatic reload up-on changes the 'unsafe-inline' needs to be added to the CSP in ``index.html``. Remember to remove before before making commits.)
+(In order to be able to use the automatic reload up-on changes the 'unsafe-inline' needs to be added to the CSP in ``index.html``. Remember to remove before making commits.)
 
-### Github Pages
+### GitHub Pages
 
 The slide deck is also served using Github Pages at [https://equinor.github.io/appsec-fundamentals-authn-authz-cs](https://equinor.github.io/appsec-fundamentals-authn-authz-cs)
 
-
 ### Docker
 
-- `docker build -t aa-slides .`
-- `docker run -d -p 8080:8080 aa-slides`
+#### Docker Compose
+
+```sh
+# start (-d can be omitted)
+docker compose up -d
+# stop
+docker compose down 
+```
+
+#### Manual build
+
+```sh
+docker build -t aa-slides .
+docker run -d -p 8080:8080 aa-slides
+```
 
 ### SRI - Integrity check for own provided source files
 
-To provide a hash for the .js and .css file provided in the source do:
+To provide a hash for the `.js` and `.css` file provided in the source, do:
 
-- `cat ./content/js/app.js | openssl dgst -sha512 -binary | openssl base64 -A`
-- `cat ./content/css/equinor.css | openssl dgst -sha512 -binary | openssl base64 -A`
-- `curl https://file-to-download | openssl dgst -sha512 -binary | openssl base64 -A`
+```sh
+cat ./content/js/app.js | openssl dgst -sha512 -binary | openssl base64 -A
+cat ./content/css/equinor.css | openssl dgst -sha512 -binary | openssl base64 -A
+curl https://file-to-download | openssl dgst -sha512 -binary | openssl base64 -A
+```
 
 ... and so on.
 
