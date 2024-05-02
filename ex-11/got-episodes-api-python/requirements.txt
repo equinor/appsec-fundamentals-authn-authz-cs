@@ -1,4 +1,6 @@
-fastapi
+fastapi==0.109.1
+cryptography==42.0.4
+idna==3.7
 uvicorn[standard]
 pydantic
 requests
