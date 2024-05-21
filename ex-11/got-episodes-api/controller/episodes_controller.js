@@ -19,16 +19,16 @@ const getAllEpisodes = async (req, reply) => {
     var tokenArray = [];
     tokenArray = req.headers.authorization.split(' ');
 
-    const aQuote = await gotQuotes.getQuote(tokenArray[1]);
+    // const aQuote = await gotQuotes.getQuote(tokenArray[1]);
  
-    logger.debug('Got quote : ' + JSON.parse(aQuote).title);
+    // logger.debug('Got quote : ' + JSON.parse(aQuote).title);
 
     var episodesWithQuote = [...episodes];
-    episodesWithQuote.push({
-        id: 'Quote:',
-        title: JSON.parse(aQuote).title,
-        season: 9999
-    })
+    // episodesWithQuote.push({
+    //     id: 'Quote:',
+    //     title: JSON.parse(aQuote).title,
+    //     season: 9999
+    // })
     
     return episodesWithQuote;
 };

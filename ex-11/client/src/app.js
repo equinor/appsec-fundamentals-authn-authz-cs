@@ -108,7 +108,7 @@ function build(opts = {}) {
     app.register(fastifyCookie);
 
     var sessionCookieConfig = {
-        secure: true,
+        secure: 'auto',
         sameSite: 'Lax',
         maxAge: 86400000,
         httpOnly: true,
