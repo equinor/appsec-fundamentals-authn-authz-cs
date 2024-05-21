@@ -36,7 +36,7 @@ function build(opts = {}) {
         cookieName: 'sessionID',
         secret: authUtils.generateRandomKey(32),
         cookie: {
-            secure: true,
+            secure: 'auto',
             sameSite: 'Lax',
             maxAge: 86400000,
             httpOnly: true,
