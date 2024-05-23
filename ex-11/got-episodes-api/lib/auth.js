@@ -1,14 +1,14 @@
 'use strict'
 
-var jwt = require('jsonwebtoken');
-// const { SigningKey } = require('jwks-rsa');
-var __ = require('underscore');
+let jwt = require('jsonwebtoken');
+let __ = require('underscore');
 const { logger } = require('../lib/logger.js');
 const appConfig = require('./app-config.js');
+const createError = require('http-errors');
 
 //Adding auth validator
-async function authVerify(request, reply, done) {
-    var tokenArray = [];
+async function authVerify(request, reply) {
+    let tokenArray = [];
 
     logger.info(
         'Authenticating request for API ' + request.method + ' ' + request.url
@@ -19,16 +19,16 @@ async function authVerify(request, reply, done) {
         tokenArray = request.headers.authorization.split(' ');
     } else {
         logger.error('No Auth header in request');
-        return reply.code(401).send('Unauthorized - missing authentication');
+        throw createError(401, 'Unauthorized - missing authentication');
     }
 
     //Decoding token
-    var decodedToken = jwt.decode(tokenArray[1], { complete: true });
-    var token = tokenArray[1];
+    let decodedToken = jwt.decode(tokenArray[1], { complete: true });
+    let token = tokenArray[1];
 
     if (__.isNull(decodedToken)) {
         logger.error('Unable to decode token: ' + tokenArray[1]);
-        return reply.code(400).send('Unauthorized - bad request');
+        throw createError(400, 'Unauthorized - bad request');
     }
 
     logger.debug(
@@ -38,60 +38,58 @@ async function authVerify(request, reply, done) {
     //Verifying key parts of access token header
     if (__.isUndefined(decodedToken.header.kid)) {
         logger.error('Token header is missing KID');
-        return reply.code(400).send('Unauthorized - bad request');
+        throw createError(400, 'Unauthorized - bad request');
     }
 
     //Building up objects where the end-goal is to verify the token
     //Get signing key, define options to validate and then verify
 
-    var jwksClient = require('jwks-rsa');
-    var client = jwksClient({
+    let jwksClient = require('jwks-rsa');
+    let client = jwksClient({
         jwksUri: appConfig.jwksUri,
     });
 
-    var kid, key, signingKey;
+    let kid, key, signingKey;
 
     //Consult library doc for verification options
     //https://github.com/auth0/node-jsonwebtoken#readme
-    var validateOptions = {
+    let validateOptions = {
         audience: appConfig.apiAudience, //Who is this token for? This API (ad object ID URI)
         issuer: 'https://sts.windows.net/' + appConfig.tenantId + '/', //Which MS tenant issued the token
         maxAge: '90m',  // May not be necessary, but could be a signal on something being off or have changed
         algorithms: 'RS256',
     };
-
+   
     try {
         kid = decodedToken.header.kid;
         key = await client.getSigningKey(kid);
         signingKey = key.getPublicKey();
 
-        if (!signingKey.length > 0) {
-            throw {
-                message: 'Empty signing key - would trigger alg=none',
-                name: 'JWKS error',
-            };
+        if (signingKey.length <= 0) {
+            throw new Error('Empty signing key - would trigger alg=none');
         }
     } catch (err) {
         logger.error(err.name + ' - ' + err.message);
-        return reply.code(400).send('Unauthorized - bad request');
+        throw createError(400, 'Unauthorized - bad request');
     }
 
-    jwt.verify(token, signingKey, validateOptions, function (err, decoded) {
+    jwt.verify(token, signingKey, validateOptions, async function (err, decoded) {
         if (!err) {
             logger.debug('Decoded token body: ' + JSON.stringify(decoded));
 
+
             //Decoded object could be passed on to drive further CRUD logic logic
-            if (!grantScopeToRoute(decoded.scp, request.method, request.url)) {
+            if (!await grantScopeToRoute(decoded.scp, request.method, request.url)) {
                 logger.error(err);
-                reply.code(403).send('Forbidden');
+                throw createError(403, 'Forbidden');
             }
 
             //Potentially more logic
 
-            done();
+       
         } else {
             logger.error(err.name + ' - ' + err.message);
-            reply.code(401).send('Unauthorized');
+            throw createError(401, 'Unauthorized');
         }
     });
 };
@@ -101,10 +99,10 @@ async function authVerify(request, reply, done) {
 // based on scope claim from an access token
 //
 // Only doing a few scenarios (GET, READ)
-function grantScopeToRoute(scope, method, url) {
+async function grantScopeToRoute(scope, method, url) {
 
     //Default deny is a good practice
-    var grantAccess = false;
+    let grantAccess = false;
 
     logger.debug('Processing scope ' + scope + ' for access to ' + url + ' using method ' + method);
 

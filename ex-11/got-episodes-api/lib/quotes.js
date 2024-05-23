@@ -28,21 +28,12 @@ async function getAccessToken(assertion) {
 
     const got = (await import('got')).default;
 
-    console.log(requestForm, url)
-
-    //Creating a new instance of the got library which handles our http requests
-    // const atRequest = got.extend({
-    //     prefixUrl:
-    //         'https://login.microsoftonline.com/' + appConfig.tenantId + '/oauth2/v2.0/',
-    // });
-
     try {
         const response = await got.post(url, {form: requestForm }).json();
 
         logger.debug('Got new access token for quote api');
-     
-        const body = response.body;
-        return body.access_token;
+      
+        return response.access_token;
     
     } catch (error) {
         logger.error('Error getting AT for Quote API :: ' + error);
@@ -51,9 +42,11 @@ async function getAccessToken(assertion) {
 }
 
 async function getQuote(assertion) {
-   
+  
     const accessToken = await getAccessToken(assertion);
-
+   
+    const got = (await import('got')).default;
+   
     try {
         const response = await got.get(appConfig.quoteApiUrl, {
             headers: {
