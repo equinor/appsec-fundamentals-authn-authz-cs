@@ -11,6 +11,7 @@ process.env.QUOTES_API_URL = 'E';
 
 const { test } = require('tap');
 var sinon = require('sinon');
+const createError = require('http-errors');
 
 test('AuthVerify should behave as expected', (t) => {
 
@@ -20,54 +21,34 @@ test('AuthVerify should behave as expected', (t) => {
 
     var auth = require('../lib/auth');
 
-    t.test('No Accesstoken in header', async (t) => {
+   t.test('No Accesstoken in header', async (t) => {
 
-        //Creating object for stubbing the reply/response object
-        var reply = {
-            code: function (code) {
-                return {
-                    send: function (message) {
-                        return true;
-                    },
-                };
-            },
-        };
 
-        //Creating object for stubbing the request
         const request = {
             headers: {
             }
         };
 
-        //Creating object to stubb done
-        const done = function () {
-            return true
+        const reply = {}
+
+
+        try {
+            await auth.authVerify(request, reply);
+            t.fail('authVerify did not reject as expected');
+            
+        } catch (err) {
+            t.equal(err.status, 401, 'No Auth header in request');
+            t.match(err.message, "Unauthorized - missing authentication", "Error message should indicate unauthorized access");
         }
 
-        sinon.spy(reply);
-
-
-        const authenticate = await auth.authVerify(request, reply, done);
-
-        t.ok(reply.code.calledOnce, 'Reply - code called once');            
-        t.ok(reply.code.calledWith(401),'and returned a 401 - unauthorized');
-
-
         t.end();
+  
     });
 
 
     t.test('Bad Accesstoken in header', async (t) => {
         //Creating object for stubbing the reply/response object
-        var reply = {
-            code: function (code) {
-                return {
-                    send: function (message) {
-                        return true;
-                    },
-                };
-            },
-        };
+        var reply = {};
 
         //Creating object for stubbing the request
         const request = {
@@ -76,17 +57,14 @@ test('AuthVerify should behave as expected', (t) => {
             },
         };
 
-        //Creating object to stubb done
-        const done = function () {
-            return true;
-        };
+        try {
+            await auth.authVerify(request, reply);
+            t.fail('authVerify did not reject as expected');
+        } catch(err){
+            t.equal(err.status, 400, 'Unable to decode token');
+            t.match(err.message, "Unauthorized - bad request", "Error message should indicate bad request");
 
-        sinon.spy(reply);
-
-        const authenticate = await auth.authVerify(request, reply, done);
-
-        t.ok(reply.code.calledOnce, 'Reply - code called once');
-        t.ok(reply.code.calledWith(400), 'and returned a 400 - bad request');
+        }
 
         t.end();
     });

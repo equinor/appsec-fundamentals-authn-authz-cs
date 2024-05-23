@@ -11,7 +11,7 @@
 		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
 		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
 		"ghcr.io/devcontainers/features/node:1": {
-			"version": "18.19"
+			"version": "20.13.1"
 		},
 		"ghcr.io/devcontainers/features/python:1": {
 			"version": "3.10.13",

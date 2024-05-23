@@ -11,7 +11,6 @@ const { test } = require('tap');
 const app = require('../src/app');
 const authUtils = require('../lib/auth-utils.js');
 var sinon = require('sinon');
-const { default: got } = require('got/dist/source');
 
 test('requests the "/" route', async (t) => {
     const app = require('../src/app').build();
@@ -122,9 +121,6 @@ test('autenticated requests to "/got" should return list of episodes', async (t)
 
     t.end();
 });
-
-
-
 
 
 //

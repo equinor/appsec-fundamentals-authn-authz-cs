@@ -2,35 +2,30 @@
 
 
 // Adding some Game of Thrones Episodes demo data
-var episodes = require('../data/got_demo_data');
+const episodes = require('../data/got_demo_data');
 const { logger } = require('../lib/logger.js');
+const gotQuotes = require('../lib/quotes');
 
 
 // Handlers
-const getAllEpisodes = async (req, reply) => {
-    
-    
-    //Adding some logic to add a GOT Quote to the response of this endpoint
-    const gotQuotes = require('../lib/quotes');
-    
+const getAllEpisodes = async(req, reply) => {
+        
     logger.debug('Preparing to add a quote to getAllEpisodes');
   
-    //Extracting token
-    var tokenArray = [];
-    tokenArray = req.headers.authorization.split(' ');
-
+    //Extracting token and getting quote
+    let tokenArray = req.headers.authorization.split(' ');
     const aQuote = await gotQuotes.getQuote(tokenArray[1]);
  
     logger.debug('Got quote : ' + JSON.parse(aQuote).title);
 
-    var episodesWithQuote = [...episodes];
+    let episodesWithQuote = [...episodes];
     episodesWithQuote.push({
         id: 'Quote:',
         title: JSON.parse(aQuote).title,
         season: 9999
     })
     
-    return episodesWithQuote;
+    return reply.send(episodesWithQuote);
 };
 
 const getEpisode = async (req, reply) => {

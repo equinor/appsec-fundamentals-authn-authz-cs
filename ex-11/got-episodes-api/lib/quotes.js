@@ -8,7 +8,6 @@ Strategy
 */
 
 const { logger } = require('../lib/logger.js');
-const got = require('got');
 const appConfig = require('./app-config.js');
 
 //The assertion param is the accesstoken we use in the assertion field when using the bob flow
@@ -25,19 +24,16 @@ async function getAccessToken(assertion) {
         requested_token_use: 'on_behalf_of',
     };
 
-    //Creating a new instance of the got library which handles our http requests
-    const atRequest = got.extend({
-        prefixUrl:
-            'https://login.microsoftonline.com/' + appConfig.tenantId + '/oauth2/v2.0/',
-    });
+    const url = 'https://login.microsoftonline.com/' + appConfig.tenantId + '/oauth2/v2.0/token'
+
+    const got = (await import('got')).default;
 
     try {
-        const response = await atRequest.post('token', { form: requestForm });
+        const response = await got.post(url, {form: requestForm }).json();
 
         logger.debug('Got new access token for quote api');
-     
-        const body = JSON.parse(response.body);
-        return body.access_token;
+      
+        return response.access_token;
     
     } catch (error) {
         logger.error('Error getting AT for Quote API :: ' + error);
@@ -46,9 +42,11 @@ async function getAccessToken(assertion) {
 }
 
 async function getQuote(assertion) {
-   
+  
     const accessToken = await getAccessToken(assertion);
-
+   
+    const got = (await import('got')).default;
+   
     try {
         const response = await got.get(appConfig.quoteApiUrl, {
             headers: {

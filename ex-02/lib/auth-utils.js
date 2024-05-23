@@ -1,6 +1,5 @@
 'use strict';
 
-const got = require('got');
 const logger = require('./logger.js').logger;
 const appConfig = require('./app-config.js'); 
 var __ = require('underscore');
@@ -29,12 +28,17 @@ async function requestAccessTokenUsingAuthCode(authCode) {
         logger.info(
             'Requesting access token at ' + appConfig.serverConfig.tokenEndpoint
         );
+
+        const got = (await import('got')).default;
+
+
         const response = await got.post(appConfig.serverConfig.tokenEndpoint, {
             headers: requestHeaders,
             body: requestBody,
+            responseType: 'json'
         });
-
-        var responseBody = JSON.parse(response.body);
+      
+        var responseBody = response.body;
         
         logger.debug('AccessToken in response : ' + responseBody.access_token);
         return responseBody.access_token;
@@ -97,16 +101,20 @@ async function readInbox(accessToken) {
 
     try {
         logger.info('Preparing to read inbox ...');
+
+        const got = (await import('got')).default;
+
         const response = await got.get(
             "https://graph.microsoft.com/v1.0/me/mailFolders('Inbox')/messages?$select=sender,subject",
             {
-                headers: requestHeaders
+                headers: requestHeaders,
+                responseType: 'json'
             }
         );
 
         logger.debug('Got inbox - building response');
       
-        var mailBody = JSON.parse(response.body);
+        var mailBody = response.body;
 
         __.each(mailBody.value, function (item, index) {
             newMails.push(item.sender.emailAddress.name + ' - ' + item.subject);

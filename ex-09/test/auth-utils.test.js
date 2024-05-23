@@ -3,7 +3,7 @@
 const { test } = require('tap');
 var __ = require('underscore');
 var sinon = require('sinon');
-const got = require('got');
+const { getGot, resetGot } = require('./gotHelper.js');
 
 //Defining config
 process.env.TENANT_ID = 'A';
@@ -254,39 +254,41 @@ test('Does authUtils work', (t) => {
 
     test('Request to read inbox should return inbox content', async (t) => {
         const accessToken = 'eyABCDE';
-        const emailReturnObject = {
-            value: [
+        const emailReturnObject = `{
+            "value": [
                 {
-                    subject: 'Test Melding 1',
-                    sender: {
-                        emailAddress: {
-                            name: 'Robert Knallert',
-                            address: 'robert@knallert.com',
-                        },
-                    },
+                    "subject": "Test Melding 1",
+                    "sender": {
+                        "emailAddress": {
+                            "name": "Robert Knallert",
+                            "address": "robert@knallert.com"
+                        }
+                    }
                 },
                 {
-                    subject: 'Test Melding 2',
-                    sender: {
-                        emailAddress: {
-                            name: 'Jon Snow',
-                            address: 'jon@snow.com',
-                        },
-                    },
-                },
-            ],
-        };
+                    "subject": "Test Melding 2",
+                    "sender": {
+                        "emailAddress": {
+                            "name": "Jon Snow",
+                            "address": "jon@snow.com"
+                        }
+                    }
+                }
+            ]
+        }`;
 
-        const responseObject = { body: JSON.stringify(emailReturnObject) };
+        const responseObject = { body: emailReturnObject };
 
         delete require.cache[require.resolve('../lib/auth-utils.js')];
         const authUtils = require('../lib/auth-utils.js');
 
-        sinon.stub(got, 'get');
-        got.get.callsFake(async function () {
-            return responseObject;
-        });
+        // Reset got instance before stubbing
+        resetGot();
 
+        const got = await getGot();
+
+        sinon.stub(got, 'get').resolves(responseObject);
+   
         var newMails = await authUtils.readInbox(accessToken);
 
         t.ok(__.size(newMails) > 0, 'Content of inbox received');
@@ -313,9 +315,13 @@ test('Does authUtils work', (t) => {
         delete require.cache[require.resolve('../lib/auth-utils.js')];
         const authUtils = require('../lib/auth-utils.js');
 
-        sinon.stub(got, 'get');
-        got.get.throws('Test: Error from request to ms graph inbox');
+        // Reset got instance before stubbing
+        resetGot();
 
+        const got = await getGot();
+
+        sinon.stub(got, 'get').throws(new Error('Test: Error from request to ms graph inbox'));
+        
         var newMails = await authUtils.readInbox(accessToken);
 
         t.ok(__.size(newMails) == 0, 'Empty array of new mails received');

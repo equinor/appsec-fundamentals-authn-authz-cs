@@ -11,7 +11,7 @@ process.env.TOKEN_CACHE_FILE = './test/cache.json';
 const { test } = require('tap');
 var __ = require('underscore');
 var sinon = require('sinon');
-const got = require('got');
+const { getGot, resetGot } = require('./gotHelper.js');
 const gotEpisodes = require('../lib/gotepisodes')
 
 
@@ -40,13 +40,15 @@ test('The GOT Api should behave as expected', (t) => {
             ];
 
         const responseObject = {
-            body: JSON.stringify(episodesData),
+            body: episodesData
         };
 
-        sinon.stub(got, 'get');
-        got.get.callsFake(async function () {
-            return responseObject;
-        });
+        // Reset got instance before stubbing
+        resetGot();
+
+        const got = await getGot();
+
+        sinon.stub(got, 'get').resolves(responseObject);
 
         const episodes = await gotEpisodes.getGOTepisodes('ey...ye');
 
@@ -64,8 +66,12 @@ test('The GOT Api should behave as expected', (t) => {
 
     test('Error from GOT Api is handled', async (t) => {
         
-        sinon.stub(got, 'get');
-        got.get.throws('Test: Error from GOT API');
+        // Reset got instance before stubbing
+        resetGot();
+
+        const got = await getGot();
+
+        sinon.stub(got, 'get').throws(new Error('Test: Error from GOT API'));
 
         const episodes = await gotEpisodes.getGOTepisodes('ey...ye');
       

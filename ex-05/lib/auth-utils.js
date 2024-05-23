@@ -1,6 +1,5 @@
 'use strict';
 
-const got = require('got');
 const logger = require('./logger.js').logger;
 const appConfig = require('./app-config.js'); 
 var __ = require('underscore');
@@ -113,6 +112,9 @@ async function readInbox(accessToken) {
 
     try {
         logger.info('Preparing to read inbox ...');
+
+        const got = (await import('got')).default;
+
         const response = await got.get(
             "https://graph.microsoft.com/v1.0/me/mailFolders('Inbox')/messages?$select=sender,subject",
             {
@@ -129,7 +131,6 @@ async function readInbox(accessToken) {
         });
 
         return newMails;
-
     } catch (error) {
         logger.error('Request for emails failed: ' + error);
         return newMails;
