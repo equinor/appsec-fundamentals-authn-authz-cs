@@ -47,7 +47,7 @@ Steps:
 * Locate the section for "Codespaces Secrets"
 * In your codespace locate and examine the script that persist the config
   * `./src/aa-save-env-files-to-github-user-secret.sh`
-  * It reads all the config files (.env), stores them in an internal variable (filname:content),base64 encode the content, saves it to the Codespaces User Secret (defined in the `./src/config/development.cfg`) and then gives the current repo access to this secret.
+  * It reads all the config files (.env), stores them in an internal variable (filename:content),base64 encode the content, saves it to the Codespaces User Secret (defined in the `./src/config/development.cfg`) and then gives the current repo access to this secret.
 * In your codespace locate and examine the script that create .env files from the secret
   * `./src/aa-create-env-files-from-github-user-secret.sh`
   * It extracts information from the environment variable containing the secret, base64 decodes, extracts filename and content and save this in the config folder.

@@ -36,7 +36,7 @@ Expects the following environment variables to execute properly
 
     npm test
 
-    npm run test-cover  (continuous run, watch on canges, show coverage)
+    npm run test-cover  (continuous run, watch on changes, show coverage)
 
 ### Development mode
 
