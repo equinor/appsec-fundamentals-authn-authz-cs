@@ -34,6 +34,7 @@ Steps:
 ---
 ## The Config
 
+* The episodes env file (appsec-course-api-episodes-eq.env) needs to be updated with new config
 * Open appsec-course-api-episodes-eq.env
   
   ```shell
