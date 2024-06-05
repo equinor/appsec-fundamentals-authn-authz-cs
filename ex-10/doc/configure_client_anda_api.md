@@ -37,6 +37,9 @@ Additional config are defined in `./lib/app-config.js`. Config that should be ve
 
 * Verify the config on the appsec-course-client-eq.env file
   * Remember to create the directory that should host your MSAL token cache
+    ```shell
+    mkdir ${HOME}/.tcache 
+    ```
 * Do the step above and update the value of scope.gotApi (remember to save)
 
 ---
@@ -49,6 +52,9 @@ The Episodes API follows the same pattern as the client application, it uses con
 Steps:
 
 * Create a new **.env** file for the api config. Give it the name **appsec-course-api-episodes-eq.env**
+  ```
+  code ~/envs/appsec-course-api-episodes-eq.env
+  ```
   * This file should be kept out of version control and out of the source code folders! Store it in the same location as the config file for the client.
 * Add the following config to the .env file
   ```shell

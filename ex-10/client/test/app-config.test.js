@@ -14,8 +14,8 @@ test('Environment Config should be persisted', (t) => {
     delete require.cache[require.resolve('../lib/app-config.js')];
     const appConfig = require('../lib/app-config.js');
 
-    sinon.stub(appConfig, 'handleTokeCacheFile');
-    appConfig.handleTokeCacheFile.callsFake(() => {
+    sinon.stub(appConfig, 'handleTokenCacheFile');
+    appConfig.handleTokenCacheFile.callsFake(() => {
         console.log('Test token cache file management');
         return true;
     });
@@ -32,7 +32,7 @@ test('Environment Config should be persisted', (t) => {
         'Client Secret should be set'
     );
 
-    appConfig.handleTokeCacheFile.restore();
+    appConfig.handleTokenCacheFile.restore();
 
     t.end();
 });
@@ -54,8 +54,8 @@ test('IsConfigOk', (t) => {
             return true;
         });   
         
-        sinon.stub(appConfig, 'handleTokeCacheFile');
-        appConfig.handleTokeCacheFile.callsFake(() => {
+        sinon.stub(appConfig, 'handleTokenCacheFile');
+        appConfig.handleTokenCacheFile.callsFake(() => {
             console.log('Test token cache file management');
             return true;
         });
@@ -64,7 +64,7 @@ test('IsConfigOk', (t) => {
 
     t.afterEach(function() {
         process.exit.restore();
-        appConfig.handleTokeCacheFile.restore();
+        appConfig.handleTokenCacheFile.restore();
     });
 
     t.test('Base case - all config is good', (t) => {
