@@ -35,6 +35,13 @@ Steps:
 ## The Config
 
 * The episodes env file (appsec-course-api-episodes-eq.env) needs to be updated with new config
+* Open appsec-course-api-episodes-eq.env
+  
+  ```shell
+  code $HOME/envs/appsec-course-api-episodes-eq.env
+  ```
+
+* Add following config
   
   ```shell
   export NODE_ENV="development"
@@ -49,6 +56,8 @@ Steps:
 
 * Add this config - explore the Microsoft Entra ID App registrations to find the proper values.
   * Hint: You may have to create a new value for the secret, see [exercise 1](../../ex-01/doc/registering_app_object_in_azure_ad.md)
+* Explore the Microsoft Entra ID App registrations to find the proper values.
+  * Hint: You may have to create a new value for the secret
 
 ### --Now You--
 
@@ -62,7 +71,18 @@ Steps:
 
 (Assuming you are in a terminal window at `./ex-11/got-episodes-api`)
   
-* Install dependencies and execute tests
+* Install dependencies
+
+    ```shell
+    npm install
+    ```
+
+* Execute tests
+
+    ```shell
+    npm test
+    ```
+  
 * Source the configuration file
 
     ```shell

@@ -64,7 +64,7 @@ npm start
 ## NPM Scripts
 
 * _npm test_ (execute unit tests)
-* _npm run test-cover_ (run, reload on canges, show coverage)
+* _npm run test-cover_ (run, reload on changes, show coverage)
 * _npm run dev_ (run server, reload on changes)
 * _npm run snyk_ (scan for open source vulnerabilities)
 

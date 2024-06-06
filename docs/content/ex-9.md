@@ -55,7 +55,7 @@ For each request to get a token (using the auth code grant flow)
 GET /authorize?
 client_id=clientid
 &scope=(optional)
-&reponse_type=code
+&response_type=code
 &state=1234
 &redirect_uri=
 &code_challenge=(SHA of Code Verifier)
@@ -103,7 +103,7 @@ client_id=clientid
 POST /token 
 &grant_type=authorization_code
 &client_id=
-&code_verfier=(the PKCE secret)
+&code_verifier=(the PKCE secret)
 &code=
 &redirect_uri=
 </code></pre>
