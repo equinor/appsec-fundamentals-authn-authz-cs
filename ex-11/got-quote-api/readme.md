@@ -24,7 +24,7 @@ Expects the following environment variables to execute properly
     export EPISODES_API_CLIENT_ID=""
 
   
-Other config, like ratelimiting and **apiAudience** , is defined in './lib/app-config.js' and also needs to be verified.
+Other config, like rate limiting and **apiAudience** , is defined in './lib/app-config.js' and also needs to be verified.
 
 ### Execute
 
@@ -36,7 +36,7 @@ Other config, like ratelimiting and **apiAudience** , is defined in './lib/app-c
 
     npm test
 
-    npm run test-cover  (continuous run, watch on canges, show coverage)
+    npm run test-cover  (continuous run, watch on changes, show coverage)
 
 ### Development mode
 

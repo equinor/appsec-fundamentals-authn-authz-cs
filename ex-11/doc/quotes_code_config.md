@@ -55,7 +55,13 @@ Using the procedure from [exercise-10](../../ex-10/doc/registering_api_in_azure_
 ---
 ### Quotes .env file
 
-* Create a new .env file for the quotes api (appsec-course-api-quotes-eq.env). It should contain the following config:
+* Create a new .env file for the quotes api
+
+```shell
+code $HOME/envs/appsec-course-api-quotes-eq.env
+```
+
+* Add following config and update values:
 
   ```shell
   export NODE_ENV=development

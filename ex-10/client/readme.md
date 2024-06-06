@@ -36,7 +36,7 @@ Other config, like the scope for the **got api**, is defined in './lib/app-confi
 
     npm test
 
-    npm run test-cover  (continuous run, watch on canges, show coverage)
+    npm run test-cover  (continuous run, watch on changes, show coverage)
 
 ### Development mode
 

@@ -154,7 +154,7 @@ Many scenarios will require __your__ app/api's to play multiples roles, often in
 GET /authorize?
 client_id=clientid
 &scope=(optional)
-&reponse_type=code
+&response_type=code
 &state=1234
 &redirect_uri=https://app/callback
 (&response_mode=form_post/query)
@@ -179,7 +179,7 @@ client_id=clientid
 
 ## Authorization Code Grant (4)
 
-(4) Authorization server is called by authentication server which redirects to defined redirect_uri upon successfull authentication.
+(4) Authorization server is called by authentication server which redirects to defined redirect_uri upon successful authentication.
 
 <pre><code>
 303 redirect https://app/callback?code=o-t-c&state=1234
@@ -279,7 +279,7 @@ grant_type=authorization_code
 GET /authorize?
 client_id=clientid
 &scope=profile+openid
-&reponse_type=code
+&response_type=code
 &state=1234
 &redirect_uri=https://app/callback
 (&response_mode=form_post/query)
@@ -305,7 +305,7 @@ client_id=clientid
 
 ## OpenID Connect Code Flow (4)
 
-(4) Authorization server is called by authentication server which redirects to defined redirect_uri upon successfull authentication.
+(4) Authorization server is called by authentication server which redirects to defined redirect_uri upon successful authentication.
 
 <pre><code>
 303 redirect https://app/callback?code=o-t-c&state=1234

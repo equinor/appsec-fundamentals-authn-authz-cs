@@ -32,7 +32,7 @@ Other config, like rate-limiting and **apiAudience** , is defined in './lib/app-
 
     npm test
 
-    npm run test-cover  (continuous run, watch on canges, show coverage)
+    npm run test-cover  (continuous run, watch on changes, show coverage)
 
 ### Development mode
 
