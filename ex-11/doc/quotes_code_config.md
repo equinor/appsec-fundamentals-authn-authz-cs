@@ -10,18 +10,7 @@ Only significant changes will be mentioned.
 
 Steps:
 
-* App config (./lib/app-config.js)
-  * The config we need is
-  
-    ```shell
-    export NODE_ENV=development
-    export TENANT_ID=""
-    export PORT=3200
-    export QUOTES_API_URI=""
-    export EPISODES_API_URI=""
-    export EPISODES_API_CLIENT_ID=""
-    ```
-
+* App config (`./lib/app-config.js`)
 * The App
   * A new controller for quotes, exposes /api/quote. Will return a random quote if request is validated
   * Exposes '/' and '/doc' (Swagger)
@@ -43,7 +32,7 @@ Steps:
 
 We need to create a new Microsoft Entra ID App Registration for Quotes Api.
 
-Using the procedure from [exercise-10](../../ex-10/doc/registering_api_in_azure_ad.md) create a new app registration. The important values will be:
+Using the procedure from [exercise 10](../../ex-10/doc/registering_api_in_azure_ad.md) create a new app registration. The important values will be:
 * Name: **(initial)-appsec-course-quotes-api**
 * Expose an api and add scope: **Quote.Read**
 * Give the episodes api permission to use the **Quote.Read** scope
@@ -64,13 +53,18 @@ code $HOME/envs/appsec-course-api-quotes-eq.env
 * Add following config and update values:
 
   ```shell
-  export NODE_ENV=development
-  export TENANT_ID=""
-  export PORT=3200
-  export QUOTES_API_URI=""
-  export EPISODES_API_URI=""
-  export EPISODES_API_CLIENT_ID=""
+  code ~/envs/appsec-course-api-quotes-eq.env
   ```
+  * It should contain the following config:
+
+    ```shell
+    export NODE_ENV=development
+    export TENANT_ID=""
+    export PORT=3200
+    export QUOTES_API_URI=""
+    export EPISODES_API_URI=""
+    export EPISODES_API_CLIENT_ID=""
+    ```
 
 ### --Now You--
 
@@ -84,6 +78,10 @@ Steps:
 
 (Assuming you are in a terminal window at ./ex-11/got-quote-api)
 
+* cd into `./ex-11/got-quote-api`
+  ```shell
+  cd ./ex-11/got-quote-api
+  ```
 * Install dependencies and execute tests
 * Source the configuration file
 
