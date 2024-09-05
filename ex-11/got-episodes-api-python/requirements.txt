@@ -1,7 +1,7 @@
 fastapi==0.112.2
 starlette==0.38.4
 anyio==4.4.0 
-cryptography==43.0.0
+cryptography==43.0.1
 certifi==2024.7.4
 idna==3.8
 uvicorn[standard]
@@ -12,3 +12,4 @@ pydantic-settings
 pytest
 httpx
 urllib3==2.2.2
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
