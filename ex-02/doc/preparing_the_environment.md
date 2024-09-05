@@ -13,7 +13,7 @@ node --version
 ```shell
 npm --version
 ```
-* Node should be around v18.18.0 and NPM > 9
+* Node should be around latest v20 (Iron) and NPM > 10
 
 ```shell
 npm install

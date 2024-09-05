@@ -31,7 +31,7 @@ Important NodeJS modules
 
 ## Requirements
 
-* Nodejs (tested on v18.18.0)
+* Nodejs (tested on v20.17.0)
 
 ## Install
 

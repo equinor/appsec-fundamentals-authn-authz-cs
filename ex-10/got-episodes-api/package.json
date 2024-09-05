@@ -17,19 +17,19 @@
     "dependencies": {
         "@fastify/cors": "^9.0.1",
         "@fastify/rate-limit": "^9.1.0",
-        "@fastify/swagger": "^8.14.0",
-        "@fastify/swagger-ui": "^3.0.0",
-        "fastify": "^4.27.0",
+        "@fastify/swagger": "^8.15.0",
+        "@fastify/swagger-ui": "^4.1.0",
+        "fastify": "^4.28.1",
         "jsonwebtoken": "^9.0.2",
         "jwks-rsa": "^3.1.0",
-        "pino": "^9.1.0",
-        "pino-pretty": "^11.0.0",
-        "underscore": "^1.13.6"
+        "pino": "^9.4.0",
+        "pino-pretty": "^11.2.2",
+        "underscore": "^1.13.7"
     },
     "devDependencies": {
-        "nodemon": "^3.1.0",
+        "nodemon": "^3.1.4",
         "sinon": "^18.0.0",
-        "snyk": "^1.1291.0",
-        "tap": "^18.8.0"
+        "snyk": "^1.1293.0",
+        "tap": "^21.0.1"
     }
 }
