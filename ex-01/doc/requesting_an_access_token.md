@@ -6,7 +6,6 @@ Steps:
 
 * Explore the `POST` request in 'authCode.http'
 * Copy the one-time `Code` from previous exercise (leg 1) to `&code=` of the post request
-* Copy the client_secret value into the "clip-board"
 * Select "Send the request" in VSCode (just above the POST definition)
 * Explore the results in the 'Response window'
   
