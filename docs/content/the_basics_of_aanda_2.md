@@ -166,5 +166,5 @@ dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 * The process for a protected resource to query the authorization server to verify validity of a OAuth2 token
 * An extension to OAuth2 defined in [rfc7662](https://datatracker.ietf.org/doc/html/rfc7662)
 * Getting tokens type by ref and querying for "details"
-* Not currently supported by Microsoft Entra ID<br/> ([5+ year old request](https://feedback.azure.com/d365community/idea/ea407180-be25-ec11-b6e6-000d3a4f0789))
+* Not currently supported by Microsoft Entra ID<br/> ([7+ year old request](https://feedback.azure.com/d365community/idea/ea407180-be25-ec11-b6e6-000d3a4f0789))
 * No introspection limits the value of the /revoke end-point?
