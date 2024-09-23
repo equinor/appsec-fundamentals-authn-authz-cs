@@ -12,7 +12,7 @@ In this section we will discuss a few security related implication that we are f
 * [OAuth 2.0 for Browser-Based Apps](https://datatracker.ietf.org/doc/draft-ietf-oauth-browser-based-apps/)
 * Good practice: Protocols (and Frameworks) does not guarantee security, Developers Do 
 * Good practice: For Microsoft Frameworks, Use MSAL (v2) - not ADAL (v1 is deprecated)
-* Good practice: Practice continuos threat modeling. Visit [appsec.equinor.com](https://appsec.equinor.com/threat-modeling/) for more information. ⚡️
+* Good practice: Practice continuous threat modeling. Visit [appsec.equinor.com](https://appsec.equinor.com/threat-modeling/) for more information. ⚡️
 
 ## --Now You--
 
