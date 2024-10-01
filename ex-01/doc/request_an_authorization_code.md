@@ -22,7 +22,7 @@ Steps:
   * Using the Browser Web Developer Tools is recommended.
   * Why in the browser?
   * Why the "consent" flow?
-  * The code is available in the redirect. It is "use once" within "seconds"
+  * The code is available in the redirect. It is "use once" within 10 minutes
   * (Depending on the State of your browser you may have to authenticate or not, explore the get request header for cookies)
   * Make a copy of the 'code' parameter in the redirect.
 * For additional insight on the complete dance (optional)
