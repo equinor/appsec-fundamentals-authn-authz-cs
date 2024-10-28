@@ -67,9 +67,7 @@
 		"trufflehog": "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.63.3/trufflehog_3.63.3_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
 	},
 	"postCreateCommand": {
-		"sed": "sed -i 's/ZSH_THEME=\\\"devcontainers\\\"/ZSH_THEME=\\\"avit\\\"/g' ~/.zshrc",
-		"addPath": "echo 'export PATH=$PATH:$CODESPACE_VSCODE_FOLDER/src' >> ~/.zshrc",
-		"cloc": "sudo apt update && sudo apt install -y cloc"
+		"define-environment": "./src/define-environment.sh"
 	},
 	"containerEnv": {
 		"PIPELINE": "development",
