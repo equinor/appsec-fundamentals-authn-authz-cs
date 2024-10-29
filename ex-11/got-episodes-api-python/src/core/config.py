@@ -43,7 +43,8 @@ def get_settings():
             port = os.environ.get('PORT', 3100),
             host =  os.environ.get('HOST', '127.0.0.1'),
             jwks_uri = f"https://login.microsoftonline.com/{os.environ['TENANT_ID']}/discovery/v2.0/keys",
-            api_audience= os.environ['EPISODES_API_URI']
+            api_audience= os.environ['EPISODES_API_URI'],
+            required_scope= list(["swagger","api.read"])
         )
     except ValidationError as exc:
         for err in exc.errors():
@@ -57,6 +58,10 @@ def get_well_known_conf_url(config: AppSettings):
 def get_claims_options():
     config = get_settings()
     return {
-        "iss": { "essential": True, "value": str(config.issuer) },
-        "aud": { "essential": True, "value": config.api_audience }
+        "iss": { "essential": True, "value": str(config.issuer) },  # Issuer must match config
+        "aud": { "essential": True, "value": config.api_audience },  # Audience must match config
+        "exp": { "essential": True  },  # EntraID token lifetime is 60-90min (75min on average)
+        "nbf": { "essential": True },  
+        "iat": { "essential": True },
+        "scp": { "essential": True } 
     }
