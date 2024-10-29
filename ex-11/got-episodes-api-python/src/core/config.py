@@ -18,6 +18,7 @@ class AppSettings(BaseSettings):
     host: str
     jwks_uri: HttpUrl
     api_audience: str
+    required_scope: list
 
 def get_uvicorn_config():
     return uvicorn.Config(
@@ -44,7 +45,7 @@ def get_settings():
             host =  os.environ.get('HOST', '127.0.0.1'),
             jwks_uri = f"https://login.microsoftonline.com/{os.environ['TENANT_ID']}/discovery/v2.0/keys",
             api_audience= os.environ['EPISODES_API_URI'],
-            required_scope= list(["swagger","api.read"])
+            required_scope= list(["Episodes.Read","Swagger"])
         )
     except ValidationError as exc:
         for err in exc.errors():
