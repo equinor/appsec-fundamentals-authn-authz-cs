@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 echo 'export PATH=$CODESPACE_VSCODE_FOLDER/src:$PATH' >> ~/.zshrc
 sed -i 's/ZSH_THEME="devcontainers"/ZSH_THEME="avit"/' ~/.zshrc
