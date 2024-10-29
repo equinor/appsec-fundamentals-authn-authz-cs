@@ -56,11 +56,6 @@
 				"terminal.integrated.defaultProfile.linux": "zsh",
 				"csharp.suppressBuildAssetsNotification": true
 			}
-		},
-		"codespaces": {
-			"openFiles": [
-				".devcontainer/welcome.txt"
-			]
 		}
 	},
 	"updateContentCommand": {
