@@ -31,7 +31,7 @@
 		"ghcr.io/devcontainers/features/dotnet",
 		"ghcr.io/devcontainers/features/node",
 		"ghcr.io/devcontainers/features/python",
-		"ghcr.io/devcontainers/features/github-cli",
+		"ghcr.io/devcontainers/features/github-cli"
 	],
 	"customizations": {
 		"vscode": {
@@ -44,14 +44,11 @@
 				"dbaeumer.vscode-eslint",
 				"ms-azuretools.vscode-docker",
 				"charliermarsh.ruff",
-				"ms-dotnettools.csharp",
-				"ritwickdey.liveserver"
+				"ms-dotnettools.csharp"
 			],
 			"settings": {
 				"gitlens.showWelcomeOnInstall": false,
-				"terminal.integrated.gpuAcceleration": "canvas",
-				"liveServer.settings.root": "/docs",
-				"liveServer.settings.donotShowInfoMsg": true,
+				"terminal.integrated.gpuAcceleration": "auto",
 				"terminal.integrated.shell.linux": "/usr/bin/zsh",
 				"terminal.integrated.defaultProfile.linux": "zsh",
 				"csharp.suppressBuildAssetsNotification": true

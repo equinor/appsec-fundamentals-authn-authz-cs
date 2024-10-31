@@ -37,18 +37,18 @@ test('requests the swagger "/doc" route', async (t) => {
             method: 'GET',
             url: '/doc',
         });
-        t.equal(response.statusCode, 302, 'returns a status code of 302');
-        t.equal(response.headers.location,'./doc/static/index.html','location is to static html');
+        t.equal(response.statusCode, 200, 'returns a status code of 200');
         t.end();
-
+        
     });
-
+    
     t.test('Request to /doc/static/index.html should render swagger doc', async (t) => {
         const response = await app.inject({
             method: 'GET',
             url: '/doc/static/index.html',
         });
-        t.equal(response.statusCode, 200, 'returns a status code of 200');
+        t.equal(response.statusCode, 302, 'returns a status code of 302');
+        t.equal(response.headers.location,'/doc/','location is to static html');
    
         t.end();
     });
