@@ -56,6 +56,10 @@ def test_get_claims_options(patchenv):
     expected_claims_options = {
         "iss": {"essential": True, "value": f"https://sts.windows.net/{os.environ['TENANT_ID']}/",},
         "aud": {"essential": True, "value": f"{os.environ['EPISODES_API_URI']}"},
+        "exp": { "essential": True  },
+        "nbf": { "essential": True },  
+        "iat": { "essential": True },
+        "scp": { "essential": True }         
     }
     result_claims_options = get_claims_options()
     assert result_claims_options == expected_claims_options
