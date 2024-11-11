@@ -50,9 +50,6 @@ The client need to authenticate itself with the Authorization Server (MS Entra I
 
 Steps:
 
-* Verify that you are using Zsh as shell in your CS terminal window
-  * Look for the `>zsh` in the upper right corner area of you CS terminal
-  * Running `echo $0` should emit `/usr/bin/zsh`
 * Register a client secret for your application (In 'Certificates and Secrets')
   * Expire: 7 days
   * Copy the secret value (not the secret id)
