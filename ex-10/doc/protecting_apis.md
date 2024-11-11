@@ -60,7 +60,7 @@ There are other security measures in the API implementation that we don't discus
 * Document APIs using Swagger or OpenAPI spec
 * Create security related test
   * Use [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) as an guide line for testing and secure coding practices.
-  * Apply tools to test your API's. (Fuzzers, OWASP ZAP etc..)
+  * Apply tools to test your API's. (Fuzzers, ZAP etc..)
   * Test from the outside (integration, end-to-end) (utilizing all components?)
 * Consult OWASP Top 10's
   * [API](https://owasp.org/www-project-api-security/)
