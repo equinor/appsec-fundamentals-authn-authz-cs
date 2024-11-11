@@ -12,7 +12,7 @@ The purpose of this section is to list and perhaps discuss a few frameworks for 
 ## --Now You--
 
 * Spend a few minutes browsing and make yourself familiar with the resources
-* Drop a message on the course slack channel state which authentication library you are using today (if any)
+* Drop a message on the course slack channel state which authentication library you are using today (if any) ⚡️
   
 ## --Discuss security issues and good practices--
 
