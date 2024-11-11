@@ -18,6 +18,14 @@ cd ex-01
   * Your client id (`client_id`)
   * The redirect URI (`redirect_uri`)
 * Explore values fro `scope` and `state`
+* Prepare the Python environment
+
+```shell
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 * Execute `first-leg.py` and copy the authorization url
 
 ```shell

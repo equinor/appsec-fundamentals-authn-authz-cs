@@ -2,10 +2,9 @@
 
 Now we are continuing on the second leg of the auth code flow, using the acquired code to request a token.
 
-
 ## Registering the client secret
 
-The client need to authenticate itself with the Authorization Server (MS Entra ID). For this it uses a client secret.
+The client need to authenticate itself with the Authorization Server (MS EntraId). For this it uses a client secret.
 
 Steps:
 
@@ -27,11 +26,20 @@ Steps:
 
 Steps:
 
-* Explore the `POST` request in 'authCode.http'
-* Copy the one-time `Code` from previous exercise (leg 1) to `&code=` of the post request
-* Select "Send the request" in VSCode (just above the POST definition)
-* Explore the results in the 'Response window'
-  
+* We assume your terminal window is in `./ex-01`
+* Open and explore `./ex-01/second-leg.py` file in VSCode.
+* Update values for the following variables:
+  * Your tenant id (`tenant_id`)
+  * Your client id (`client_id`)
+  * The redirect URI (`redirect_uri`)
+  * The One time code (`authorization_code`) (use code from first leg)
+  * (The client_secret is read from the terminal environment)
+* Execute `second-leg.py`
+
+```shell
+python ./second-leg.py
+````
+
 ## --Now You--
 
 * Do the steps
@@ -39,8 +47,7 @@ Steps:
 
 ## --Discuss security issues and good practices--
 
-* This part of the communication happens in the "back-channel"  
-(will be more obvious later on)
+* This part of the communication happens in the "back-channel" (will be more obvious later on)
 * Public vs. Confidential Client (Trust level)
 * The importance of proper SSL, exception of localhost
 * The importance of handling `client_secret` as a secret
