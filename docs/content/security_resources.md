@@ -15,8 +15,3 @@
 * [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)
 * [OWASP Software Assurance Maturity Model](https://owaspsamm.org/)
 
----
-
-## Going deeper into A&A?
-
-![OAuth2 in Action](content/images/oauth2inaction.jpeg)<!-- .element style="width:40%"-->
