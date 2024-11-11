@@ -1,6 +1,29 @@
-# Requesting an Access Token using using Rest Client.
+# Requesting an Access Token
 
 Now we are continuing on the second leg of the auth code flow, using the acquired code to request a token.
+
+
+## Registering the client secret
+
+The client need to authenticate itself with the Authorization Server (MS Entra ID). For this it uses a client secret.
+
+Steps:
+
+* Register a client secret for your application (In 'Certificates and Secrets')
+  * Expire: 7 days
+  * Copy the secret *value* (not the secret id)
+* Execute the following command to make the client secret available to the environment (change <the secret> with the value)
+
+    ```shell
+    export CLIENT_SECRET='<the secret>'
+    ```
+ 
+## --Now You--
+
+* Do the steps
+
+
+## Getting the access token
 
 Steps:
 

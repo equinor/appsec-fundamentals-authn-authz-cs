@@ -1,23 +1,29 @@
-# Requesting an Authorization Code using Rest Client.
+# Requesting an Authorization Code
 
-At this point we will start the first leg of the OAuth2 Code Grant flow - getting the auth code that we later will use to request a token. We will use the VS Code Rest Client.
+At this point we will start the first leg of the OAuth2 Code Grant flow - getting the auth code that we later will use to request a token. We use a small Python program to generate the request and past this into our browser
 
 Steps:
 
 * Let's start by looking at the [auth code flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow) in the documentation of the _Microsoft Identity Platform_
 * Open a new terminal window if one is not already available.
-  * Current directory should be `/workspaces/appsec-fundamentals-authn-authz-cs `
-* Open the `./ex-01/authCode.http` file in VSCode.
-  * Verify that the 'Rest Client' extension is active
-* In 'authCode.http' - add value values for
-  * Your tenant id to `@tenant_id=`
-  * Your client id to `@client_id=`
-  * The redirect URI to `@redirect_uri=`
-* Explore the set-up and the `GET` request (The first leg)
-  * In VSCode, select the GET request
-  * Right-click and select 'Generate Code Snippet' ([doc](https://github.com/Huachao/vscode-restclient#generate-code-snippet))
-  * Select 'Shell' and then 'cURL'
-* Copy the `url` from the curl request
+* Navigate to the `./ex-01` directory
+
+```shell
+cd ex-01
+```
+
+* Open and explore `./ex-01/first-leg.py` file in VSCode.
+* Update values for the following variables:
+  * Your tenant id (`tenant_id`)
+  * Your client id (`client_id`)
+  * The redirect URI (`redirect_uri`)
+* Explore values fro `scope` and `state`
+* Execute `first-leg.py` and copy the authorization url
+
+```shell
+python ./first-leg.py
+````
+
 * Paste the url into your browser and execute
   * Using the Browser Web Developer Tools is recommended.
   * Why in the browser?

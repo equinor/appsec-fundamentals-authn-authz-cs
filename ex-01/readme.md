@@ -1,6 +1,6 @@
 # Authorization Code Grant
 
-In this exercise we will explore the OAuth2 authorization code grant from a raw perspective, that is the raw http flow. We are using the browser and [VSCode Rest Client](https://github.com/Huachao/vscode-restclient#system-variables) to facilitate the investigation.
+In this exercise we will explore the OAuth2 authorization code grant from a raw perspective, that is the raw http flow
 
 ## Outline
 
