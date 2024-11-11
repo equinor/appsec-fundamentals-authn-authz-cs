@@ -60,7 +60,7 @@
 		"define-environment": "./src/define-environment.sh"
 	},
 	"postCreateCommand": {
-		"say-hello": "echo 'Hello, and welcome!'"
+		"welcome": "echo 'Hello, and welcome! Your codespace is now ready to use.'"
 	},
 	"containerEnv": {
 		"PIPELINE": "development",
