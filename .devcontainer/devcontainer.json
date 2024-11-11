@@ -56,10 +56,11 @@
 		}
 	},
 	"updateContentCommand": {
-		"trufflehog": "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.82.13/trufflehog_3.82.13_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/"
+		"trufflehog": "curl -L https://github.com/trufflesecurity/trufflehog/releases/download/v3.82.13/trufflehog_3.82.13_linux_amd64.tar.gz| tar -xz -C /tmp/ && sudo mv /tmp/trufflehog /usr/local/bin/",
+		"define-environment": "./src/define-environment.sh"
 	},
 	"postCreateCommand": {
-		"define-environment": "./src/define-environment.sh"
+		"say-hello": "echo 'Hello, and welcome!'"
 	},
 	"containerEnv": {
 		"PIPELINE": "development",
