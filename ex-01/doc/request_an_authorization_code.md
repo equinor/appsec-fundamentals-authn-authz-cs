@@ -32,7 +32,7 @@ pip install -r requirements.txt
 python ./first-leg.py
 ````
 
-* Paste the url into your browser and execute
+* Paste the url into your browser and execute (or click link in terminal if available)
   * Using the Browser Web Developer Tools is recommended.
   * Why in the browser?
   * Why the "consent" flow?

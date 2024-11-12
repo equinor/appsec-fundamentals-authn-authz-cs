@@ -31,6 +31,6 @@ response = requests.post(token_endpoint, data=data)
 if response.status_code == 200:
     # Parse the JSON response
     tokens = response.json()
-    print("Tokens:\n", tokens)
+    print(json.dumps(tokens, indent=4))
 else:
-    print("Failed to obtain access token:", response.text)
+    print("Failed to obtain token:", response.text)
