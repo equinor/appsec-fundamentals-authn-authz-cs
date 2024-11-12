@@ -4,17 +4,17 @@ Now we are continuing on the second leg of the auth code flow, using the acquire
 
 ## Registering the client secret
 
-The client need to authenticate itself with the Authorization Server (MS EntraId). For this it uses a client secret.
+The client need to authenticate itself with the Authorization Server (Microsoft Entra ID). For this it uses a client secret.
 
 Steps:
 
 * Register a client secret for your application (In 'Certificates and Secrets')
   * Expire: 7 days
   * Copy the secret *value* (not the secret id)
-* Execute the following command to make the client secret available to the environment (change <the secret> with the value)
+* Execute the following command to make the client secret available to the environment (add your secret value)
 
     ```shell
-    export CLIENT_SECRET='<the secret>'
+    export CLIENT_SECRET='THE-VALUE-OF-YOUR-CLIENT-SECRET'
     ```
  
 ## --Now You--
