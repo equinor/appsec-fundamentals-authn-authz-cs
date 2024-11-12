@@ -36,5 +36,5 @@ Steps:
 ## --Now You--
 
 * Do the steps above
-* When done; post a message to the course Slack channel and include your api's scope (api://..../...)
+* When done; post a message to the course Slack channel and include your api's scope (api://..../...) ⚡️
 

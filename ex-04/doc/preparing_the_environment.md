@@ -22,4 +22,4 @@ Steps:
 ## --Now You--
 
 * Do the steps
-* When done post the output the last two lines of the **npm test** command to the course Slack channel
+* When done post the output the last two lines of the **npm test** command to the course Slack channel ⚡️
