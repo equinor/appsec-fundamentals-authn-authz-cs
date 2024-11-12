@@ -1,6 +1,6 @@
 # EX-2 - Getting an access token using code
 
-The purpose of this exercise is get an access token using code. We are moving from the raw style http to exploring what's needed to get this done in code.
+The purpose of this exercise is get an access token using code. We are moving from the "raw style" http to exploring what's needed to get this done using more code.
 
 ## Outline
 
