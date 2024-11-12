@@ -6,6 +6,7 @@
 
 * Microsoft Entra ID App Registrations
 * Remove unused Github CodeSpaces
+* Remove unused Github CodeSpace Secrets
 
 ---
 

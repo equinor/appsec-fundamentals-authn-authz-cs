@@ -78,7 +78,7 @@ Many scenarios will require __your__ app/api's to play multiples roles, often in
 
 [RFC6749 1.2](https://datatracker.ietf.org/doc/html/rfc6749#section-1.2)
 
-![Abstract flow](content/images/rfc6479_abstract_flow.png)<!-- .element style="width:40%"-->
+![Abstract flow](content/images/rfc6749_abstract_flow.png)<!-- .element style="width:40%"-->
 
 <div style="font-size:0.7em">
 
@@ -125,11 +125,11 @@ Many scenarios will require __your__ app/api's to play multiples roles, often in
 
 ---
 
-## The Authorization Code Grant<br/>[rfc6479 - 4.1](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
+## The Authorization Code Grant<br/>[rfc6749 - 4.1](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
 
 | | |
 | - | - |
-| ![Code Grant](content/images/rfc6479_code_grant.png)<!-- .element style="width:78%"--> | ![Code Grant](content/images/actors.jpg)<!-- .element style="width:70%"--> |
+| ![Code Grant](content/images/rfc6749_code_grant.png)<!-- .element style="width:78%"--> | ![Code Grant](content/images/actors.jpg)<!-- .element style="width:70%"--> |
 
 ---
 

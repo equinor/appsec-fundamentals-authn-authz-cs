@@ -40,7 +40,7 @@ Steps:
 * You may have to start / stop the back-end between changes.
 * Do the steps above
 * Login to your application and figure out how to observe the changes (Hint: "id token")
-* When done - post how many AD groups you are member of into the course Slack channel.
+* When done - post how many AD groups you are member of into the course Slack channel. ⚡️
 
 ### --Further experiments-- (🥸)
 

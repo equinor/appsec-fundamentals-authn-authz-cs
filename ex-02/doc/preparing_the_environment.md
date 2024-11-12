@@ -26,4 +26,4 @@ npm test
 ## --Now You--
 
 * Do the steps
-* When done post the time it took to run the tests to the workshop Slack channel
+* When done post the time it took to run the tests to the workshop Slack channel ⚡️
