@@ -17,9 +17,9 @@ Steps:
 * You can extract the value from the CLIENT_SECRET from the environment using the following command
 
   ```shell
-  echo $APPSEC_AA_CLIENT_SECRET 
+  echo $CLIENT_SECRET 
   ```
-* If you have create a new code space since you configured the Entra ID Application Object for the client app, you may need to update the app registration with the proper redirect uri.
+* (If you have create a new code space since you configured the Entra ID Application Object for the client app, you may need to update the app registration with the proper redirect uri.)
 
 
 ## --Now You--

@@ -38,8 +38,6 @@
 			"extensions": [
 				"ms-vscode-remote.remote-containers",
 				"GitHub.codespaces",
-				"mhutchie.git-graph",
-				"humao.rest-client",
 				"streetsidesoftware.code-spell-checker",
 				"dbaeumer.vscode-eslint",
 				"ms-azuretools.vscode-docker",
