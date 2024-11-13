@@ -34,4 +34,4 @@ if response.status_code == 200:
     tokens = response.json()
     print(json.dumps(tokens, indent=4))
 else:
-    print("Failed to obtain token:", response.text)
+    print("Failed to obtain token:\n", json.dumps(json.loads(response.text),indent=4))
