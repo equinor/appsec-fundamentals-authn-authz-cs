@@ -21,8 +21,6 @@ async def get_app_registrations_with_owners(keyword: str) -> List[Dict]:
     token = await credential.get_token(*scopes)
 
     # Define the Graph API endpoint
-    #service_principals_url = "https://graph.microsoft.com/v1.0/servicePrincipals"
-    #owners_url_template = "https://graph.microsoft.com/v1.0/servicePrincipals/{id}/owners"
     app_registrations_url = "https://graph.microsoft.com/v1.0/applications"
     owners_url = "https://graph.microsoft.com/v1.0/applications/{id}/owners"
 
