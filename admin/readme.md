@@ -37,9 +37,12 @@ Tasks to do before/after workshop. Current set-up is assuming a virtual workshop
   * Decide on changes, create issues/tasks on board for updates
   * Delete groups output of exercises from course Slack channel?
 * Within 2 weeks after
-  * ⚡️ Run scripts to identify EQ AAD Objects 
-  * Send reminder about cleaning up
-  * ⚡️ Remind about joining #appsec
+  * ⚡️ Run scripts to identify EQ AAD Objects
+    * Log in with `azure-cli` before running the script
+    * Run `appreg_cleanup.py` to get a list of app registrations with owners
+    * Verify recipients from output
+  * Send reminder about cleaning up with (set owners-email as BCC). Template below
+  * ⚡️ Remind about joining`#appsec` on Slack
 
 ### Invitation proposal ⚡️
 
@@ -100,4 +103,31 @@ Instructor A, Instructor B
  
 Ps: The sign-up sheet is locked for editing. Your details are still available in the spreadsheet using this link
  
+```
+
+### Cleanup Reminder ⚡️
+
+```text
+
+Greetings!
+ 
+This is just a friendly reminder about cleaning-up stuff after the last A&A workshop. You may have:
+ 
+1. Azure AD App Registrations (In the Equinor Tenant) with name in one the below formats:
+  - (your initial)-appsec-course-client
+  - (your initial)-appsec-course-episodes-api
+  - (your initial)-appsec-course-quotes-api
+
+2. A codespace on https://github.com/codespaces
+
+3. Codespace user secrets under https://github.com/settings/codespaces
+
+
+Thank you for participating! see you around and have a nice year end season!
+ 
+Also remember to swing by the #appsec channel on Slack when you have a moment, Thanks!
+ 
+Regards,
+Instructor A, Instructor B
+  
 ```
